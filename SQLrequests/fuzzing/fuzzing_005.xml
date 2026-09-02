@@ -1,0 +1,527 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Thu Jul 09 22:28:07 IST 2026">
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 120
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"test@example.com","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>723</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/25
+Content-Type: application/json; charset=utf-8
+Content-Length: 307
+ETag: W/"133-NPor3+x3pfZUh+H2aU94+bwzIFs"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":25,"email":"test@example.com","updatedAt":"2026-07-09T16:54:57.019Z","createdAt":"2026-07-09T16:54:57.019Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 111
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"a@b.com","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>714</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/28
+Content-Type: application/json; charset=utf-8
+Content-Length: 298
+ETag: W/"12a-pvijXtsFA/s/a5bH0BqIZpg3ROY"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":28,"email":"a@b.com","updatedAt":"2026-07-09T16:54:57.113Z","createdAt":"2026-07-09T16:54:57.113Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 120
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"newuser@test.com","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>723</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/24
+Content-Type: application/json; charset=utf-8
+Content-Length: 307
+ETag: W/"133-GV7+U6yhTCb4m9bp7YtnJPozwQs"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":24,"email":"newuser@test.com","updatedAt":"2026-07-09T16:54:56.971Z","createdAt":"2026-07-09T16:54:56.971Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 105
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"@","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>708</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/29
+Content-Type: application/json; charset=utf-8
+Content-Length: 292
+ETag: W/"124-K8c8ndJ2WpSOUIbqP2N16oH+I5g"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":29,"email":"@","updatedAt":"2026-07-09T16:54:57.162Z","createdAt":"2026-07-09T16:54:57.162Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 107
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"no@","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>710</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/26
+Content-Type: application/json; charset=utf-8
+Content-Length: 294
+ETag: W/"126-MgulctWazRrZXeZb88gJtIZCSqk"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":26,"email":"no@","updatedAt":"2026-07-09T16:54:57.045Z","createdAt":"2026-07-09T16:54:57.045Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 107
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"a@a","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>710</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/27
+Content-Type: application/json; charset=utf-8
+Content-Length: 294
+ETag: W/"126-39c+ut3FCT0CJNhNId22kKSyTxQ"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":27,"email":"a@a","updatedAt":"2026-07-09T16:54:57.052Z","createdAt":"2026-07-09T16:54:57.052Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:57 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 109
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"a@a.a","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>712</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/31
+Content-Type: application/json; charset=utf-8
+Content-Length: 296
+ETag: W/"128-4vt1mHGjBvBHlo7Invjc3yFJJKE"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":31,"email":"a@a.a","updatedAt":"2026-07-09T16:54:57.678Z","createdAt":"2026-07-09T16:54:57.678Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:57 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 111
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"a@a.a.a","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>714</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/30
+Content-Type: application/json; charset=utf-8
+Content-Length: 298
+ETag: W/"12a-nsSg/QeOg+iPiRVaOJDmak05l/Q"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":30,"email":"a@a.a.a","updatedAt":"2026-07-09T16:54:57.678Z","createdAt":"2026-07-09T16:54:57.678Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:57 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 116
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"a@a.<script>","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>711</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/32
+Content-Type: application/json; charset=utf-8
+Content-Length: 295
+ETag: W/"127-1sXavnSDfZ6WxYzFWwhGEql/2eY"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":32,"email":"a@a.","updatedAt":"2026-07-09T16:54:57.694Z","createdAt":"2026-07-09T16:54:57.694Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 22:24:57 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Users/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Users/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Users/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 604
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"email":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","password":"pass123","passwordRepeat":"pass123","securityQuestion":{"id":1,"answer":"test"}}]]></request>
+    <status>201</status>
+    <responselength>1207</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: /api/Users/33
+Content-Type: application/json; charset=utf-8
+Content-Length: 791
+ETag: W/"317-tRsV1vkOKDzWf/MUb/gUg5o3wJM"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 16:54:57 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"username":"","role":"customer","deluxeToken":"","lastLoginIp":"0.0.0.0","profileImage":"/assets/public/images/uploads/default.svg","isActive":true,"id":33,"email":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","updatedAt":"2026-07-09T16:54:57.695Z","createdAt":"2026-07-09T16:54:57.695Z","deletedAt":null}}]]></response>
+    <comment></comment>
+  </item>
+</items>

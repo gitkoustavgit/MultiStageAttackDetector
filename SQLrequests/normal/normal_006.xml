@@ -1,0 +1,778 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Fri Jun 19 23:59:21 IST 2026">
+  <item>
+    <time>Fri Jun 19 23:48:37 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC8gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpDYWNoZS1Db250cm9sOiBtYXgtYWdlPTANCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpVcGdyYWRlLUluc2VjdXJlLVJlcXVlc3RzOiAxDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogdGV4dC9odG1sLGFwcGxpY2F0aW9uL3hodG1sK3htbCxhcHBsaWNhdGlvbi94bWw7cT0wLjksaW1hZ2UvYXZpZixpbWFnZS93ZWJwLGltYWdlL2FwbmcsKi8qO3E9MC44LGFwcGxpY2F0aW9uL3NpZ25lZC1leGNoYW5nZTt2PWIzO3E9MC43DQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBuYXZpZ2F0ZQ0KU2VjLUZldGNoLVVzZXI6ID8xDQpTZWMtRmV0Y2gtRGVzdDogZG9jdW1lbnQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjI2YWYtMTllZTBhNmQxODUiDQpJZi1Nb2RpZmllZC1TaW5jZTogRnJpLCAxOSBKdW4gMjAyNiAxNjoxMToyOSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpBY2NlcHQtUmFuZ2VzOiBieXRlcw0KQ2FjaGUtQ29udHJvbDogcHVibGljLCBtYXgtYWdlPTANCkxhc3QtTW9kaWZpZWQ6IEZyaSwgMTkgSnVuIDIwMjYgMTY6MTE6MjkgR01UDQpFVGFnOiBXLyIyNmFmLTE5ZWUwYTZkMTg1Ig0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODozNyBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/socket.io/?EIO=4&transport=polling&t=PxX6pmH]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=PxX6pmH]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD1wb2xsaW5nJnQ9UHhYNnBtSCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6ICovKg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>326</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCkNvbnRlbnQtTGVuZ3RoOiA5Ng0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODozOSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQoweyJzaWQiOiIwYWxBLVY3a0hGQUJwWU40QUFBVyIsInVwZ3JhZGVzIjpbIndlYnNvY2tldCJdLCJwaW5nSW50ZXJ2YWwiOjI1MDAwLCJwaW5nVGltZW91dCI6NTAwMH0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLXZlcnNpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyIxNC0rRUJwWm5mdTE5M0p6SU9CalhzWTErS3ZlTjgiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxNC0rRUJwWm5mdTE5M0p6SU9CalhzWTErS3ZlTjgiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjE4OjM5IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6MzkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/assets/i18n/en.json]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/assets/i18n/en.json]]></path>
+    <extension>json</extension>
+    <request base64="true"><![CDATA[R0VUIC9hc3NldHMvaTE4bi9lbi5qc29uIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KSWYtTm9uZS1NYXRjaDogVy8iOGE5MC0xOWU5NmI1YTgyMCINCklmLU1vZGlmaWVkLVNpbmNlOiBGcmksIDA1IEp1biAyMDI2IDA3OjM1OjQ4IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpBY2NlcHQtUmFuZ2VzOiBieXRlcw0KQ2FjaGUtQ29udHJvbDogcHVibGljLCBtYXgtYWdlPTANCkxhc3QtTW9kaWZpZWQ6IEZyaSwgMDUgSnVuIDIwMjYgMDc6MzU6NDggR01UDQpFVGFnOiBXLyI4YTkwLTE5ZTk2YjVhODIwIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODozOSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvQ2hhbGxlbmdlcy8/bmFtZT1TY29yZSUyMEJvYXJkIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KSWYtTm9uZS1NYXRjaDogVy8iMWRjLTE0U05ZKyt6bzJkL092STZHU2ZtTVpEZENLMCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGMtMTRTTlkrK3pvMmQvT3ZJNkdTZm1NWkRkQ0swIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODozOSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/languages]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/languages]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2xhbmd1YWdlcyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjEwNzctZDFqRUdHMk5iZ0R2Q0RNaURyN08yM2tLcHFjIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxMDc3LWQxakVHRzJOYmdEdkNETWlEcjdPMjNrS3BxYyINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6MzkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvUXVhbnRpdHlzLyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjFkY2MtM0xIQWhSS05aZVB3OGJHT2JzaURNZ2dHS0JNIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGNjLTNMSEFoUktOWmVQdzhiR09ic2lETWdnR0tCTSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6MzkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjQwYjMtUWVFZmVmSFVGelhKWlhrcFlPM2c4MGZlY2kwIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLVFlRWZlZkhVRnpYSlpYa3BZTzNnODBmZWNpMCINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6MzkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/socket.io/?EIO=4&transport=polling&t=PxX6prj&sid=0alA-V7kHFABpYN4AAAW]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=PxX6prj&sid=0alA-V7kHFABpYN4AAAW]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[UE9TVCAvc29ja2V0LmlvLz9FSU89NCZ0cmFuc3BvcnQ9cG9sbGluZyZ0PVB4WDZwcmomc2lkPTBhbEEtVjdrSEZBQnBZTjRBQUFXIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0KQ29udGVudC1MZW5ndGg6IDINCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6ICovKg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpDb250ZW50LXR5cGU6IHRleHQvcGxhaW47Y2hhcnNldD1VVEYtOA0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KT3JpZ2luOiBodHRwOi8vbG9jYWxob3N0OjMwMDANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo0MA==]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbA0KQ29udGVudC1MZW5ndGg6IDINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6MzkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0Kb2s=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=0alA-V7kHFABpYN4AAAW]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=0alA-V7kHFABpYN4AAAW]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD13ZWJzb2NrZXQmc2lkPTBhbEEtVjdrSEZBQnBZTjRBQUFXIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KUHJhZ21hOiBuby1jYWNoZQ0KQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUNClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KVXBncmFkZTogd2Vic29ja2V0DQpPcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMA0KU2VjLVdlYlNvY2tldC1WZXJzaW9uOiAxMw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KU2VjLVdlYlNvY2tldC1LZXk6IG5HV2w2ZlZmQlEvMWp1VVJBNDM1Mnc9PQ0KDQo=]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IEtyQ25kWjlYYlRTditpOGlQTHBEMDVNOWhvaz0NCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:39 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/socket.io/?EIO=4&transport=polling&t=PxX6prm&sid=0alA-V7kHFABpYN4AAAW]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=PxX6prm&sid=0alA-V7kHFABpYN4AAAW]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD1wb2xsaW5nJnQ9UHhYNnBybSZzaWQ9MGFsQS1WN2tIRkFCcFlONEFBQVcgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiAqLyoNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>262</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCkNvbnRlbnQtTGVuZ3RoOiAzMg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODozOSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo0MHsic2lkIjoiZEdrY3IzMFFuTm1yNkZwMUFBQVgifQ==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:40 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLXZlcnNpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyIxNC0rRUJwWm5mdTE5M0p6SU9CalhzWTErS3ZlTjgiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxNC0rRUJwWm5mdTE5M0p6SU9CalhzWTErS3ZlTjgiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjE4OjQwIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:40 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6NDAgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:40 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvQ2hhbGxlbmdlcy8/bmFtZT1TY29yZSUyMEJvYXJkIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KSWYtTm9uZS1NYXRjaDogVy8iMWRjLTE0U05ZKyt6bzJkL092STZHU2ZtTVpEZENLMCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGMtMTRTTlkrK3pvMmQvT3ZJNkdTZm1NWkRkQ0swIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoxODo0MCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:40 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6NDAgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:48:40 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6MTg6NDAgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:57:58 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YmQ5LXJlVm9ud0UyR09jTXp3MkxweklrU3F5QjJPRSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjc6NTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjJjLUl2ZzFhbW9taWp2dHdTazNOeDhOUXM0b1VQNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>394</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDExDQpFVGFnOiBXLyJiLS81YlNib1ZqVmhHdzNxUmd2VWZaakUxcjFOcyINClZhcnk6IEFjY2VwdC1FbmNvZGluZw0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODowMCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQp7InVzZXIiOnt9fQ==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/login]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[UE9TVCAvcmVzdC91c2VyL2xvZ2luIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0KQ29udGVudC1MZW5ndGg6IDU2DQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uDQpPcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCnsiZW1haWwiOiJqdWljZWN1c3RvbWVyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiX0FiYzEyMyJ9]]></request>
+    <status>200</status>
+    <responselength>1199</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDgxMw0KRVRhZzogVy8iMzJkLVZyTHNlVXN0U3M0cXg0L0xWcUwyVDdIME1pNCINClZhcnk6IEFjY2VwdC1FbmNvZGluZw0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODowMCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQp7ImF1dGhlbnRpY2F0aW9uIjp7InRva2VuIjoiZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUiLCJiaWQiOjYsInVtYWlsIjoianVpY2VjdXN0b21lckBnbWFpbC5jb20ifX0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRQ0KSWYtTm9uZS1NYXRjaDogVy8iODAtdmhxdjJ5bEF1ZGRKT3p6cGM1eStGSmQ2YlRRIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>200</status>
+    <responselength>394</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDExDQpFVGFnOiBXLyJiLS81YlNib1ZqVmhHdzNxUmd2VWZaakUxcjFOcyINClZhcnk6IEFjY2VwdC1FbmNvZGluZw0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODowMCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQp7InVzZXIiOnt9fQ==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KSWYtTm9uZS1NYXRjaDogVy8iYi0vNWJTYm9WalZoR3czcVJndlVmWmpFMXIxTnMiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>513</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDEyOA0KRVRhZzogVy8iODAtdmhxdjJ5bEF1ZGRKT3p6cGM1eStGSmQ2YlRRIg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjAwIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCnsidXNlciI6eyJpZCI6MjQsImVtYWlsIjoianVpY2VjdXN0b21lckBnbWFpbC5jb20iLCJsYXN0TG9naW5JcCI6IiIsInByb2ZpbGVJbWFnZSI6Ii9hc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIn19]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvImItLzViU2JvVmpWaEd3M3FSZ3ZVZlpqRTFyMU5zIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>200</status>
+    <responselength>428</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDQ0DQpFVGFnOiBXLyIyYy1JdmcxYW1vbWlqdnR3U2szTng4TlFzNG9VUDQiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6MDAgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJ1c2VyIjp7ImVtYWlsIjoianVpY2VjdXN0b21lckBnbWFpbC5jb20ifX0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/basket/6]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/basket/6]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2Jhc2tldC82IEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KSWYtTm9uZS1NYXRjaDogVy8iMjEwLUYrVHREWGhCZk5CYTgwb1V5VXpjY2tnMlJPWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyMTAtRitUdERYaEJmTkJhODBvVXlVemNja2cyUk9ZIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODowMSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjQwYjMtUWVFZmVmSFVGelhKWlhrcFlPM2c4MGZlY2kwIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLVFlRWZlZkhVRnpYSlpYa3BZTzNnODBmZWNpMCINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6MDEgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:00 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvUXVhbnRpdHlzLyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjFkY2MtM0xIQWhSS05aZVB3OGJHT2JzaURNZ2dHS0JNIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGNjLTNMSEFoUktOWmVQdzhiR09ic2lETWdnR0tCTSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6MDEgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:16 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjJjLUl2ZzFhbW9taWp2dHdTazNOeDhOUXM0b1VQNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyYy1JdmcxYW1vbWlqdnR3U2szTng4TlFzNG9VUDQiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjE2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:16 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/6/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/6/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzYvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvImFhLWRaTVpnVmJrb3llODNSWTJhM1hWTlQ2NDV2NCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>542</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDE1Nw0KRVRhZzogVy8iOWQtcG1RcFFzbXNYMTRUUjNVblNZRXJjcEw1a1pNIg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjE2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCnsic3RhdHVzIjoic3VjY2VzcyIsImRhdGEiOlt7Im1lc3NhZ2UiOiJGcnkgbGlrZWQgaXQgdG9vLiIsImF1dGhvciI6ImJlbmRlckBqdWljZS1zaC5vcCIsInByb2R1Y3QiOjYsImxpa2VzQ291bnQiOjAsImxpa2VkQnkiOltdLCJfaWQiOiJpaGp3ZHVoaXhXYzdBNHhxTSJ9XX0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:16 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/6/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/6/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzYvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjlkLXBtUXBRc21zWDE0VFIzVW5TWUVyY3BMNWtaTSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI5ZC1wbVFwUXNtc1gxNFRSM1VuU1lFcmNwTDVrWk0iDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjE2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:17 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/6/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/6/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzYvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjlkLXBtUXBRc21zWDE0VFIzVW5TWUVyY3BMNWtaTSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI5ZC1wbVFwUXNtc1gxNFRSM1VuU1lFcmNwTDVrWk0iDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjE3IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:41 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/42/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/42/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzQyL3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQXV0aG9yaXphdGlvbjogQmVhcmVyIGV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEU7IHRva2VuPWV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpJZi1Ob25lLU1hdGNoOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODo0MSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:41 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjJjLUl2ZzFhbW9taWp2dHdTazNOeDhOUXM0b1VQNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyYy1JdmcxYW1vbWlqdnR3U2szTng4TlFzNG9VUDQiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjQxIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:41 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/42/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/42/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzQyL3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQXV0aG9yaXphdGlvbjogQmVhcmVyIGV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEU7IHRva2VuPWV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpJZi1Ob25lLU1hdGNoOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODo0MSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:41 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/42/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/42/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzQyL3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQXV0aG9yaXphdGlvbjogQmVhcmVyIGV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEU7IHRva2VuPWV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpJZi1Ob25lLU1hdGNoOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxODMtTEdGQnIwL2pocDVkWDBGYjMvK3VPR21weUFVIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODo0MSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:49 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/8/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/8/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzgvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6NDkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:50 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjJjLUl2ZzFhbW9taWp2dHdTazNOeDhOUXM0b1VQNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyYy1JdmcxYW1vbWlqdnR3U2szTng4TlFzNG9VUDQiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjUwIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:50 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/8/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/8/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzgvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjFlLUprUGNJK3BHajdCQlR4T3VaVFZWSW05MXphWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjUwIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:54 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/basket/6]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/basket/6]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2Jhc2tldC82IEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KSWYtTm9uZS1NYXRjaDogVy8iMjEwLUYrVHREWGhCZk5CYTgwb1V5VXpjY2tnMlJPWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyMTAtRitUdERYaEJmTkJhODBvVXlVemNja2cyUk9ZIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyODo1NCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:54 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/user/whoami?fields=email]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami?fields=email]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3VzZXIvd2hvYW1pP2ZpZWxkcz1lbWFpbCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjJjLUl2ZzFhbW9taWp2dHdTazNOeDhOUXM0b1VQNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyYy1JdmcxYW1vbWlqdnR3U2szTng4TlFzNG9VUDQiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjU0IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:55 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/11]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[DELETE]]></method>
+    <path><![CDATA[/api/BasketItems/11]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[REVMRVRFIC9hcGkvQmFza2V0SXRlbXMvMTEgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQXV0aG9yaXphdGlvbjogQmVhcmVyIGV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSlNVekkxTmlKOS5leUp6ZEdGMGRYTWlPaUp6ZFdOalpYTnpJaXdpWkdGMFlTSTZleUpwWkNJNk1qUXNJblZ6WlhKdVlXMWxJam9pSWl3aVpXMWhhV3dpT2lKcWRXbGpaV04xYzNSdmJXVnlRR2R0WVdsc0xtTnZiU0lzSW5CaGMzTjNiM0prSWpvaVpURTJNVFUyTjJFd01ERXhPV0l6T0ROa1lXWXdOMkl6WkRsbE9UWTVZMllpTENKeWIyeGxJam9pWTNWemRHOXRaWElpTENKa1pXeDFlR1ZVYjJ0bGJpSTZJaUlzSW14aGMzUk1iMmRwYmtsd0lqb2lJaXdpY0hKdlptbHNaVWx0WVdkbElqb2lMMkZ6YzJWMGN5OXdkV0pzYVdNdmFXMWhaMlZ6TDNWd2JHOWhaSE12WkdWbVlYVnNkQzV6ZG1jaUxDSjBiM1J3VTJWamNtVjBJam9pSWl3aWFYTkJZM1JwZG1VaU9uUnlkV1VzSW1OeVpXRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRjNk16SXVPRFUySUNzd01Eb3dNQ0lzSW5Wd1pHRjBaV1JCZENJNklqSXdNall0TURZdE1Ua2dNVGM2TVRnNk5ESXVPVEk1SUNzd01Eb3dNQ0lzSW1SbGJHVjBaV1JCZENJNmJuVnNiSDBzSW1saGRDSTZNVGM0TVRnNU16WTRNWDAuT0dxVXIyZ201WS1lekxEQm9Jb3FRWmNzZ1RNc2p6UFJWZWxScjc4ak5lZVpaUTNKbWE0Rk84VW1LY1hwUTJuN2txd3hHODdCTzNqaGJQWGJ4TUdmWmtwRzZtSVlIQXlscTVrZzd5SFJYSG4xdkZ0dnRnVVVpamJHMTluQWYxb2tycWNTWVVUU0ZLXzVlN1BOb1p0XzhLTHFUblBWZVFSc1hxUGZ2UUdpcWxVDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpYLVVzZXItRW1haWw6IGp1aWNlY3VzdG9tZXJAZ21haWwuY29tDQpPcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS0vM3ZXRktVdTZ2UndoU3l5eVFORUlsL0QvNlUiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6NTUgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6e319]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/basket/6]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/basket/6]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2Jhc2tldC82IEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KSWYtTm9uZS1NYXRjaDogVy8iMjEwLUYrVHREWGhCZk5CYTgwb1V5VXpjY2tnMlJPWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>539</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDE1NA0KRVRhZzogVy8iOWEtb0VCQk93S1lldmZXSGl0MFpFRWR2QTZmeDhRIg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjU2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCnsic3RhdHVzIjoic3VjY2VzcyIsImRhdGEiOnsiaWQiOjYsImNvdXBvbiI6bnVsbCwiVXNlcklkIjoyNCwiY3JlYXRlZEF0IjoiMjAyNi0wNi0xOVQxNzoxNzo0NC4yOTNaIiwidXBkYXRlZEF0IjoiMjAyNi0wNi0xOVQxNzoxNzo0NC4yOTNaIiwiUHJvZHVjdHMiOltdfX0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:56 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/basket/6]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/basket/6]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2Jhc2tldC82IEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFOyB0b2tlbj1leUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KSWYtTm9uZS1NYXRjaDogVy8iOWEtb0VCQk93S1lldmZXSGl0MFpFRWR2QTZmeDhRIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI5YS1vRUJCT3dLWWV2ZldIaXQwWkVFZHZBNmZ4OFEiDQpEYXRlOiBGcmksIDE5IEp1biAyMDI2IDE4OjI4OjU2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:58 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvUXVhbnRpdHlzLyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjFkY2MtM0xIQWhSS05aZVB3OGJHT2JzaURNZ2dHS0JNIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGNjLTNMSEFoUktOWmVQdzhiR09ic2lETWdnR0tCTSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6NTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:58:58 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBdXRob3JpemF0aW9uOiBCZWFyZXIgZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNClgtVXNlci1FbWFpbDoganVpY2VjdXN0b21lckBnbWFpbC5jb20NClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPXdqS1JXYkxSbzdrWXo4bWp5UTNwOWFKRURuZ0IwTlZWMDVldjFXd1BOeFpxNjRLVjJPck1YYmxvZzFMRTsgdG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUo5LmV5SnpkR0YwZFhNaU9pSnpkV05qWlhOeklpd2laR0YwWVNJNmV5SnBaQ0k2TWpRc0luVnpaWEp1WVcxbElqb2lJaXdpWlcxaGFXd2lPaUpxZFdsalpXTjFjM1J2YldWeVFHZHRZV2xzTG1OdmJTSXNJbkJoYzNOM2IzSmtJam9pWlRFMk1UVTJOMkV3TURFeE9XSXpPRE5rWVdZd04ySXpaRGxsT1RZNVkyWWlMQ0p5YjJ4bElqb2lZM1Z6ZEc5dFpYSWlMQ0prWld4MWVHVlViMnRsYmlJNklpSXNJbXhoYzNSTWIyZHBia2x3SWpvaUlpd2ljSEp2Wm1sc1pVbHRZV2RsSWpvaUwyRnpjMlYwY3k5d2RXSnNhV012YVcxaFoyVnpMM1Z3Ykc5aFpITXZaR1ZtWVhWc2RDNXpkbWNpTENKMGIzUndVMlZqY21WMElqb2lJaXdpYVhOQlkzUnBkbVVpT25SeWRXVXNJbU55WldGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGM2TXpJdU9EVTJJQ3N3TURvd01DSXNJblZ3WkdGMFpXUkJkQ0k2SWpJd01qWXRNRFl0TVRrZ01UYzZNVGc2TkRJdU9USTVJQ3N3TURvd01DSXNJbVJsYkdWMFpXUkJkQ0k2Ym5Wc2JIMHNJbWxoZENJNk1UYzRNVGc1TXpZNE1YMC5PR3FVcjJnbTVZLWV6TERCb0lvcVFaY3NnVE1zanpQUlZlbFJyNzhqTmVlWlpRM0ptYTRGTzhVbUtjWHBRMm43a3F3eEc4N0JPM2poYlBYYnhNR2Zaa3BHNm1JWUhBeWxxNWtnN3lIUlhIbjF2RnR2dGdVVWlqYkcxOW5BZjFva3JxY1NZVVRTRktfNWU3UE5vWnRfOEtMcVRuUFZlUVJzWHFQZnZRR2lxbFUNCklmLU5vbmUtTWF0Y2g6IFcvIjQwYjMtUWVFZmVmSFVGelhKWlhrcFlPM2c4MGZlY2kwIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLVFlRWZlZkhVRnpYSlpYa3BZTzNnODBmZWNpMCINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjg6NTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:59:06 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/saveLoginIp]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/saveLoginIp]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3NhdmVMb2dpbklwIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkF1dGhvcml6YXRpb246IEJlYXJlciBleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpTVXpJMU5pSjkuZXlKemRHRjBkWE1pT2lKemRXTmpaWE56SWl3aVpHRjBZU0k2ZXlKcFpDSTZNalFzSW5WelpYSnVZVzFsSWpvaUlpd2laVzFoYVd3aU9pSnFkV2xqWldOMWMzUnZiV1Z5UUdkdFlXbHNMbU52YlNJc0luQmhjM04zYjNKa0lqb2laVEUyTVRVMk4yRXdNREV4T1dJek9ETmtZV1l3TjJJelpEbGxPVFk1WTJZaUxDSnliMnhsSWpvaVkzVnpkRzl0WlhJaUxDSmtaV3gxZUdWVWIydGxiaUk2SWlJc0lteGhjM1JNYjJkcGJrbHdJam9pSWl3aWNISnZabWxzWlVsdFlXZGxJam9pTDJGemMyVjBjeTl3ZFdKc2FXTXZhVzFoWjJWekwzVndiRzloWkhNdlpHVm1ZWFZzZEM1emRtY2lMQ0owYjNSd1UyVmpjbVYwSWpvaUlpd2lhWE5CWTNScGRtVWlPblJ5ZFdVc0ltTnlaV0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UYzZNekl1T0RVMklDc3dNRG93TUNJc0luVndaR0YwWldSQmRDSTZJakl3TWpZdE1EWXRNVGtnTVRjNk1UZzZOREl1T1RJNUlDc3dNRG93TUNJc0ltUmxiR1YwWldSQmRDSTZiblZzYkgwc0ltbGhkQ0k2TVRjNE1UZzVNelk0TVgwLk9HcVVyMmdtNVktZXpMREJvSW9xUVpjc2dUTXNqelBSVmVsUnI3OGpOZWVaWlEzSm1hNEZPOFVtS2NYcFEybjdrcXd4Rzg3Qk8zamhiUFhieE1HZlprcEc2bUlZSEF5bHE1a2c3eUhSWEhuMXZGdHZ0Z1VVaWpiRzE5bkFmMW9rcnFjU1lVVFNGS181ZTdQTm9adF84S0xxVG5QVmVRUnNYcVBmdlFHaXFsVQ0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9d2pLUldiTFJvN2tZejhtanlRM3A5YUpFRG5nQjBOVlYwNWV2MVd3UE54WnE2NEtWMk9yTVhibG9nMUxFDQpJZi1Ob25lLU1hdGNoOiBXLyIxNTUtWC9OV0ZxOWRFUHM5Q1c2YjgvZjlQT0NSbFAwIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxNTUtWC9OV0ZxOWRFUHM5Q1c2YjgvZjlQT0NSbFAwIg0KRGF0ZTogRnJpLCAxOSBKdW4gMjAyNiAxODoyOTowNiBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:59:06 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjQwYjMtUWVFZmVmSFVGelhKWlhrcFlPM2c4MGZlY2kwIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLVFlRWZlZkhVRnpYSlpYa3BZTzNnODBmZWNpMCINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjk6MDYgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jun 19 23:59:06 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvUXVhbnRpdHlzLyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0KWC1Vc2VyLUVtYWlsOiBqdWljZWN1c3RvbWVyQGdtYWlsLmNvbQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT13aktSV2JMUm83a1l6OG1qeVEzcDlhSkVEbmdCME5WVjA1ZXYxV3dQTnhacTY0S1YyT3JNWGJsb2cxTEUNCklmLU5vbmUtTWF0Y2g6IFcvIjFkY2MtM0xIQWhSS05aZVB3OGJHT2JzaURNZ2dHS0JNIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGNjLTNMSEFoUktOWmVQdzhiR09ic2lETWdnR0tCTSINCkRhdGU6IEZyaSwgMTkgSnVuIDIwMjYgMTg6Mjk6MDYgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+</items>

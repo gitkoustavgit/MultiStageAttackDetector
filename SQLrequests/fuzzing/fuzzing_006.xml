@@ -1,0 +1,377 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Thu Jul 09 23:10:43 IST 2026">
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 15
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":-1}]]></request>
+    <status>200</status>
+    <responselength>540</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+ETag: W/"9b-P1eFMU+bmImLZNgUOvbJiBd2S3w"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"ProductId":1,"BasketId":1,"id":1,"quantity":-1,"createdAt":"2026-07-09T15:28:59.611Z","updatedAt":"2026-07-09T17:39:35.265Z"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 18
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":99999}]]></request>
+    <status>400</status>
+    <responselength>454</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 61
+ETag: W/"3d-VkRk/NEcEL+eG65pbceN61i4Zho"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"You can order only up to 5 items of this product."}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 18
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":"abc"}]]></request>
+    <status>400</status>
+    <responselength>454</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 61
+ETag: W/"3d-VkRk/NEcEL+eG65pbceN61i4Zho"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"You can order only up to 5 items of this product."}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 17
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":null}]]></request>
+    <status>200</status>
+    <responselength>542</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 157
+ETag: W/"9d-0wAMxOBAdSARkTKq9O6Q1XQcIgs"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"ProductId":1,"BasketId":1,"id":1,"quantity":null,"createdAt":"2026-07-09T15:28:59.611Z","updatedAt":"2026-07-09T17:39:35.640Z"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 16
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":1.5}]]></request>
+    <status>200</status>
+    <responselength>541</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+ETag: W/"9c-YWVduWPRrce4+yhi1GrJLTDmnhg"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"ProductId":1,"BasketId":1,"id":1,"quantity":1.5,"createdAt":"2026-07-09T15:28:59.611Z","updatedAt":"2026-07-09T17:39:35.640Z"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 14
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":0}]]></request>
+    <status>200</status>
+    <responselength>539</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 154
+ETag: W/"9a-T55m4EPBlIRY7LK2ES6LKAACl6g"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"ProductId":1,"BasketId":1,"id":1,"quantity":0,"createdAt":"2026-07-09T15:28:59.611Z","updatedAt":"2026-07-09T17:39:35.640Z"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 23:09:35 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/BasketItems/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[PUT]]></method>
+    <path><![CDATA[/api/BasketItems/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[PUT /api/BasketItems/1 HTTP/1.1
+Host: localhost:3000
+Content-Length: 15
+sec-ch-ua-platform: "Windows"
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Connection: keep-alive
+
+{"quantity":[]}]]></request>
+    <status>200</status>
+    <responselength>540</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+ETag: W/"9b-RCpYpeBqOKpbb9vyS5YfTzJahmI"
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 17:39:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"success","data":{"ProductId":1,"BasketId":1,"id":1,"quantity":[],"createdAt":"2026-07-09T15:28:59.611Z","updatedAt":"2026-07-09T17:39:35.692Z"}}]]></response>
+    <comment></comment>
+  </item>
+</items>

@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Thu Jul 09 21:51:33 IST 2026">
+  <item>
+    <time>Thu Jul 09 21:44:37 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/9999/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/9999/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzk5OTkvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTQ6MzcgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:45:04 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/-1/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/-1/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLy0xL3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpBY2NlcHQ6ICovKg0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9S285eThPUjR6N2F2YkJRVzNYNURZVm5OS2xNZEUxU0tLZEVlalpMbTZwdzgxMnJxazl4Z1BveUpCTHFKDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTU6MDQgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:45:11 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/0/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/0/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzAvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTU6MTEgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:45:24 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/99999999999999999999999999999999999999/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/99999999999999999999999999999999999999/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5L3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpBY2NlcHQ6ICovKg0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9S285eThPUjR6N2F2YkJRVzNYNURZVm5OS2xNZEUxU0tLZEVlalpMbTZwdzgxMnJxazl4Z1BveUpCTHFKDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTU6MjQgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:45:43 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/test/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/test/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3Rlc3QvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTU6NDMgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:46:03 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/1.5/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/1.5/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzEuNS9yZXZpZXdzIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6MzAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCnNlYy1jaC11YTogIk5vdC1BLkJyYW5kIjt2PSIyNCIsICJDaHJvbWl1bSI7dj0iMTQ2Ig0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE0Ni4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KQWNjZXB0OiAqLyoNClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDozMDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiBsYW5ndWFnZT1lbjsgd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPUtvOXk4T1I0ejdhdmJCUVczWDVEWVZuTktsTWRFMVNLS2RFZWpaTG02cHc4MTJycWs5eGdQb3lKQkxxSg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTY6MDMgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:46:08 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/.5/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/.5/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLy41L3Jldmlld3MgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDozMDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0Kc2VjLWNoLXVhOiAiTm90LUEuQnJhbmQiO3Y9IjI0IiwgIkNocm9taXVtIjt2PSIxNDYiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTQ2LjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpBY2NlcHQ6ICovKg0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjMwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IGxhbmd1YWdlPWVuOyB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9S285eThPUjR6N2F2YkJRVzNYNURZVm5OS2xNZEUxU0tLZEVlalpMbTZwdzgxMnJxazl4Z1BveUpCTHFKDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTY6MDggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:46:16 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/null/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/null/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL251bGwvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDkgSnVsIDIwMjYgMTY6MTY6MTYgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:51:05 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/1/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzEvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>781</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDM5NQ0KRVRhZzogVy8iMThiLXdBV0tSQmdFaUo2L0RPbTUrUmtxeVI2Y2c0NCINClZhcnk6IEFjY2VwdC1FbmNvZGluZw0KRGF0ZTogVGh1LCAwOSBKdWwgMjAyNiAxNjoyMTowNSBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQp7InN0YXR1cyI6InN1Y2Nlc3MiLCJkYXRhIjpbeyJtZXNzYWdlIjoiT25lIG9mIG15IGZhdm9yaXRlcyEiLCJhdXRob3IiOiJhZG1pbkBqdWljZS1zaC5vcCIsInByb2R1Y3QiOjEsImxpa2VzQ291bnQiOjAsImxpa2VkQnkiOltdLCJfaWQiOiJNb2ZyWVRvVzdDakxvV2NMNiIsImxpa2VkIjp0cnVlfSx7Im1lc3NhZ2UiOiJHcmVhdCEgV2UnbGwgaGF2ZSBhbiBhcHBsZSBwYXJ0eS4gRXZlcnlvbmUgYnJpbmdzIGFuIGFwcGxlIGFuZCAtIFNUVUZGUyBJVCBET1dOIEVBQ0ggT1RIRVInUyBUSFJPQVQhIiwiYXV0aG9yIjoiYmFzaWxAanVpY2Utc2gub3AiLCJwcm9kdWN0IjoxLCJsaWtlc0NvdW50IjowLCJsaWtlZEJ5IjpbXSwiX2lkIjoibkF0dDU3Y016a3JCa3NqMnQiLCJsaWtlZCI6dHJ1ZX1dfQ==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:51:09 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/2/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/2/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzIvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>569</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDE4NA0KRVRhZzogVy8iYjgtcU1vWjBUbitsd2hrUTRPanJtV0FmSjZJZC9vIg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBUaHUsIDA5IEp1bCAyMDI2IDE2OjIxOjA5IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCnsic3RhdHVzIjoic3VjY2VzcyIsImRhdGEiOlt7Im1lc3NhZ2UiOiJ5MHVyIGYxcjN3YWxsIG5lZWRzIG0wcjMgbXVzYzEzIiwiYXV0aG9yIjoidXZvZ2luQGp1aWNlLXNoLm9wIiwicHJvZHVjdCI6MiwibGlrZXNDb3VudCI6MCwibGlrZWRCeSI6W10sIl9pZCI6Ik1heFphaTRKanY4ZWpxR0IzIiwibGlrZWQiOnRydWV9XX0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Jul 09 21:51:14 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/rest/products/3/reviews]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/3/reviews]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzLzMvcmV2aWV3cyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjMwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpzZWMtY2gtdWE6ICJOb3QtQS5CcmFuZCI7dj0iMjQiLCAiQ2hyb21pdW0iO3Y9IjE0NiINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNDYuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCkFjY2VwdDogKi8qDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogbGFuZ3VhZ2U9ZW47IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT1Lbzl5OE9SNHo3YXZiQlFXM1g1RFlWbk5LbE1kRTFTS0tkRWVqWkxtNnB3ODEycnFrOXhnUG95SkJMcUoNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>570</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDE4NQ0KRVRhZzogVy8iYjktVTUrVU5Ga0JiN1gxa0t5c2hIaVZ6UkRMeTRVIg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBUaHUsIDA5IEp1bCAyMDI2IDE2OjIxOjE0IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCnsic3RhdHVzIjoic3VjY2VzcyIsImRhdGEiOlt7Im1lc3NhZ2UiOiJJIGJvdWdodCBpdCwgd291bGQgYnV5IGFnYWluLiA1LzciLCJhdXRob3IiOiJhZG1pbkBqdWljZS1zaC5vcCIsInByb2R1Y3QiOjMsImxpa2VzQ291bnQiOjAsImxpa2VkQnkiOltdLCJfaWQiOiJmeGF6dnQ1Y2o2REVRdm5mNyIsImxpa2VkIjp0cnVlfV19]]></response>
+    <comment></comment>
+  </item>
+</items>

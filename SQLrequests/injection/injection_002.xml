@@ -1,0 +1,706 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2026.4.3" exportTime="Fri Jul 10 00:11:04 IST 2026">
+  <item>
+    <time>Fri Jul 10 00:10:20 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 21
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"{{7*7}}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:20 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 20
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"${7*7}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:21 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 24
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"<%= 7*7 %>"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:21 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 20
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"#{7*7}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:22 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 25
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"{{ '7'*7 }}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:22 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 22
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"${{7*7}}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Jul 10 00:10:22 IST 2026</time>
+    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>3000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/Feedbacks/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
+Host: localhost:3000
+Content-Length: 24
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://localhost:3000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Connection: keep-alive
+
+{"comment":"{{config}}"}]]></request>
+    <status>500</status>
+    <responselength>2666</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 09 Jul 2026 18:40:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2310
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>
