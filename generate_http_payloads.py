@@ -1,13 +1,45 @@
+import os
 import requests
 import random
 import json
 from pymongo import MongoClient
+from urllib.parse import quote_plus
+from dotenv import load_dotenv
 import sys
 
+# ================================================================
+# LOAD ENVIRONMENT VARIABLES
+# ================================================================
+
+load_dotenv()
+
+REQUIRED_ENV = [
+    "MONGO_USERNAME",
+    "MONGO_PASSWORD",
+    "MONGO_CLUSTER",
+    "DATABASE_NAME",
+    "COLLECTION_NAME",
+]
+
+missing = [key for key in REQUIRED_ENV if not os.getenv(key)]
+
+if missing:
+    raise RuntimeError(
+        f"Missing environment variables: {', '.join(missing)}"
+    )
+
 # -------------------- CONFIG --------------------
-MONGO_URI = "mongodb+srv://koustavmitra18_db_user:idsDB%4069@ids-dataset-cluster.wvxuucs.mongodb.net/?appName=ids-dataset-cluster"
-DB_NAME = "AttackDetection"
-COLL_NAME = "newSessions"
+USERNAME = os.getenv("MONGO_USERNAME")
+PASSWORD = quote_plus(os.getenv("MONGO_PASSWORD"))
+CLUSTER = os.getenv("MONGO_CLUSTER")
+DB_NAME = os.getenv("DATABASE_NAME")
+COLL_NAME = os.getenv("COLLECTION_NAME")
+MONGO_URI = (
+    f"mongodb+srv://{USERNAME}:{PASSWORD}@{CLUSTER}/"
+    "?retryWrites=true&w=majority"
+    "&appName=ids-dataset-cluster"
+)
+
 JUICE_SHOP_URL = "http://localhost:3000"
 
 SESSIONS_PER_STAGE = 48   # NORMAL, RECON, FUZZING, INJECTION, EXPLOITATION -> 240 sessions total
