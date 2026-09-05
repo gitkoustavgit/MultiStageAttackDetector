@@ -23,473 +23,2640 @@
 <!ATTLIST response base64 (true|false) "false">
 <!ELEMENT comment (#PCDATA)>
 ]>
-<items burpVersion="2026.4.3" exportTime="Thu Jul 09 23:35:20 IST 2026">
+<items burpVersion="2026.7.3" exportTime="Thu Sep 03 18:43:33 IST 2026">
   <item>
-    <time>Thu Jul 09 23:33:48 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
+    <time>Thu Sep 03 18:41:35 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
+    <path><![CDATA[/]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
+    <request base64="false"><![CDATA[GET / HTTP/1.1
+Host: localhost:9000
+Cache-Control: max-age=0
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"24b1-1a06757c91f"
+If-Modified-Since: Thu, 03 Sep 2026 12:56:41 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Thu, 03 Sep 2026 12:56:41 GMT
+ETag: W/"24b1-1a06757c91f"
+Date: Thu, 03 Sep 2026 13:11:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:02 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET / HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
 sec-ch-ua-mobile: ?0
-Accept: */*
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"24b1-1a06757c91f"
+If-Modified-Since: Thu, 03 Sep 2026 12:56:41 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Thu, 03 Sep 2026 12:56:41 GMT
+ETag: W/"24b1-1a06757c91f"
+Date: Thu, 03 Sep 2026 13:13:02 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Date: Thu, 03 Sep 2026 13:11:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Date: Thu, 03 Sep 2026 13:11:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-g1p0uKyxURIKwzy/TkhqQvOp6bE"
+Date: Thu, 03 Sep 2026 13:13:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Quantitys/ HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dcc-8Hu7Wu+I6KdZs8MPpKr6zpKifP4"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dcc-8Hu7Wu+I6KdZs8MPpKr6zpKifP4"
+Date: Thu, 03 Sep 2026 13:11:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Quantitys/ HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1dcc-8Hu7Wu+I6KdZs8MPpKr6zpKifP4"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dcc-8Hu7Wu+I6KdZs8MPpKr6zpKifP4"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/assets/i18n/en.json]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/assets/i18n/en.json]]></path>
+    <extension>json</extension>
+    <request base64="false"><![CDATA[GET /assets/i18n/en.json HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"8a89-19fef445a30"
+If-Modified-Since: Tue, 11 Aug 2026 05:21:02 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 11 Aug 2026 05:21:02 GMT
+ETag: W/"8a89-19fef445a30"
+Date: Thu, 03 Sep 2026 13:11:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/assets/i18n/en.json]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/assets/i18n/en.json]]></path>
+    <extension>json</extension>
+    <request base64="false"><![CDATA[GET /assets/i18n/en.json HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"8a89-19fef445a30"
+If-Modified-Since: Tue, 11 Aug 2026 05:21:02 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 11 Aug 2026 05:21:02 GMT
+ETag: W/"8a89-19fef445a30"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:11:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:11:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:38 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:11:38 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:38 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:11:38 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:13:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:04 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:13:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:04 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 13:13:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 13:11:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 13:11:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/languages]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/languages]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/languages HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Date: Thu, 03 Sep 2026 13:11:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/languages]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/languages]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/languages HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:42 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/-1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/-1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/-1 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2790</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:42 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2434
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/-1</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/-1</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:35 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/0]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/0]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/0 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2788</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2432
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/0</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/0</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:44 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/1]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/1]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/1 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2788</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:11:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2432
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/1</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/1</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:09 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/10]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/10]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/10 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2790</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:09 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2434
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/10</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/10</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:59 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/2]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/2]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/2 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2788</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:11:59 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2432
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/2</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/2</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/3]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/3]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/3 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2788</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2432
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/3</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/3</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:20 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/50]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/50]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/50 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2790</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2434
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/50</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/50</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:28 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/99]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/99]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/99 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2790</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:28 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2434
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/99</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/99</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:49 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/999]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/999]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/999 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2792</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:49 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2436
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/999</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/999</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:42:55 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/9999]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/9999]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/9999 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>500</status>
+    <responselength>2794</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding
+Date: Thu, 03 Sep 2026 13:12:55 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 2438
+
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <title>Error: Unexpected path: /rest/products/9999</title>
+    <style>* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  padding: 80px 100px;
+  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+  background-repeat: no-repeat;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 {
+  font-size: 22px;
+  color: #343434;
+}
+h1 em, h2 em {
+  padding: 0 5px;
+  font-weight: normal;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  margin-top: 10px;
+}
+ul li {
+  list-style: none;
+}
+#stacktrace {
+  margin-left: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
+      <h2><em>500</em> Error: Unexpected path: /rest/products/9999</h2>
+      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:18:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:235:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:235:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/insecurity.js:218:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q= HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"40b3-FOoF94mPODt0px1MaoPEt2EPABg"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"40b3-FOoF94mPODt0px1MaoPEt2EPABg"
+Date: Thu, 03 Sep 2026 13:11:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q= HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+If-None-Match: W/"40b3-FOoF94mPODt0px1MaoPEt2EPABg"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"40b3-FOoF94mPODt0px1MaoPEt2EPABg"
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPN4d]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPN4d]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPN4d HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
 Connection: keep-alive
 
 ]]></request>
     <status>200</status>
-    <responselength>781</responselength>
+    <responselength>326</responselength>
     <mimetype>JSON</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: application/json; charset=utf-8
-Content-Length: 395
-ETag: W/"18b-wAWKRBgEiJ6/DOm5+RkqyR6cg44"
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:48 GMT
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 96
+Date: Thu, 03 Sep 2026 13:11:36 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-{"status":"success","data":[{"message":"One of my favorites!","author":"admin@juice-sh.op","product":1,"likesCount":0,"likedBy":[],"_id":"MofrYToW7CjLoWcL6","liked":true},{"message":"Great! We'll have an apple party. Everyone brings an apple and - STUFFS IT DOWN EACH OTHER'S THROAT!","author":"basil@juice-sh.op","product":1,"likesCount":0,"likedBy":[],"_id":"nAtt57cMzkrBksj2t","liked":true}]}]]></response>
+0{"sid":"JUXYFvEv7ax33EKmAAAP","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Thu Jul 09 23:33:48 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPN9-&sid=JUXYFvEv7ax33EKmAAAP]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[PUT]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[PUT /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
-Content-Length: 0
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPN9-&sid=JUXYFvEv7ax33EKmAAAP]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPN9-&sid=JUXYFvEv7ax33EKmAAAP HTTP/1.1
+Host: localhost:9000
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
 Connection: keep-alive
 
 ]]></request>
-    <status>201</status>
-    <responselength>409</responselength>
+    <status>200</status>
+    <responselength>262</responselength>
     <mimetype>JSON</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 201 Created
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: application/json; charset=utf-8
-Content-Length: 20
-ETag: W/"14-Y53wuE/mmbSikKcT/WualL1N65U"
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:48 GMT
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 32
+Date: Thu, 03 Sep 2026 13:11:37 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-{"status":"success"}]]></response>
+40{"sid":"jSTUJxLYK1KYRURXAAAQ"}]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Thu Jul 09 23:33:48 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
+    <time>Thu Sep 03 18:41:37 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPN9x&sid=JUXYFvEv7ax33EKmAAAP]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[POST]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[POST /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
-Content-Length: 0
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPN9x&sid=JUXYFvEv7ax33EKmAAAP]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[POST /socket.io/?EIO=4&transport=polling&t=Q1dPN9x&sid=JUXYFvEv7ax33EKmAAAP HTTP/1.1
+Host: localhost:9000
+Content-Length: 2
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Origin: http://localhost:9000
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
 Connection: keep-alive
 
-]]></request>
-    <status>500</status>
-    <responselength>3386</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:48 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 3030
-
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: Unexpected path: /rest/products/1/reviews</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: Unexpected path: /rest/products/1/reviews</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:42:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:225:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:210:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:113:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at logger (/juice-shop/node_modules/morgan/index.js:170:5)</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
-    </div>
-  </body>
-</html>
-]]></response>
-    <comment></comment>
-  </item>
-  <item>
-    <time>Thu Jul 09 23:33:48 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
-    <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
-    <protocol>http</protocol>
-    <method><![CDATA[OPTIONS]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[OPTIONS /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Origin: http://localhost:3000
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
-Connection: keep-alive
-
-]]></request>
-    <status>204</status>
-    <responselength>262</responselength>
-    <mimetype></mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 204 No Content
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE
-Vary: Access-Control-Request-Headers
-Content-Length: 0
-Date: Thu, 09 Jul 2026 18:03:48 GMT
+40]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/html
+Content-Length: 2
+Date: Thu, 03 Sep 2026 13:11:37 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-]]></response>
+ok]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Thu Jul 09 23:33:48 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
+    <time>Thu Sep 03 18:41:47 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPPfj]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[DELETE]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[DELETE /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPPfj]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPPfj HTTP/1.1
+Host: localhost:9000
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
-Connection: keep-alive
-
-]]></request>
-    <status>500</status>
-    <responselength>3386</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:48 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 3030
-
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: Unexpected path: /rest/products/1/reviews</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: Unexpected path: /rest/products/1/reviews</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:42:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:225:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:210:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:113:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at logger (/juice-shop/node_modules/morgan/index.js:170:5)</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
-    </div>
-  </body>
-</html>
-]]></response>
-    <comment></comment>
-  </item>
-  <item>
-    <time>Thu Jul 09 23:33:59 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
-    <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
-    <protocol>http</protocol>
-    <method><![CDATA[PATCH]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[PATCH /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Origin: http://localhost:3000
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
-Content-Length: 0
-Connection: keep-alive
-
-]]></request>
-    <status>500</status>
-    <responselength>3386</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:59 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 3030
-
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: Unexpected path: /rest/products/1/reviews</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: Unexpected path: /rest/products/1/reviews</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at /juice-shop/build/routes/angular.js:42:18</li><li> &nbsp; &nbsp;at /juice-shop/build/lib/utils.js:225:26</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:210:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at /juice-shop/build/routes/verify.js:113:5</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/express/lib/router/index.js:286:9</li><li> &nbsp; &nbsp;at router.process_params (/juice-shop/node_modules/express/lib/router/index.js:346:12)</li><li> &nbsp; &nbsp;at next (/juice-shop/node_modules/express/lib/router/index.js:280:10)</li><li> &nbsp; &nbsp;at logger (/juice-shop/node_modules/morgan/index.js:170:5)</li><li> &nbsp; &nbsp;at Layer.handle [as handle_request] (/juice-shop/node_modules/express/lib/router/layer.js:95:5)</li><li> &nbsp; &nbsp;at trim_prefix (/juice-shop/node_modules/express/lib/router/index.js:328:13)</li></ul>
-    </div>
-  </body>
-</html>
-]]></response>
-    <comment></comment>
-  </item>
-  <item>
-    <time>Thu Jul 09 23:33:59 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/rest/products/1/reviews]]></url>
-    <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
-    <protocol>http</protocol>
-    <method><![CDATA[HEAD]]></method>
-    <path><![CDATA[/rest/products/1/reviews]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[HEAD /rest/products/1/reviews HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDctMDkgMTU6Mjg6NTguMzE0ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MzYxODY3NX0.NtgZWo4a7LIuStNcPtD1q1ihdlWZn6gp89shIRXzKqGol4jN6oU_b_kjaYAu2LSCyqswhPZjPqQ0BgUs1r0WuVRbxN1b3PK4MrLC6w9GIQLtNnVEQSPcyXjWZndqt_8lFqiFTGMHajA7E2DpwWAyxXuwPtOvkzO0BLE6Yf90xC4
-If-None-Match: W/"18b-wAWKRBgEiJ6/DOm5+RkqyR6cg44"
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
 Connection: keep-alive
 
 ]]></request>
     <status>200</status>
-    <responselength>386</responselength>
-    <mimetype></mimetype>
+    <responselength>326</responselength>
+    <mimetype>JSON</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: application/json; charset=utf-8
-Content-Length: 478
-ETag: W/"1de-vc3ltymuK2NnwG90xBCYXFwskxE"
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:03:59 GMT
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 96
+Date: Thu, 03 Sep 2026 13:11:47 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
+
+0{"sid":"5G1NB_e5k542lx0KAAAR","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:47 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPPgO&sid=5G1NB_e5k542lx0KAAAR]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPPgO&sid=5G1NB_e5k542lx0KAAAR]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[POST /socket.io/?EIO=4&transport=polling&t=Q1dPPgO&sid=5G1NB_e5k542lx0KAAAR HTTP/1.1
+Host: localhost:9000
+Content-Length: 2
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Origin: http://localhost:9000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+40]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/html
+Content-Length: 2
+Date: Thu, 03 Sep 2026 13:11:47 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+ok]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:47 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPPgP&sid=5G1NB_e5k542lx0KAAAR]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPPgP&sid=5G1NB_e5k542lx0KAAAR]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPPgP&sid=5G1NB_e5k542lx0KAAAR HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>262</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 32
+Date: Thu, 03 Sep 2026 13:11:47 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+40{"sid":"1jEe_T2h0HlbSidmAAAS"}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:47 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPPla&sid=5G1NB_e5k542lx0KAAAR]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPPla&sid=5G1NB_e5k542lx0KAAAR]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPPla&sid=5G1NB_e5k542lx0KAAAR HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>230</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 1
+Date: Thu, 03 Sep 2026 13:11:47 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+6]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:02 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPiBU]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPiBU]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPiBU HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>326</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 96
+Date: Thu, 03 Sep 2026 13:13:02 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+0{"sid":"SbCkK-SD4u-kI-nTAAAT","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPiC4&sid=SbCkK-SD4u-kI-nTAAAT]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPiC4&sid=SbCkK-SD4u-kI-nTAAAT]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[POST /socket.io/?EIO=4&transport=polling&t=Q1dPiC4&sid=SbCkK-SD4u-kI-nTAAAT HTTP/1.1
+Host: localhost:9000
+Content-Length: 2
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Origin: http://localhost:9000
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+40]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/html
+Content-Length: 2
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+ok]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1dPiC5&sid=SbCkK-SD4u-kI-nTAAAT]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1dPiC5&sid=SbCkK-SD4u-kI-nTAAAT]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1dPiC5&sid=SbCkK-SD4u-kI-nTAAAT HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>262</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 32
+Date: Thu, 03 Sep 2026 13:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+40{"sid":"kNBtOE1YakYHFblhAAAU"}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:47 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=websocket&sid=5G1NB_e5k542lx0KAAAR]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=5G1NB_e5k542lx0KAAAR]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=websocket&sid=5G1NB_e5k542lx0KAAAR HTTP/1.1
+Host: localhost:9000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:9000
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Sec-WebSocket-Key: o10WiML26jjh6oCwPgjC+g==
+
+]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: okwSfiuLlt1N2YwFrrL4cm+p+F4=
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:41:36 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=websocket&sid=JUXYFvEv7ax33EKmAAAP]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=JUXYFvEv7ax33EKmAAAP]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=websocket&sid=JUXYFvEv7ax33EKmAAAP HTTP/1.1
+Host: localhost:9000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:9000
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Sec-WebSocket-Key: 9cPU20Hd5H5jj64tvlCV1Q==
+
+]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: LBRDVX4U5QX2c88CyxBAy2hIHvU=
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 18:43:03 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=websocket&sid=SbCkK-SD4u-kI-nTAAAT]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=SbCkK-SD4u-kI-nTAAAT]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=websocket&sid=SbCkK-SD4u-kI-nTAAAT HTTP/1.1
+Host: localhost:9000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:9000
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=Ko9y8OR4z7avbBQW3X5DYVnNKlMdE1SKKdEejZLm6pw812rqk9xgPoyJBLqJ
+Sec-WebSocket-Key: g6Z2EhY7ZHjl28m1VbZL5Q==
+
+]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: 614ZNTCj+hRmmGMYVzGwOWbQ6tw=
 
 ]]></response>
     <comment></comment>

@@ -23,38 +23,663 @@
 <!ATTLIST response base64 (true|false) "false">
 <!ELEMENT comment (#PCDATA)>
 ]>
-<items burpVersion="2026.4.3" exportTime="Fri Jul 10 00:11:04 IST 2026">
+<items burpVersion="2026.7.3" exportTime="Thu Sep 03 23:00:23 IST 2026">
   <item>
-    <time>Fri Jul 10 00:10:20 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:58:10 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 21
+    <request base64="false"><![CDATA[GET / HTTP/1.1
+Host: localhost:9000
+Cache-Control: max-age=0
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"24b1-1a067f40eb2"
+If-Modified-Since: Thu, 03 Sep 2026 15:47:22 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Thu, 03 Sep 2026 15:47:22 GMT
+ETag: W/"24b1-1a067f40eb2"
+Date: Thu, 03 Sep 2026 17:28:11 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
 sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-Accept: */*
-Origin: http://localhost:3000
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"1dc-niHkzdR1PLRuIcFCxq77JYmfxOk"
 Connection: keep-alive
 
-{"comment":"{{7*7}}"}]]></request>
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-niHkzdR1PLRuIcFCxq77JYmfxOk"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Challenges/?name=Score%20Board HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"1dc-niHkzdR1PLRuIcFCxq77JYmfxOk"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dc-niHkzdR1PLRuIcFCxq77JYmfxOk"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Quantitys/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Quantitys/ HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"1dcc-CYoAPIAeWpOjWe9SOB0S8bc3U88"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1dcc-CYoAPIAeWpOjWe9SOB0S8bc3U88"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/assets/i18n/en.json]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/assets/i18n/en.json]]></path>
+    <extension>json</extension>
+    <request base64="false"><![CDATA[GET /assets/i18n/en.json HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"8a89-19fef445a30"
+If-Modified-Since: Tue, 11 Aug 2026 05:21:02 GMT
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 11 Aug 2026 05:21:02 GMT
+ETag: W/"8a89-19fef445a30"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:13 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 17:28:13 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:13 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-configuration HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"5c19-KAzWjzBr3ZdE6m+xf9FCn8I0LPU"
+Date: Thu, 03 Sep 2026 17:28:13 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/admin/application-version HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"14-WIzt+vltMCkrD66vnlxB3t+rP34"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/languages]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/languages]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/languages HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"1077-aMCD2CMkxjMItZvR03m1h3lq6U0"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q= HTTP/1.1
+Host: localhost:9000
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Accept: application/json, text/plain, */*
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:9000/
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"40b3-vfqCCBmFRkexH4PfFSsBQM6Wtm8"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"40b3-vfqCCBmFRkexH4PfFSsBQM6Wtm8"
+Date: Thu, 03 Sep 2026 17:28:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:30 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q= HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+If-None-Match: W/"40b3-vfqCCBmFRkexH4PfFSsBQM6Wtm8"
+Connection: keep-alive
+
+]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+ETag: W/"40b3-vfqCCBmFRkexH4PfFSsBQM6Wtm8"
+Date: Thu, 03 Sep 2026 17:28:30 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:40 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q=apple%27 HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+Connection: keep-alive
+
+]]></request>
     <status>500</status>
-    <responselength>2666</responselength>
+    <responselength>1349</responselength>
     <mimetype>HTML</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
 Access-Control-Allow-Origin: *
@@ -64,15 +689,15 @@ Feature-Policy: payment 'self'
 X-Recruiting: /#/jobs
 Content-Type: text/html; charset=utf-8
 Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:20 GMT
+Date: Thu, 03 Sep 2026 17:28:40 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
+Content-Length: 994
 
 <html>
   <head>
     <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <title>Error: SQLITE_ERROR: near &quot;&#39;%&#39;&quot;: syntax error</title>
     <style>* {
   margin: 0;
   padding: 0;
@@ -113,8 +738,8 @@ ul li {
   <body>
     <div id="wrapper">
       <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;&#39;%&#39;&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
     </div>
   </body>
 </html>
@@ -122,36 +747,34 @@ ul li {
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:20 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 23:00:02 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27%20AND%201=0--]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27%20AND%201=0--]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 20
+    <request base64="false"><![CDATA[GET /rest/products/search?q=apple%27%20AND%201=0-- HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-Accept: */*
-Origin: http://localhost:3000
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"${7*7}"}]]></request>
+]]></request>
     <status>500</status>
-    <responselength>2666</responselength>
+    <responselength>1297</responselength>
     <mimetype>HTML</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
 Access-Control-Allow-Origin: *
@@ -161,15 +784,15 @@ Feature-Policy: payment 'self'
 X-Recruiting: /#/jobs
 Content-Type: text/html; charset=utf-8
 Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:20 GMT
+Date: Thu, 03 Sep 2026 17:30:03 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
+Content-Length: 942
 
 <html>
   <head>
     <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <title>Error: SQLITE_ERROR: incomplete input</title>
     <style>* {
   margin: 0;
   padding: 0;
@@ -210,8 +833,8 @@ ul li {
   <body>
     <div id="wrapper">
       <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+      <h2><em>500</em> Error: SQLITE_ERROR: incomplete input</h2>
+      <ul id="stacktrace"></ul>
     </div>
   </body>
 </html>
@@ -219,36 +842,34 @@ ul li {
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:21 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:58:52 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27)%20OR%201=1--]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27)%20OR%201=1--]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 24
+    <request base64="false"><![CDATA[GET /rest/products/search?q=apple%27)%20OR%201=1-- HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-Accept: */*
-Origin: http://localhost:3000
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"<%= 7*7 %>"}]]></request>
+]]></request>
     <status>500</status>
-    <responselength>2666</responselength>
+    <responselength>1297</responselength>
     <mimetype>HTML</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
 Access-Control-Allow-Origin: *
@@ -258,15 +879,15 @@ Feature-Policy: payment 'self'
 X-Recruiting: /#/jobs
 Content-Type: text/html; charset=utf-8
 Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:21 GMT
+Date: Thu, 03 Sep 2026 17:28:52 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
+Content-Length: 942
 
 <html>
   <head>
     <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <title>Error: SQLITE_ERROR: incomplete input</title>
     <style>* {
   margin: 0;
   padding: 0;
@@ -307,8 +928,8 @@ ul li {
   <body>
     <div id="wrapper">
       <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+      <h2><em>500</em> Error: SQLITE_ERROR: incomplete input</h2>
+      <ul id="stacktrace"></ul>
     </div>
   </body>
 </html>
@@ -316,36 +937,34 @@ ul li {
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:21 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:59:53 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27)%20UNION%20SELECT%201,2,3,4,5,6,7,8,9--]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27)%20UNION%20SELECT%201,2,3,4,5,6,7,8,9--]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 20
+    <request base64="false"><![CDATA[GET /rest/products/search?q=apple%27)%20UNION%20SELECT%201,2,3,4,5,6,7,8,9-- HTTP/1.1
+Host: localhost:9000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-Accept: */*
-Origin: http://localhost:3000
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"#{7*7}"}]]></request>
+]]></request>
     <status>500</status>
-    <responselength>2666</responselength>
+    <responselength>1337</responselength>
     <mimetype>HTML</mimetype>
     <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
 Access-Control-Allow-Origin: *
@@ -355,15 +974,15 @@ Feature-Policy: payment 'self'
 X-Recruiting: /#/jobs
 Content-Type: text/html; charset=utf-8
 Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:21 GMT
+Date: Thu, 03 Sep 2026 17:29:53 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
+Content-Length: 982
 
 <html>
   <head>
     <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
+    <title>Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</title>
     <style>* {
   margin: 0;
   padding: 0;
@@ -404,8 +1023,8 @@ ul li {
   <body>
     <div id="wrapper">
       <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
+      <h2><em>500</em> Error: SQLITE_ERROR: near &quot;UNION&quot;: syntax error</h2>
+      <ul id="stacktrace"></ul>
     </div>
   </body>
 </html>
@@ -413,293 +1032,163 @@ ul li {
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:22 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eK5i1]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 25
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eK5i1]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1eK5i1 HTTP/1.1
+Host: localhost:9000
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"{{ '7'*7 }}"}]]></request>
-    <status>500</status>
-    <responselength>2666</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:22 GMT
+]]></request>
+    <status>200</status>
+    <responselength>326</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 96
+Date: Thu, 03 Sep 2026 17:28:12 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
 
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
-    </div>
-  </body>
-</html>
-]]></response>
+0{"sid":"KuqZjS5Jj8GVOyJBAABA","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":5000}]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:22 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eK5nN&sid=KuqZjS5Jj8GVOyJBAABA]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 22
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eK5nN&sid=KuqZjS5Jj8GVOyJBAABA]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[POST /socket.io/?EIO=4&transport=polling&t=Q1eK5nN&sid=KuqZjS5Jj8GVOyJBAABA HTTP/1.1
+Host: localhost:9000
+Content-Length: 2
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Origin: http://localhost:9000
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"${{7*7}}"}]]></request>
-    <status>500</status>
-    <responselength>2666</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:22 GMT
+40]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/html
+Content-Length: 2
+Date: Thu, 03 Sep 2026 17:28:12 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
 
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
-    </div>
-  </body>
-</html>
-]]></response>
+ok]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:10:22 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/api/Feedbacks/]]></url>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eK5nP&sid=KuqZjS5Jj8GVOyJBAABA]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
-    <method><![CDATA[POST]]></method>
-    <path><![CDATA[/api/Feedbacks/]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[POST /api/Feedbacks/ HTTP/1.1
-Host: localhost:3000
-Content-Length: 24
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eK5nP&sid=KuqZjS5Jj8GVOyJBAABA]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=polling&t=Q1eK5nP&sid=KuqZjS5Jj8GVOyJBAABA HTTP/1.1
+Host: localhost:9000
 sec-ch-ua-platform: "Windows"
 Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-Content-Type: application/json
-sec-ch-ua-mobile: ?0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
 Accept: */*
-Origin: http://localhost:3000
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+sec-ch-ua-mobile: ?0
 Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: cors
 Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
+Referer: http://localhost:9000/
 Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
 Connection: keep-alive
 
-{"comment":"{{config}}"}]]></request>
-    <status>500</status>
-    <responselength>2666</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Content-Type: text/html; charset=utf-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:40:22 GMT
+]]></request>
+    <status>200</status>
+    <responselength>262</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 32
+Date: Thu, 03 Sep 2026 17:28:12 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
-Content-Length: 2310
 
-<html>
-  <head>
-    <meta charset='utf-8'> 
-    <title>Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</title>
-    <style>* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
+40{"sid":"cHRn1T5Su9uTVRPAAABB"}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 22:58:12 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=websocket&sid=KuqZjS5Jj8GVOyJBAABA]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=KuqZjS5Jj8GVOyJBAABA]]></path>
+    <extension>io/</extension>
+    <request base64="false"><![CDATA[GET /socket.io/?EIO=4&transport=websocket&sid=KuqZjS5Jj8GVOyJBAABA HTTP/1.1
+Host: localhost:9000
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:9000
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: welcomebanner_status=dismiss; cookieconsent_status=dismiss; language=en
+Sec-WebSocket-Key: JydCIMCbDfwyPmiK3hPt+g==
 
-body {
-  padding: 80px 100px;
-  font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
-  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
-  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
-  background-repeat: no-repeat;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2 {
-  font-size: 22px;
-  color: #343434;
-}
-h1 em, h2 em {
-  padding: 0 5px;
-  font-weight: normal;
-}
-h1 {
-  font-size: 60px;
-}
-h2 {
-  margin-top: 10px;
-}
-ul li {
-  list-style: none;
-}
-#stacktrace {
-  margin-left: 60px;
-}
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>
-      <h2><em>500</em> Error: WHERE parameter &quot;captchaId&quot; has invalid &quot;undefined&quot; value</h2>
-      <ul id="stacktrace"><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1770:13)</li><li> &nbsp; &nbsp;at /juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1761:25</li><li> &nbsp; &nbsp;at Array.forEach (&lt;anonymous&gt;)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.whereItemsQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1759:35)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.getWhereConditions (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2108:19)</li><li> &nbsp; &nbsp;at SQLiteQueryGenerator.selectQuery (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1015:28)</li><li> &nbsp; &nbsp;at SQLiteQueryInterface.select (/juice-shop/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)</li><li> &nbsp; &nbsp;at Captcha.findAll (/juice-shop/node_modules/sequelize/lib/model.js:1140:47)</li><li> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:104:5)</li><li> &nbsp; &nbsp;at async Captcha.findOne (/juice-shop/node_modules/sequelize/lib/model.js:1240:12)</li><li> &nbsp; &nbsp;at async /juice-shop/build/routes/captcha.js:33:25</li></ul>
-    </div>
-  </body>
-</html>
+]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: KIlApxC0ja0TAkEphupJefQFUmY=
+
 ]]></response>
     <comment></comment>
   </item>

