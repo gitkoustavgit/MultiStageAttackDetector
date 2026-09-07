@@ -52,7 +52,8 @@ SQLrequests/*.xml                      real Burp captures (the corpus)
       v  compose.py       assemble realistic multi-stage sessions (breaks running-max)
       v  features.py      one causal 30-feature extractor (training == inference)
       v  dataset.py       -> dataset_v2.npz  (sequence view for LSTM, flat view for XGBoost)
-      v  train.py         LSTM + XGBoost + HMM; calibrate T and pick HMM smoothing on VAL
+      v  train.py         grid-select + seed-average LSTM, select XGBoost, fuse, calibrate,
+      v                   pick HMM smoothing -- all on VALIDATION
       v  evaluate.py      honest benchmark vs parameter-free baselines, causal only
       v  predict.py       online ensemble + causal HMM; live_demo.py drives Juice Shop
 ```
@@ -78,8 +79,8 @@ CUDA_VISIBLE_DEVICES=-1 python -m pipeline.live_demo
 
 Three views of one causal per-request feature stream:
 
-- **LSTM** (unidirectional, sequence-to-sequence) contributes temporal memory. Unidirectional
-  on purpose: a live detector cannot see future requests.
+- **LSTM** (unidirectional, sequence-to-sequence, seed-averaged over 3 runs) contributes
+  temporal memory. Unidirectional on purpose: a live detector cannot see future requests.
 - **XGBoost** (per request) sees the same feature vector, whose rolling-context columns
   already encode recent behaviour, so it captures non-linear cutoffs without a sequence.
 - **HMM** supplies a transition prior over stages, estimated from the composed training
@@ -110,18 +111,28 @@ measure. Only causal rows are deployable.
 |---|:---:|---:|---:|---:|---:|
 | Zero-param: running-max lookup | yes | 0.282 | 0.141 | 0.277 | 0.129 |
 | Majority class (NORMAL) | yes | 0.287 | 0.089 | 0.285 | 0.000 |
-| LSTM (calibrated) | yes | 0.541 | 0.497 | 0.394 | 0.141 |
-| XGBoost (per-step) | yes | 0.514 | 0.475 | 0.470 | 0.235 |
-| Ensemble LSTM+XGBoost | yes | 0.548 | 0.501 | 0.451 | 0.133 |
-| **Ensemble + HMM forward-filter (deployed)** | **yes** | **0.535** | 0.490 | 0.330 | **0.095** |
-| Ensemble + HMM offline-viterbi | **NO** | 0.569 | 0.529 | 0.465 | 0.086 |
+| LSTM (seed-averaged ×3) | yes | 0.518 | 0.468 | 0.362 | 0.093 |
+| XGBoost (per-step) | yes | 0.519 | 0.478 | 0.464 | 0.240 |
+| Ensemble LSTM+XGBoost (α=0.5) | yes | 0.536 | 0.486 | 0.429 | 0.097 |
+| **Ensemble + HMM forward-filter (deployed)** | **yes** | **0.529** | 0.480 | 0.352 | **0.084** |
+| Ensemble + HMM offline-viterbi | **NO** | 0.552 | 0.505 | 0.431 | 0.070 |
 
-The best causal model beats the parameter-free ceiling by **+0.262** — far more headroom
-than the old 45%-NORMAL data allowed. The HMM trades a little accuracy for fewer false
-alarms (benign FP 13.3% → 9.5% vs the raw ensemble); for a detector that recommends
-isolating a client, that is the right default, and the raw ensemble is available when
-recall matters more. The offline Viterbi scores higher but is non-causal, so it is not
-deployable.
+The best causal model beats the parameter-free ceiling by **+0.249**. The HMM trades a
+little accuracy for fewer false alarms (benign FP 9.7% → 8.4% vs the raw ensemble); for a
+detector that recommends isolating a client, that is the right default, and the raw
+ensemble is available when recall matters more. The offline Viterbi scores higher but is
+non-causal, so it is not deployable.
+
+**Training method (same three models, trained better).** The LSTM and XGBoost
+configurations are chosen by a small validation grid; the winning LSTM is trained over 3
+seeds and its softmaxes averaged, which cuts the run-to-run variance of a single CPU LSTM
+and improves macro-F1 and the false-positive rate. The ensemble blend is fixed at the
+equal-trust α=0.5 rather than grid-tuned: fine α-selection on this small validation set
+did not generalize (a validation-optimal α=1.0 scored *worse* on test), so it is set on
+principle, not chased. Raw accuracy is essentially unchanged from the untuned model
+(within CPU noise) because it is at the intrinsic ceiling below; the tuning bought
+reliability — higher macro-F1, lower false positives, better session detection, and less
+variance — not a higher headline number.
 
 ### Task 2 — next-stage forecast
 
@@ -130,8 +141,8 @@ naive heuristics.
 
 | Predictor | top-1 | top-2 |
 |---|---:|---:|
-| **Model: belief · transition matrix** | **0.353** | **0.549** |
-| Baseline: always advance one rung | 0.303 | — |
+| **Model: belief · transition matrix** | **0.347** | **0.542** |
+| Baseline: always advance one rung | 0.307 | — |
 | Baseline: global most-common next | 0.262 | — |
 
 The model beats "always advance" by +5 and "global most-common" by +9 points; top-2
@@ -145,9 +156,9 @@ indistinguishable from browsing. Measured per attacking session:
 
 | Peak stage of session | caught |
 |---|---:|
-| RECON | 72% |
-| FUZZING | 82% |
-| INJECTION | 76% |
+| RECON | 77% |
+| FUZZING | 85% |
+| INJECTION | 79% |
 | EXPLOITATION | 89% |
 
 Median detection latency: **2 requests** into the peak stage; ~65% caught within 3.

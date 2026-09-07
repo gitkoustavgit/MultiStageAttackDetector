@@ -1,9 +1,9 @@
 {
   "num_features": 30,
-  "units": 64,
+  "units": 96,
   "layers_n": 1,
-  "dropout": 0.4,
+  "dropout": 0.3,
   "lr": 0.001,
-  "recurrent_dropout": 0.2,
+  "recurrent_dropout": 0.15,
   "l2": 0.0001
 }

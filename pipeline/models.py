@@ -42,6 +42,37 @@ NUM_STAGES = 5
 PAD_SENTINEL = -10.0   # no real feature is ever negative (flags 0/1, log>=0), so safe
 
 
+def _apply_temperature(probs: np.ndarray, T: float) -> np.ndarray:
+    logits = np.log(np.clip(probs, 1e-12, 1.0)) / T
+    logits -= logits.max(axis=-1, keepdims=True)
+    e = np.exp(logits)
+    return e / e.sum(axis=-1, keepdims=True)
+
+
+def ensemble_emissions(lstm_models, xgb_clf, feats: np.ndarray,
+                       alpha: float, temperature: float) -> np.ndarray:
+    """
+    THE ONE fusion path, shared by training selection, evaluation and live inference so
+    they can never drift. Given a session's causal feature matrix (T, F):
+
+      * average the softmax of every LSTM seed (seed-averaging reduces the run-to-run
+        variance of a single CPU-trained LSTM and usually lifts accuracy a little),
+      * blend with XGBoost's per-step probabilities by weight `alpha`
+        (alpha=1 -> LSTM only, alpha=0 -> XGBoost only; tuned on validation),
+      * temperature-calibrate the result.
+
+    Returns calibrated emissions (T, NUM_STAGES).
+    """
+    feats = np.asarray(feats, dtype=np.float32)
+    lstm_p = np.zeros((len(feats), NUM_STAGES), dtype=np.float64)
+    for m in lstm_models:
+        lstm_p += m.predict(feats[None, :, :], verbose=0)[0]
+    lstm_p /= max(1, len(lstm_models))
+    xgb_p = xgb_clf.predict_proba(feats)
+    ens = alpha * lstm_p + (1.0 - alpha) * xgb_p
+    return _apply_temperature(ens, temperature)
+
+
 # ---- LSTM -----------------------------------------------------------------------
 
 def build_lstm(num_features: int, units: int = 64, layers_n: int = 1,

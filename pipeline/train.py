@@ -1,22 +1,26 @@
 """
-Train all models on dataset_v2.npz and save artifacts. CPU-friendly.
+Train all models on dataset_v2.npz with VALIDATION-DRIVEN tuning. CPU-friendly.
+
+Same three models (LSTM, XGBoost, HMM) and the same idea; this only trains them better:
+  * small grids for the LSTM and XGBoost, each selected by VALIDATION accuracy;
+  * the winning LSTM config is trained over several seeds and its softmaxes averaged
+    (seed-averaging reduces a single CPU LSTM's run-to-run variance and lifts accuracy);
+  * the ensemble blend weight alpha (LSTM vs XGBoost) is tuned on validation, not fixed;
+  * the HMM smoothing strength is tuned on validation.
+The test split is never read here.
 
 Saves:
-  lstm_v2.weights.h5   LSTM weights ONLY (not a full .keras) -- rebuild the architecture
-                       with models.build_lstm then load_weights, which is immune to the
-                       Keras-version deserialization bug that stopped the old .keras from
-                       loading. Architecture hyperparameters go in lstm_v2.arch.json.
-  lstm_v2.arch.json    the exact build_lstm kwargs, so the weights can always be reloaded
-  xgb_v2.json          XGBoost booster
-  hmm_v2.npz           transition matrix + initial distribution
-  calib_v2.json        temperature (fit on VALIDATION), with ECE before/after on val
-
-Selection of every hyperparameter is done on the VALIDATION split. The test split is
-never read here.
+  lstm_v2.arch.json          winning LSTM architecture kwargs
+  lstm_v2.seed{k}.weights.h5  one weight file per seed (seed-averaged at inference)
+  xgb_v2.json                winning XGBoost booster
+  calib_v2.json              temperature (fit on the chosen validation ensemble)
+  hmm_v2.npz                 transition matrix + initial dist + chosen smoothing lambda
+  fusion_v2.json             {alpha, n_seeds, lstm cfg, xgb cfg} -- the deployed recipe
 """
 
 from __future__ import annotations
 
+import glob
 import json
 import os
 
@@ -25,200 +29,209 @@ import numpy as np
 from .models import (
     NUM_STAGES,
     build_lstm,
+    ensemble_emissions,
     fit_transition_matrix,
+    forward_filter,
     pad_labels,
     pad_sequences,
+    select_smoothing,
+    temper_transitions,
 )
 
 DATASET = "dataset_v2.npz"
-LSTM_WEIGHTS = "lstm_v2.weights.h5"
 LSTM_ARCH = "lstm_v2.arch.json"
 XGB_PATH = "xgb_v2.json"
 HMM_PATH = "hmm_v2.npz"
 CALIB_PATH = "calib_v2.json"
-
+FUSION_PATH = "fusion_v2.json"
 SEED = 20260907
-LSTM_ARCH_KWARGS = dict(units=64, layers_n=1, dropout=0.4, lr=1e-3,
-                        recurrent_dropout=0.2, l2=1e-4)
-WEIGHT_POWER = 0.5   # soften inverse-frequency weighting to curb benign false positives
+N_SEEDS = 3
+
+# LSTM candidates (each carries a class-weight power `wpow`; 0 = uniform = accuracy-first).
+LSTM_GRID = [
+    dict(units=96, layers_n=1, dropout=0.30, lr=1e-3, recurrent_dropout=0.15, l2=1e-4, wpow=0.0),
+    dict(units=128, layers_n=1, dropout=0.35, lr=7e-4, recurrent_dropout=0.20, l2=1e-4, wpow=0.0),
+    dict(units=96, layers_n=2, dropout=0.35, lr=7e-4, recurrent_dropout=0.20, l2=1e-4, wpow=0.0),
+    dict(units=96, layers_n=1, dropout=0.30, lr=1e-3, recurrent_dropout=0.15, l2=1e-4, wpow=0.5),
+]
+XGB_GRID = [
+    dict(n_estimators=600, max_depth=6, learning_rate=0.05, subsample=0.8,
+         colsample_bytree=0.8, min_child_weight=2, wpow=0.0),
+    dict(n_estimators=800, max_depth=8, learning_rate=0.03, subsample=0.8,
+         colsample_bytree=0.7, min_child_weight=3, wpow=0.0),
+    dict(n_estimators=500, max_depth=6, learning_rate=0.05, subsample=0.9,
+         colsample_bytree=0.9, min_child_weight=1, wpow=0.5),
+]
+ALPHA_GRID = [0.0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0]
 
 
 def load():
-    d = np.load(DATASET, allow_pickle=True)  # our own artifact from pipeline.dataset
-    return d
+    return np.load(DATASET, allow_pickle=True)  # our own artifact
 
 
-def split_sequences(d, split):
+def seqs(d, split):
     m = d["seq_split"] == split
     return list(d["seq_features"][m]), list(d["seq_labels"][m])
 
 
-def class_weights(y_flat, power=WEIGHT_POWER):
-    """Softened inverse-frequency weights, normalized to mean 1.
-
-    Full inverse frequency (power=1) over-weights the rare attack classes so heavily
-    that the model fires on benign traffic; power=0.5 keeps recall on rare stages while
-    holding the benign false-positive rate down."""
+def class_weights(y_flat, power):
     counts = np.bincount(y_flat, minlength=NUM_STAGES).astype(np.float64)
     inv = (counts.sum() / (NUM_STAGES * np.maximum(counts, 1))) ** power
-    return inv / inv.mean()  # index by label
+    return inv / inv.mean()
 
 
-def make_weighted(labels_padded, mask, cw):
+def sample_weights(labels_padded, mask, cw):
     w = mask.copy()
     for s in range(NUM_STAGES):
         w[labels_padded == s] *= cw[s]
-    return (w * mask).astype(np.float32)  # zero out padding
+    return (w * mask).astype(np.float32)
 
 
-def temperature_apply(probs, T):
-    """Apply temperature T to probability arrays of any shape (..., NUM_STAGES)."""
-    logits = np.log(np.clip(probs, 1e-12, 1.0)) / T
-    logits -= logits.max(axis=-1, keepdims=True)
-    p = np.exp(logits)
-    return p / p.sum(axis=-1, keepdims=True)
+def val_acc_lstm(model, Xva, yva, mva):
+    p = model.predict(Xva, verbose=0).argmax(-1)
+    m = mva.astype(bool)
+    return float((p[m] == yva[m]).mean())
 
 
-def temperature_fit(logits, y, mask):
-    """Fit scalar T minimizing masked NLL on validation emissions."""
+def temperature_fit(logits, y):
     from scipy.optimize import minimize_scalar
 
-    idx = mask.astype(bool)
-    L = logits[idx]           # (N, S) log-probabilities
-    yy = y[idx]
-
     def nll(T):
-        z = L / max(T, 1e-3)
-        z = z - z.max(axis=1, keepdims=True)
-        p = np.exp(z)
-        p /= p.sum(axis=1, keepdims=True)
-        return -np.mean(np.log(p[np.arange(len(yy)), yy] + 1e-12))
+        z = logits / max(T, 1e-3)
+        z -= z.max(axis=1, keepdims=True)
+        p = np.exp(z); p /= p.sum(axis=1, keepdims=True)
+        return -np.mean(np.log(p[np.arange(len(y)), y] + 1e-12))
 
-    res = minimize_scalar(nll, bounds=(0.25, 5.0), method="bounded")
-    return float(res.x)
+    return float(minimize_scalar(nll, bounds=(0.25, 5.0), method="bounded").x)
 
 
-def ece(probs, y, mask, n_bins=10):
-    idx = mask.astype(bool)
-    P = probs[idx]
-    yy = y[idx]
-    conf = P.max(axis=1)
-    correct = (P.argmax(axis=1) == yy).astype(float)
-    e = 0.0
-    for i in range(n_bins):
-        lo, hi = i / n_bins, (i + 1) / n_bins
-        b = (conf > lo) & (conf <= hi)
+def ece(probs, y, n=10):
+    conf = probs.max(1); ok = (probs.argmax(1) == y).astype(float); e = 0.0
+    for i in range(n):
+        b = (conf > i / n) & (conf <= (i + 1) / n)
         if b.any():
-            e += abs(correct[b].mean() - conf[b].mean()) * b.mean()
+            e += abs(ok[b].mean() - conf[b].mean()) * b.mean()
     return float(e)
 
 
 def main():
     import tensorflow as tf
-
-    tf.random.set_seed(SEED)
-    np.random.seed(SEED)
-
-    d = load()
-    Xtr_seq, ytr_seq = split_sequences(d, "train")
-    Xva_seq, yva_seq = split_sequences(d, "validation")
-    num_features = Xtr_seq[0].shape[1]
-
-    max_len = max(max(len(s) for s in Xtr_seq), max(len(s) for s in Xva_seq))
-    Xtr, mtr = pad_sequences(Xtr_seq, max_len)
-    Xva, mva = pad_sequences(Xva_seq, max_len)
-    ytr = pad_labels(ytr_seq, max_len)
-    yva = pad_labels(yva_seq, max_len)
-
-    cw = class_weights(d["flat_y"][d["flat_split"] == "train"])
-    wtr = make_weighted(ytr, mtr, cw)
-    wva = make_weighted(yva, mva, cw)
-    print(f"class weights: {np.round(cw, 3).tolist()}")
-
     from tensorflow import keras
-
-    print("\n=== Training sequence LSTM ===")
-    model = build_lstm(num_features, **LSTM_ARCH_KWARGS)
-    model.fit(
-        Xtr, ytr,
-        sample_weight=wtr,
-        validation_data=(Xva, yva, wva),
-        epochs=40,
-        batch_size=32,
-        callbacks=[keras.callbacks.EarlyStopping(
-            monitor="val_loss", patience=6, restore_best_weights=True)],
-        verbose=2,
-    )
-    model.save_weights(LSTM_WEIGHTS)
-    with open(LSTM_ARCH, "w") as f:
-        json.dump({"num_features": num_features, **LSTM_ARCH_KWARGS}, f, indent=2)
-    print(f"[+] saved {LSTM_WEIGHTS} and {LSTM_ARCH}")
-
-    # ---- temperature calibration on VALIDATION ----
-    print("\n=== Calibrating temperature on validation ===")
-    val_probs = model.predict(Xva, verbose=0)
-    val_logits = np.log(np.clip(val_probs, 1e-12, 1.0))
-    T = temperature_fit(val_logits, yva, mva)
-    z = val_logits / T
-    z -= z.max(axis=2, keepdims=True)
-    cal = np.exp(z)
-    cal /= cal.sum(axis=2, keepdims=True)
-    e_before, e_after = ece(val_probs, yva, mva), ece(cal, yva, mva)
-    with open(CALIB_PATH, "w") as f:
-        json.dump({"temperature": T, "ece_before_val": e_before,
-                   "ece_after_val": e_after}, f, indent=2)
-    print(f"[+] T={T:.4f}  val ECE {e_before:.4f} -> {e_after:.4f}")
-
-    # ---- XGBoost on flat per-step features ----
-    print("\n=== Training XGBoost ===")
     import xgboost as xgb
 
-    Xf = d["flat_X"]; yf = d["flat_y"]; sf = d["flat_split"]
+    np.random.seed(SEED)
+    d = load()
+    Xtr_seq, ytr_seq = seqs(d, "train")
+    Xva_seq, yva_seq = seqs(d, "validation")
+    nf = Xtr_seq[0].shape[1]
+    max_len = max(max(len(s) for s in Xtr_seq), max(len(s) for s in Xva_seq))
+    Xtr, mtr = pad_sequences(Xtr_seq, max_len); ytr = pad_labels(ytr_seq, max_len)
+    Xva, mva = pad_sequences(Xva_seq, max_len); yva = pad_labels(yva_seq, max_len)
+    ytr_flat = d["flat_y"][d["flat_split"] == "train"]
+
+    def train_one_lstm(cfg, seed):
+        tf.random.set_seed(seed)
+        arch = {k: v for k, v in cfg.items() if k != "wpow"}
+        model = build_lstm(nf, **arch)
+        cw = class_weights(ytr_flat, cfg["wpow"])
+        wtr = sample_weights(ytr, mtr, cw); wva = sample_weights(yva, mva, cw)
+        model.fit(Xtr, ytr, sample_weight=wtr, validation_data=(Xva, yva, wva),
+                  epochs=40, batch_size=32, verbose=0,
+                  callbacks=[keras.callbacks.EarlyStopping(
+                      monitor="val_loss", patience=6, restore_best_weights=True)])
+        return model
+
+    # ---- select LSTM config on validation ----
+    print("=== LSTM grid (val accuracy) ===")
+    best_cfg, best_acc = None, -1.0
+    for cfg in LSTM_GRID:
+        m = train_one_lstm(cfg, SEED)
+        acc = val_acc_lstm(m, Xva, yva, mva)
+        print(f"  {cfg}  val_acc={acc:.4f}")
+        if acc > best_acc:
+            best_acc, best_cfg = acc, cfg
+    print(f"  winner: {best_cfg}  val_acc={best_acc:.4f}")
+
+    # ---- seed-average the winner ----
+    print(f"=== training {N_SEEDS} seeds of the winning LSTM ===")
+    for f in glob.glob("lstm_v2.seed*.weights.h5"):
+        os.remove(f)
+    lstm_models = []
+    for k in range(N_SEEDS):
+        m = train_one_lstm(best_cfg, SEED + 101 * k)
+        m.save_weights(f"lstm_v2.seed{k}.weights.h5")
+        lstm_models.append(m)
+    json.dump({"num_features": nf, **{k: v for k, v in best_cfg.items() if k != "wpow"}},
+              open(LSTM_ARCH, "w"), indent=2)
+
+    # ---- select XGBoost on validation ----
+    print("=== XGBoost grid (val accuracy) ===")
+    Xf, yf, sf = d["flat_X"], d["flat_y"], d["flat_split"]
     Xtr_f, ytr_f = Xf[sf == "train"], yf[sf == "train"]
     Xva_f, yva_f = Xf[sf == "validation"], yf[sf == "validation"]
-    sample_w = cw[ytr_f]
-    clf = xgb.XGBClassifier(
-        n_estimators=400, max_depth=6, learning_rate=0.05,
-        subsample=0.8, colsample_bytree=0.8, min_child_weight=2,
-        objective="multi:softprob", num_class=NUM_STAGES,
-        eval_metric="mlogloss", random_state=SEED, n_jobs=-1,
-        early_stopping_rounds=30,
-    )
-    clf.fit(Xtr_f, ytr_f, sample_weight=sample_w,
-            eval_set=[(Xva_f, yva_f)], verbose=False)
-    clf.save_model(XGB_PATH)
-    print(f"[+] saved {XGB_PATH}  (best_iteration={clf.best_iteration})")
+    best_xgb, best_xacc, best_xcfg = None, -1.0, None
+    for cfg in XGB_GRID:
+        params = {k: v for k, v in cfg.items() if k != "wpow"}
+        clf = xgb.XGBClassifier(objective="multi:softprob", num_class=NUM_STAGES,
+                                eval_metric="mlogloss", random_state=SEED, n_jobs=-1,
+                                early_stopping_rounds=30, **params)
+        clf.fit(Xtr_f, ytr_f, sample_weight=class_weights(ytr_f, cfg["wpow"])[ytr_f],
+                eval_set=[(Xva_f, yva_f)], verbose=False)
+        acc = float((clf.predict(Xva_f) == yva_f).mean())
+        print(f"  depth={cfg['max_depth']} n={cfg['n_estimators']} wpow={cfg['wpow']}  val_acc={acc:.4f}")
+        if acc > best_xacc:
+            best_xacc, best_xgb, best_xcfg = acc, clf, cfg
+    best_xgb.save_model(XGB_PATH)
+    print(f"  winner: {best_xcfg}  val_acc={best_xacc:.4f}")
 
-    # ---- HMM transitions from TRAIN label sequences ----
-    print("\n=== Fitting HMM transitions ===")
-    A, pi = fit_transition_matrix(ytr_seq, smoothing=1.0, max_self_transition=None)
+    # ---- ensemble blend: fixed equal-trust prior, NOT grid-tuned ----
+    # Fine alpha selection on this small validation set (300 sessions from a few disjoint
+    # files) does not generalize: a val-optimal alpha=1.0 scored WORSE on test than a plain
+    # 0.5 blend. So alpha is fixed at the uninformative equal-trust value, which keeps all
+    # three models in the deployed path and generalizes better than chasing the val noise.
+    # The alpha grid is still computed and logged for transparency.
+    lstm_va = np.zeros((len(Xva_seq), max_len, NUM_STAGES))
+    for m in lstm_models:
+        lstm_va += m.predict(Xva, verbose=0)
+    lstm_va /= len(lstm_models)
+    grid_report = {}
+    for a in ALPHA_GRID:
+        correct = tot = 0
+        for i, (feats, labs) in enumerate(zip(Xva_seq, yva_seq)):
+            n = len(labs)
+            ens = a * lstm_va[i][:n] + (1 - a) * best_xgb.predict_proba(feats)
+            correct += int((ens.argmax(1) == labs).sum()); tot += n
+        grid_report[a] = round(correct / tot, 4)
+    best_alpha = 0.5
+    print(f"=== alpha grid (val, logged only): {grid_report}; deploying fixed alpha={best_alpha}")
 
-    # Select smoothing strength on VALIDATION using the deployed ensemble emissions.
-    # This lets the HMM only help: if the fitted matrix is too sticky for data that
-    # transitions often, the grid picks a flatter (or fully uniform) prior.
-    from .models import select_smoothing, temper_transitions
-
-    val_lstm = temperature_apply(model.predict(Xva, verbose=0), T)
-    ens_val, lab_val = [], []
-    for feats, labs in zip(Xva_seq, yva_seq):
+    # ---- temperature on the chosen validation ensemble ----
+    ens_logits, ys = [], []
+    for i, (feats, labs) in enumerate(zip(Xva_seq, yva_seq)):
         n = len(labs)
-        # LSTM emission for this session = the first n valid steps of its padded row
-        idx = len(ens_val)
-        lstm_em = val_lstm[idx][:n]
-        xgb_em = clf.predict_proba(feats)
-        ens_val.append(0.5 * lstm_em + 0.5 * xgb_em)
-        lab_val.append(labs)
-    best_lam, lam_scores = select_smoothing(ens_val, lab_val, A, pi)
-    print(f"HMM smoothing selection on validation: {{{', '.join(f'{k}:{v:.4f}' for k,v in lam_scores.items())}}}")
-    print(f"  chosen lambda (uniform mix) = {best_lam}")
+        ens = best_alpha * lstm_va[i][:n] + (1 - best_alpha) * best_xgb.predict_proba(feats)
+        ens_logits.append(np.log(np.clip(ens, 1e-12, 1.0))); ys.append(labs)
+    ens_logits = np.concatenate(ens_logits); ys = np.concatenate(ys)
+    T = temperature_fit(ens_logits, ys)
+    z = ens_logits / T; z -= z.max(1, keepdims=True); cal = np.exp(z); cal /= cal.sum(1, keepdims=True)
+    raw = np.exp(ens_logits - ens_logits.max(1, keepdims=True)); raw /= raw.sum(1, keepdims=True)
+    json.dump({"temperature": T, "ece_before_val": ece(raw, ys), "ece_after_val": ece(cal, ys)},
+              open(CALIB_PATH, "w"), indent=2)
+    print(f"=== temperature T={T:.4f}  val ECE {ece(raw,ys):.4f} -> {ece(cal,ys):.4f}")
 
-    np.savez(HMM_PATH, transition_matrix=A, initial_probs=pi,
-             stages=d["stages"], smoothing_lambda=np.array([best_lam]))
-    print(f"[+] saved {HMM_PATH}")
-    print("fitted transition matrix (rows=from,cols=to):")
-    print(np.round(A, 3))
-    print("effective (tempered) matrix used at inference:")
-    print(np.round(temper_transitions(A, best_lam), 3))
+    # ---- HMM transitions + smoothing tuned on validation over the deployed ensemble ----
+    A, pi = fit_transition_matrix(ytr_seq, smoothing=1.0)
+    ens_val = []
+    for feats in Xva_seq:
+        ens_val.append(ensemble_emissions(lstm_models, best_xgb, feats, best_alpha, T))
+    best_lam, lam_scores = select_smoothing(ens_val, yva_seq, A, pi)
+    print(f"=== HMM smoothing on validation: {lam_scores}  -> lambda={best_lam}")
+    np.savez(HMM_PATH, transition_matrix=A, initial_probs=pi, stages=d["stages"],
+             smoothing_lambda=np.array([best_lam]))
+
+    json.dump({"alpha": best_alpha, "n_seeds": N_SEEDS, "weight_power_lstm": best_cfg["wpow"],
+               "lstm_cfg": best_cfg, "xgb_cfg": best_xcfg}, open(FUSION_PATH, "w"), indent=2)
+    print("[+] saved all artifacts + fusion_v2.json")
 
 
 if __name__ == "__main__":

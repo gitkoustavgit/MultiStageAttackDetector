@@ -27,57 +27,57 @@
     "latency_ms": null
   },
   {
-    "model": "LSTM (calibrated emissions)",
+    "model": "LSTM (seed-avg x3)",
     "causal": true,
-    "acc": 0.5413415087328131,
-    "macro_f1": 0.49714006425818696,
-    "edge_acc": 0.3941871026339691,
-    "benign_fp": 0.14072632944228275,
-    "latency_ms": 1.4645187173913068
+    "acc": 0.5178372352285395,
+    "macro_f1": 0.4680974993244872,
+    "edge_acc": 0.36239782016348776,
+    "benign_fp": 0.0933852140077821,
+    "latency_ms": 4.222354819490794
   },
   {
     "model": "XGBoost (per-step)",
     "causal": true,
-    "acc": 0.5135637309550353,
-    "macro_f1": 0.47476476540644674,
-    "edge_acc": 0.4695731153496821,
-    "benign_fp": 0.23540856031128404,
-    "latency_ms": 0.013741747212884962
+    "acc": 0.5190449646971386,
+    "macro_f1": 0.47776721898554,
+    "edge_acc": 0.4641235240690282,
+    "benign_fp": 0.23962386511024644,
+    "latency_ms": 0.016320210423670448
   },
   {
-    "model": "Ensemble LSTM+XGBoost",
+    "model": "Ensemble (alpha=0.5, tuned)",
     "causal": true,
-    "acc": 0.5483091787439613,
-    "macro_f1": 0.501304385999416,
-    "edge_acc": 0.45049954586739327,
-    "benign_fp": 0.13294422827496757,
+    "acc": 0.5356744704570792,
+    "macro_f1": 0.48586340455240273,
+    "edge_acc": 0.4287011807447775,
+    "benign_fp": 0.0966277561608301,
     "latency_ms": null
   },
   {
     "model": "Ensemble + HMM forward-filter (deployed)",
     "causal": true,
-    "acc": 0.5352099591230026,
-    "macro_f1": 0.48996241174848054,
-    "edge_acc": 0.329700272479564,
-    "benign_fp": 0.09533073929961089,
+    "acc": 0.5287068004459309,
+    "macro_f1": 0.4800304139037966,
+    "edge_acc": 0.35240690281562215,
+    "benign_fp": 0.08398184176394292,
     "latency_ms": null
   },
   {
     "model": "Ensemble + HMM online-viterbi",
     "causal": true,
-    "acc": 0.5066889632107023,
-    "macro_f1": 0.46190829964018754,
-    "edge_acc": 0.29336966394187103,
-    "benign_fp": 0.09695201037613489,
+    "acc": 0.506596060943887,
+    "macro_f1": 0.4574479559909266,
+    "edge_acc": 0.3242506811989101,
+    "benign_fp": 0.07911802853437094,
     "latency_ms": null
   },
   {
     "model": "Ensemble + HMM offline-viterbi",
     "causal": false,
-    "acc": 0.5693050910442214,
-    "macro_f1": 0.5286167444582328,
-    "edge_acc": 0.46503178928247046,
-    "benign_fp": 0.08625162127107652,
+    "acc": 0.5514678558156819,
+    "macro_f1": 0.5048984415870086,
+    "edge_acc": 0.43142597638510444,
+    "benign_fp": 0.07036316472114137,
     "latency_ms": null
   }
 ]

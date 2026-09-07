@@ -24,9 +24,12 @@ from collections import Counter, defaultdict
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
 
+import glob
+
 from .models import (
     NUM_STAGES,
     build_lstm,
+    ensemble_emissions,
     fit_transition_matrix,
     forward_filter,
     online_viterbi,
@@ -37,11 +40,17 @@ DATASET = "dataset_v2.npz"
 STAGES = ["NORMAL", "RECON", "FUZZING", "INJECTION", "EXPLOITATION"]
 
 
-def load_lstm():
+def load_lstm_seeds():
+    """Load every seed of the winning LSTM (seed-averaged at inference)."""
     arch = json.load(open("lstm_v2.arch.json"))
-    model = build_lstm(**arch)
-    model.load_weights("lstm_v2.weights.h5")
-    return model
+    models = []
+    for path in sorted(glob.glob("lstm_v2.seed*.weights.h5")):
+        m = build_lstm(**arch)
+        m.load_weights(path)
+        models.append(m)
+    if not models:  # backward-compat with a single-file save
+        m = build_lstm(**arch); m.load_weights("lstm_v2.weights.h5"); models = [m]
+    return models
 
 
 def transition_edges(labels):
@@ -115,36 +124,40 @@ def main():
     results.append(score("Zero-param: running-max lookup", y_all, p_runmax, edges_all, benign_all, causal=True))
     results.append(score("Majority class (NORMAL)", y_all, np.zeros_like(y_all), edges_all, benign_all, causal=True))
 
-    # ---- LSTM emissions ----
-    model = load_lstm()
+    # ---- models + tuned fusion recipe ----
+    lstm_models = load_lstm_seeds()
     T = json.load(open("calib_v2.json"))["temperature"]
-    lstm_em = []      # per-session (T,5) emission arrays, calibrated
-    t0 = time.perf_counter()
-    for feats in test_feats:
-        p = model.predict(feats[None, :, :], verbose=0)[0]
-        lstm_em.append(temperature_apply(p, T))
-    lstm_latency = (time.perf_counter() - t0) * 1000 / len(y_all)
-    p_lstm = np.concatenate([e.argmax(1) for e in lstm_em])
-    results.append(score("LSTM (calibrated emissions)", y_all, p_lstm, edges_all, benign_all,
-                         latency_ms=lstm_latency))
-
-    # ---- XGBoost per-step ----
+    fusion = json.load(open("fusion_v2.json"))
+    alpha = fusion["alpha"]
     import xgboost as xgb
     clf = xgb.XGBClassifier()
     clf.load_model("xgb_v2.json")
+
+    # LSTM-only (seed-averaged) row
+    lstm_em = []
+    t0 = time.perf_counter()
+    for feats in test_feats:
+        p = np.mean([m.predict(feats[None, :, :], verbose=0)[0] for m in lstm_models], axis=0)
+        lstm_em.append(p)
+    lstm_latency = (time.perf_counter() - t0) * 1000 / len(y_all)
+    results.append(score(f"LSTM (seed-avg x{len(lstm_models)})", y_all,
+                         np.concatenate([e.argmax(1) for e in lstm_em]),
+                         edges_all, benign_all, latency_ms=lstm_latency))
+
+    # XGBoost-only row
     xgb_em = []
     t0 = time.perf_counter()
     for feats in test_feats:
         xgb_em.append(clf.predict_proba(feats))
     xgb_latency = (time.perf_counter() - t0) * 1000 / len(y_all)
-    p_xgb = np.concatenate([e.argmax(1) for e in xgb_em])
-    results.append(score("XGBoost (per-step)", y_all, p_xgb, edges_all, benign_all,
-                         latency_ms=xgb_latency))
+    results.append(score("XGBoost (per-step)", y_all,
+                         np.concatenate([e.argmax(1) for e in xgb_em]),
+                         edges_all, benign_all, latency_ms=xgb_latency))
 
-    # ---- ensemble emissions ----
-    ens_em = [0.5 * a + 0.5 * b for a, b in zip(lstm_em, xgb_em)]
+    # Tuned ensemble (the ONE fusion path; alpha chosen on validation)
+    ens_em = [ensemble_emissions(lstm_models, clf, feats, alpha, T) for feats in test_feats]
     p_ens = np.concatenate([e.argmax(1) for e in ens_em])
-    results.append(score("Ensemble LSTM+XGBoost", y_all, p_ens, edges_all, benign_all))
+    results.append(score(f"Ensemble (alpha={alpha}, tuned)", y_all, p_ens, edges_all, benign_all))
 
     # ---- HMM smoothing over ensemble emissions ----
     # Use the transition matrix and smoothing strength saved by training (lambda chosen

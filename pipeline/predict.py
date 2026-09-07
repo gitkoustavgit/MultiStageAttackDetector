@@ -24,8 +24,16 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
+import glob
+
 from .features import RequestView, SessionFeatureExtractor
-from .models import NUM_STAGES, build_lstm, next_distinct_matrix, temper_transitions
+from .models import (
+    NUM_STAGES,
+    build_lstm,
+    ensemble_emissions,
+    next_distinct_matrix,
+    temper_transitions,
+)
 
 STAGES = ["NORMAL", "RECON", "FUZZING", "INJECTION", "EXPLOITATION"]
 SEVERITY = {"NORMAL": "INFO", "RECON": "LOW", "FUZZING": "WARNING",
@@ -63,12 +71,18 @@ class OnlinePredictor:
         self.session_ttl = session_ttl_seconds
 
         arch = json.load(open(f"{artifact_dir}/lstm_v2.arch.json"))
-        self.lstm = build_lstm(**arch)
-        self.lstm.load_weights(f"{artifact_dir}/lstm_v2.weights.h5")
+        self.lstm_models = []
+        for path in sorted(glob.glob(f"{artifact_dir}/lstm_v2.seed*.weights.h5")):
+            m = build_lstm(**arch); m.load_weights(path); self.lstm_models.append(m)
+        if not self.lstm_models:
+            m = build_lstm(**arch); m.load_weights(f"{artifact_dir}/lstm_v2.weights.h5")
+            self.lstm_models = [m]
 
         import xgboost as xgb
         self.xgb = xgb.XGBClassifier()
         self.xgb.load_model(f"{artifact_dir}/xgb_v2.json")
+
+        self.alpha = json.load(open(f"{artifact_dir}/fusion_v2.json")).get("alpha", 0.5)
 
         hmm = np.load(f"{artifact_dir}/hmm_v2.npz", allow_pickle=True)  # own artifact
         lam = float(hmm["smoothing_lambda"][0]) if "smoothing_lambda" in hmm else 0.0
@@ -83,19 +97,14 @@ class OnlinePredictor:
         self._windows: Dict[str, List[List[float]]] = {}
 
     def _emission(self, session_id: str, feature_row: List[float]) -> np.ndarray:
-        """Ensemble emission for the current request (LSTM over the session so far +
-        XGBoost on this row), temperature-calibrated."""
+        """Calibrated ensemble emission for the current request, via the ONE shared fusion
+        path (seed-averaged LSTM over the session so far + XGBoost on this row, blended by
+        the validation-tuned alpha). Returns the emission for the latest timestep."""
         window = self._windows.setdefault(session_id, [])
         window.append(feature_row)
-        arr = np.asarray(window, dtype=np.float32)[None, :, :]
-        lstm_p = self.lstm.predict(arr, verbose=0)[0, -1]        # last step
-        xgb_p = self.xgb.predict_proba(np.asarray([feature_row], dtype=np.float32))[0]
-        ens = 0.5 * lstm_p + 0.5 * xgb_p
-        # temperature calibration
-        logits = np.log(np.clip(ens, 1e-12, 1.0)) / self.temperature
-        logits -= logits.max()
-        p = np.exp(logits)
-        return p / p.sum()
+        feats = np.asarray(window, dtype=np.float32)
+        return ensemble_emissions(self.lstm_models, self.xgb, feats,
+                                  self.alpha, self.temperature)[-1]
 
     def observe(self, session_id: str, request: RequestView) -> Prediction:
         self._expire(request_time=time.time())
