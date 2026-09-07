@@ -164,7 +164,3 @@ Demo complete. Total Alerts Triggered & Logged to admin_alerts.jsonl: 5
 All triggered alerts are stored in `admin_alerts.jsonl` (structured JSON audit log) and `admin_alerts.log` (plain text incident log).
 
 ---
-
-## 🛡️ License
-
-This project is released under the MIT License.
