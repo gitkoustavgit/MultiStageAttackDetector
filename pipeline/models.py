@@ -130,6 +130,23 @@ def fit_transition_matrix(
     return A, pi
 
 
+def next_distinct_matrix(A: np.ndarray) -> np.ndarray:
+    """
+    Turn a transition matrix into P(next DISTINCT stage | current stage) by removing the
+    self-loop and renormalizing each row.
+
+    Predicting the next request's raw label is near-useless because blocks are long, so
+    the next request is almost always the same stage ("persistence"). The operationally
+    meaningful forecast is: when this user changes phase, which stage do they move to?
+    That is exactly this matrix, applied to the current-stage belief.
+    """
+    B = A.copy().astype(np.float64)
+    np.fill_diagonal(B, 0.0)
+    rs = B.sum(axis=1, keepdims=True)
+    rs[rs == 0] = 1.0
+    return B / rs
+
+
 def temper_transitions(A: np.ndarray, lam: float) -> np.ndarray:
     """
     Mix the fitted transition matrix toward uniform: A' = (1-lam)*A + lam*U.

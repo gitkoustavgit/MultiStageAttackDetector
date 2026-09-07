@@ -52,8 +52,8 @@ def _check_local(url: str):
 def main():
     predictor = OnlinePredictor(min_alert_severity="WARNING")
     session = requests.Session()
-    print(f"{'req':<4}{'raw guess':<14}{'smoothed':<14}{'conf':<7}{'esc':<6}{'alert':<10}status/len")
-    print("-" * 78)
+    print(f"{'req':<4}{'current stage':<14}{'-> likely next':<15}{'conf':<7}{'alert':<10}status/len")
+    print("-" * 82)
 
     for i, (method, path, params, extra) in enumerate(SCRIPT):
         url = BASE + path
@@ -69,13 +69,15 @@ def main():
         )
         r = predictor.observe("live_demo", req)
         alert = r.alert["severity"] if r.alert else "-"
-        print(f"{r.request_number:<4}{r.raw_stage:<14}{r.stage:<14}{r.confidence:<7.3f}"
-              f"{str(r.escalated):<6}{alert:<10}{resp.status_code}/{len(resp.content)}")
+        print(f"{r.request_number:<4}{r.stage:<14}{r.next_stage:<15}{r.confidence:<7.3f}"
+              f"{alert:<10}{resp.status_code}/{len(resp.content)}")
 
     predictor.reset_session("live_demo")
     session.close()
-    print("-" * 78)
-    print("Smoothed = deployed ensemble + causal HMM forward filter. Response status/len are real.")
+    print("-" * 82)
+    print("Current stage = ensemble + causal HMM forward filter (belief over the current phase).")
+    print("Likely next   = where the user is forecast to go WHEN they next change phase.")
+    print("Response status/len are real, captured from the running server.")
 
 
 if __name__ == "__main__":

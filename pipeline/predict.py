@@ -25,7 +25,7 @@ from typing import Dict, List, Optional
 import numpy as np
 
 from .features import RequestView, SessionFeatureExtractor
-from .models import NUM_STAGES, build_lstm, temper_transitions
+from .models import NUM_STAGES, build_lstm, next_distinct_matrix, temper_transitions
 
 STAGES = ["NORMAL", "RECON", "FUZZING", "INJECTION", "EXPLOITATION"]
 SEVERITY = {"NORMAL": "INFO", "RECON": "LOW", "FUZZING": "WARNING",
@@ -37,11 +37,13 @@ SEV_RANK = {"INFO": 0, "LOW": 1, "WARNING": 2, "CRITICAL": 3}
 class Prediction:
     session_id: str
     request_number: int
-    stage: str                 # causal forward-filter argmax at this step
+    stage: str                 # causal forward-filter argmax at this step (CURRENT stage)
     confidence: float          # filtered posterior of `stage`
     raw_stage: str             # ensemble emission argmax (pre-smoothing), for comparison
     escalated: bool            # severity rose vs the previous step
-    posterior: Dict[str, float]
+    posterior: Dict[str, float]        # P(current stage | requests so far)
+    next_stage: str = ""               # most likely NEXT stage
+    next_posterior: Dict[str, float] = field(default_factory=dict)  # P(next stage | so far)
     alert: Optional[dict] = None
 
 
@@ -72,6 +74,8 @@ class OnlinePredictor:
         lam = float(hmm["smoothing_lambda"][0]) if "smoothing_lambda" in hmm else 0.0
         self.A = temper_transitions(hmm["transition_matrix"], lam)
         self.pi = hmm["initial_probs"]
+        # P(next distinct stage | current) for the "where will they go next" forecast
+        self.B = next_distinct_matrix(hmm["transition_matrix"])
 
         self.temperature = json.load(open(f"{artifact_dir}/calib_v2.json"))["temperature"]
         self.sessions: Dict[str, _State] = {}
@@ -117,6 +121,15 @@ class OnlinePredictor:
         stage = STAGES[stage_idx]
         raw_stage = STAGES[int(emission.argmax())]
 
+        # NEXT-STAGE forecast: where will this user go WHEN they change phase? Propagate
+        # the current-stage belief through the self-loop-removed transition matrix. This
+        # answers "where can this user go next" -- the next distinct stage -- rather than
+        # the near-useless "the next request is probably the same stage".
+        next_dist = alpha @ self.B
+        s = next_dist.sum()
+        next_dist = next_dist / s if s > 0 else next_dist
+        next_idx = int(next_dist.argmax())
+
         rank = SEV_RANK[SEVERITY[stage]]
         escalated = rank > state.prev_rank
         state.prev_rank = rank
@@ -129,6 +142,8 @@ class OnlinePredictor:
             raw_stage=raw_stage,
             escalated=escalated,
             posterior={s: float(p) for s, p in zip(STAGES, alpha)},
+            next_stage=STAGES[next_idx],
+            next_posterior={s: float(p) for s, p in zip(STAGES, next_dist)},
         )
         pred.alert = self._maybe_alert(pred, request)
         return pred

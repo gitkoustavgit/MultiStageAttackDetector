@@ -221,6 +221,53 @@ def main():
         print(f"  detection latency: median {int(np.median(lat))} req, mean {lat.mean():.1f}, "
               f"within-3 {(lat<=3).mean():.2%}")
 
+    # ---- NEXT-STAGE prediction ----
+    # Predicting the very next request's raw label is near-useless: blocks are long, so
+    # the next request is almost always the same stage (persistence is ~0.49 and nothing
+    # beats it). The operationally meaningful question is: WHEN this user changes phase,
+    # which stage do they move to? So at every true stage transition we ask whether the
+    # model named the correct next DISTINCT stage, using the current-stage belief
+    # propagated through the self-loop-removed transition matrix.
+    #
+    # Baselines: "always advance one rung" (the naive kill-chain guess) and "global most
+    # common next-distinct stage".
+    from collections import Counter as _C
+    from .models import next_distinct_matrix
+
+    train_labels = list(d["seq_labels"][d["seq_split"] == "train"])
+    B = next_distinct_matrix(A)
+    global_next = _C()
+    for labs in train_labels:
+        for a, b in zip(labs[:-1], labs[1:]):
+            if a != b:
+                global_next[int(b)] += 1
+    global_top = global_next.most_common(1)[0][0]
+
+    truth_t, model_t, model_top2, advance_t, global_t = [], [], [], [], []
+    for em, labs in zip(ens_em, test_labels):
+        belief = forward_filter(em, A, pi)
+        for t in range(len(labs) - 1):
+            if labs[t + 1] == labs[t]:
+                continue  # only score at real phase changes
+            nxt = int(labs[t + 1])
+            nd = belief[t] @ B
+            truth_t.append(nxt)
+            model_t.append(int(nd.argmax()))
+            model_top2.append(nxt in set(np.argsort(nd)[-2:]))
+            cur = int(belief[t].argmax())
+            advance_t.append(min(cur + 1, NUM_STAGES - 1))
+            global_t.append(global_top)
+    truth_t = np.array(truth_t)
+    print(f"\n=== Next-DISTINCT-stage prediction (at {len(truth_t)} real phase changes) ===")
+    print(f"  where will the user go when they change phase?")
+    print(f"  {'predictor':<40}{'top-1':>8}{'top-2':>8}")
+    print(f"  {'model: belief @ transition matrix':<40}"
+          f"{accuracy_score(truth_t, model_t):>8.4f}{np.mean(model_top2):>8.4f}")
+    print(f"  {'baseline: always advance one rung':<40}"
+          f"{accuracy_score(truth_t, advance_t):>8.4f}{'-':>8}")
+    print(f"  {'baseline: global most-common next':<40}"
+          f"{accuracy_score(truth_t, global_t):>8.4f}{'-':>8}")
+
     json.dump([{k: (None if v is None else v) for k, v in r.items()} for r in results],
               open("benchmark_v2.json", "w"), indent=2)
     print("\n[+] wrote benchmark_v2.json")

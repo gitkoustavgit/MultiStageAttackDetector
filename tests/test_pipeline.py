@@ -20,14 +20,23 @@ import pytest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipeline.corpus import load_capture_files, assign_file_splits
-from pipeline.compose import compose_sessions, running_max_fraction
 from pipeline.features import (
     NUM_FEATURES,
     RequestView,
     SessionFeatureExtractor,
     extract_session,
 )
-from pipeline.models import fit_transition_matrix, forward_filter, temper_transitions
+from pipeline.compose import (
+    compose_sessions,
+    next_stage_predictability,
+    running_max_fraction,
+)
+from pipeline.models import (
+    fit_transition_matrix,
+    forward_filter,
+    next_distinct_matrix,
+    temper_transitions,
+)
 
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "SQLrequests")
 
@@ -154,6 +163,32 @@ def test_forward_filter_is_prefix_stable():
     for cut in (4, 7, 10):
         prefix = forward_filter(em[:cut], A, pi).argmax(1)
         assert np.array_equal(prefix, full[:cut]), f"prefix at cut={cut} disagrees"
+
+
+def test_kill_chain_structure_is_learnable():
+    """The composer must leave a learnable next-stage signal (so 'predict where he goes
+    next' is possible), while still not being a running-max staircase."""
+    caps = load_capture_files(ROOT)
+    splits = assign_file_splits(caps)
+    sessions = compose_sessions(caps, splits, "train", 300)
+    # a first-order Markov model must beat chance (0.25 among 4 non-current stages) at
+    # naming the next distinct stage
+    assert next_stage_predictability(sessions) > 0.35
+    # and the sequence must still de-escalate enough to defeat a running-max rule
+    assert running_max_fraction(sessions) < 0.85
+
+
+def test_next_distinct_matrix_removes_self_loops():
+    A = np.array([
+        [0.9, 0.06, 0.02, 0.01, 0.01],
+        [0.1, 0.8, 0.05, 0.03, 0.02],
+        [0.1, 0.05, 0.75, 0.07, 0.03],
+        [0.1, 0.03, 0.05, 0.72, 0.10],
+        [0.2, 0.03, 0.03, 0.04, 0.70],
+    ])
+    B = next_distinct_matrix(A)
+    assert np.allclose(np.diag(B), 0.0)              # no self-loops
+    assert np.allclose(B.sum(axis=1), 1.0)           # still a distribution
 
 
 if __name__ == "__main__":
