@@ -61,8 +61,15 @@ def featurize_session(session: Session) -> np.ndarray:
     return np.asarray(rows, dtype=np.float32)
 
 
-def build(seed: int = 20260907) -> dict:
+def build(seed: int = 20260907, include_augmented: bool = True) -> dict:
+    from .corpus import load_augmented
+
     captures = load_capture_files()
+    if include_augmented:
+        aug = load_augmented()
+        if aug:
+            print(f"  merging {len(aug)} augmented (train-only) sessions")
+            captures = captures + aug
     splits = assign_file_splits(captures)
 
     sessions: List[Session] = []

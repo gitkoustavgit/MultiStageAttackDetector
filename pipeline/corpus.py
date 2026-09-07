@@ -209,6 +209,33 @@ def load_capture_files(root: str = "SQLrequests") -> List[CaptureFile]:
     return out
 
 
+def load_augmented(path: str = "augmented_corpus.json") -> List[CaptureFile]:
+    """Load augmented sessions (from augment.py) as CaptureFile objects, if present.
+
+    These are driven live against Juice Shop and are assigned to the TRAIN split only by
+    assign_file_splits, so validation/test stay pure real captures."""
+    import json
+    import os
+
+    if not os.path.exists(path):
+        return []
+    out: List[CaptureFile] = []
+    for entry in json.load(open(path)):
+        cap = CaptureFile(name=entry["name"], stage=entry["stage"])
+        for r in entry["requests"]:
+            ts = None
+            if r.get("epoch") is not None:
+                ts = datetime.fromtimestamp(r["epoch"])
+            cap.requests.append(Request(
+                method=r["method"], path=r["path"], query=r["query"], body=r["body"],
+                headers=r["headers"], status=r["status"],
+                response_length=r["response_length"], timestamp=ts,
+                stage=entry["stage"], source_file=entry["name"]))
+        if cap.requests:
+            out.append(cap)
+    return out
+
+
 def assign_file_splits(
     captures: List[CaptureFile],
     val_fraction: float = 0.2,
@@ -232,6 +259,12 @@ def assign_file_splits(
     splits: Dict[str, str] = {}
     for stage in STAGES:
         names = sorted(by_stage.get(stage, []))
+        # Augmented files (name starts with AUG_) are always train, never held out,
+        # so validation/test remain pure real captures.
+        aug = [n for n in names if n.startswith("AUG_")]
+        names = [n for n in names if not n.startswith("AUG_")]
+        for n in aug:
+            splits[n] = "train"
         if not names:
             continue
         rng.shuffle(names)

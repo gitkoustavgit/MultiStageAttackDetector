@@ -126,6 +126,20 @@ def test_composed_sessions_break_running_max():
     assert frac < 0.85, f"running-max fraction {frac:.3f} too high; shortcut still present"
 
 
+def test_augmented_files_are_train_only():
+    """Augmented (live-generated) sessions must never land in validation/test."""
+    from pipeline.corpus import assign_file_splits, CaptureFile, Request
+
+    real = load_capture_files(ROOT)
+    fake = [CaptureFile(name=f"AUG_INJECTION_{i:03d}", stage="INJECTION",
+                        requests=[Request("GET", "/x", "", "", {}, 200, 10, None,
+                                          "INJECTION", f"AUG_INJECTION_{i:03d}")])
+            for i in range(5)]
+    splits = assign_file_splits(real + fake)
+    for f in fake:
+        assert splits[f.name] == "train", f"{f.name} leaked into {splits[f.name]}"
+
+
 def test_forward_filter_is_prefix_stable():
     """
     Causality of the deployed decoder: the stage reported at step t must not change when

@@ -85,34 +85,75 @@ parameter-free ceiling**, and that only causal rows are deployable.
 
 | Model | causal | acc | macro-F1 | edge acc | benign FP |
 |---|:---:|---:|---:|---:|---:|
-| Zero-param: running-max lookup | yes | 0.466 | 0.178 | 0.390 | 0.041 |
-| Majority class (NORMAL) | yes | 0.465 | 0.127 | 0.388 | 0.000 |
-| LSTM (calibrated) | yes | 0.507 | 0.416 | 0.406 | 0.237 |
-| XGBoost (per-step) | yes | 0.560 | 0.457 | 0.490 | 0.176 |
-| Ensemble LSTM+XGBoost | yes | 0.578 | 0.469 | 0.491 | 0.118 |
-| **Ensemble + HMM forward-filter (deployed)** | **yes** | **0.578** | 0.448 | 0.413 | **0.067** |
-| Ensemble + HMM offline-viterbi | **NO** | 0.574 | 0.431 | 0.478 | 0.041 |
+| Zero-param: running-max lookup | yes | 0.457 | 0.171 | 0.388 | 0.022 |
+| Majority class (NORMAL) | yes | 0.453 | 0.125 | 0.387 | 0.000 |
+| LSTM (calibrated) | yes | 0.572 | 0.485 | 0.394 | 0.198 |
+| XGBoost (per-step) | yes | 0.583 | 0.497 | 0.514 | 0.177 |
+| Ensemble LSTM+XGBoost | yes | 0.604 | 0.504 | 0.516 | 0.128 |
+| **Ensemble + HMM forward-filter (deployed)** | **yes** | **0.576** | 0.456 | 0.375 | **0.080** |
+| Ensemble + HMM offline-viterbi | **NO** | 0.583 | 0.457 | 0.478 | 0.046 |
 
-The deployed model beats the parameter-free ceiling by **+0.112**. The HMM's value is
-visible not in accuracy but in the **benign false-positive rate, cut from 11.8% to 6.7%**
-at equal accuracy: the transition prior suppresses isolated spurious flips on normal
-traffic. The offline Viterbi scores similarly but is non-causal, so it is not deployable.
+The best causal model beats the parameter-free ceiling by **+0.147**. The HMM trades a
+little accuracy for a large cut in false alarms: the deployed forward-filter drops the
+**benign false-positive rate from 12.8% to 8.0%** versus the raw ensemble, because the
+transition prior suppresses isolated spurious flips on normal traffic. For a detector
+whose recommended action is to isolate a client, that trade is the right default; the raw
+ensemble is available if recall matters more than false alarms. The offline Viterbi scores
+similarly but is non-causal, so it is not deployable.
+
+*Numbers are from one committed training run (`benchmark_v2.json`). CPU training is not
+bit-reproducible, so retraining moves each figure by a few points; the ranking and the
+margin over baseline are stable.*
 
 ### Session-level detection (what an operator sees)
 
 Per-request accuracy understates operational value, because many RECON requests are
-genuinely indistinguishable from browsing. Measured per attacking session:
+genuinely indistinguishable from browsing. Measured per attacking session (committed run):
 
 | Peak stage of session | caught |
 |---|---:|
-| RECON | 72% |
-| FUZZING | 87% |
-| INJECTION | 75% |
-| EXPLOITATION | 68% |
+| RECON | 67% |
+| FUZZING | 61% |
+| INJECTION | 61% |
+| EXPLOITATION | 70% |
 
-Median detection latency: **2 requests** into the peak stage; 60% caught within 3.
+Median detection latency: **2 requests** into the peak stage; ~62% caught within 3.
+(These swing several points between training runs; see the reproducibility note above.)
 
 ---
+
+## Can accuracy be improved? What the ceiling analysis shows
+
+Measured on the test split, not guessed:
+
+- **52% of RECON requests are byte-identical to NORMAL requests** at the content level
+  (browsing `/`, fetching `/rest/languages`, loading assets). A recon session and a
+  normal session issue many of the same requests; the difference is intent, visible only
+  in aggregate. That half of RECON is irreducibly unresolvable from a single request.
+- A perfect content-only lookup with oracle (test-peeking) labels caps at **0.80**; the
+  realistically learnable content-only ceiling is **0.52**. The deployed model at **0.58**
+  already sits above the learnable content-only ceiling, i.e. session context is adding
+  signal, and below the oracle cap, i.e. some headroom exists but requires resolving the
+  ambiguous requests from context.
+- **Live augmentation was tried** (`augment.py`, 1,209 extra real-response requests driven
+  against Juice Shop, added to train only). It did **not** raise overall accuracy
+  (~0.57), but it improved minority-class recall (RECON correctly classified rose ~50%)
+  and ensemble macro-F1. The overall number is flat because the ceiling is ambiguity, not
+  data volume. Augmentation is therefore an available, documented tool rather than the
+  default: run `python -m pipeline.augment` then rebuild with `include_augmented=True`.
+
+Realistic levers, in order of expected effect:
+
+1. **Reframe RECON as a session-level judgment** (was this session probing?) rather than
+   labeling each browsing request RECON. This removes the intrinsic NORMAL/RECON
+   collision and would lift the ceiling directly.
+2. **Timing/rate features across a longer horizon** — a scanner and a human hit the same
+   endpoints at very different rates; the current 8-request window captures some of this.
+3. **More diverse real captures**, especially of injection/exploitation, which are thin.
+
+Overall accuracy near 0.58 is close to the intrinsic per-request ceiling for this
+labeling; the honest way to report higher is the session-level detection above (68-87%),
+which is what an operator actually experiences.
 
 ## Honest limitations
 
