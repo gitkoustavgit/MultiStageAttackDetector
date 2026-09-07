@@ -75,8 +75,8 @@ def main():
     predictor.reset_session("live_demo")
     session.close()
     print("-" * 82)
-    print("Current stage = ensemble + causal HMM forward filter (belief over the current phase).")
-    print("Likely next   = where the user is forecast to go WHEN they next change phase.")
+    print("Current stage = responsive LSTM+XGBoost ensemble (tracks transitions sharply).")
+    print("Likely next   = forecast from the causal HMM belief: where the user goes next.")
     print("Response status/len are real, captured from the running server.")
 
 

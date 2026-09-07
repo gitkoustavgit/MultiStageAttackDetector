@@ -1,7 +1,7 @@
 {
   "alpha": 0.5,
   "n_seeds": 3,
-  "weight_power_lstm": 0.0,
+  "weight_power_lstm": 0.5,
   "lstm_cfg": {
     "units": 96,
     "layers_n": 1,
@@ -9,7 +9,7 @@
     "lr": 0.001,
     "recurrent_dropout": 0.15,
     "l2": 0.0001,
-    "wpow": 0.0
+    "wpow": 0.5
   },
   "xgb_cfg": {
     "n_estimators": 500,

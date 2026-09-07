@@ -124,6 +124,18 @@ def _stage_request(rng, stage):
     if stage == "NORMAL":
         return rng.choice(NORMAL)
     if stage == "RECON":
+        # Half the time do systematic ENUMERATION (the real recon signal): walk ids across
+        # one template -- product reviews, users, baskets -- rather than a single endpoint.
+        if rng.random() < 0.5:
+            kind = rng.choice(["reviews", "users", "baskets", "products"])
+            i = rng.randint(1, 60)
+            if kind == "reviews":
+                return ("GET", f"/rest/products/{i}/reviews", None, None)
+            if kind == "users":
+                return ("GET", f"/api/Users/{i}", None, None)
+            if kind == "baskets":
+                return ("GET", f"/rest/basket/{i}", None, None)
+            return ("GET", f"/api/Products/{i}", None, None)
         return rng.choice(RECON)
     if stage == "FUZZING":
         if rng.random() < 0.6:

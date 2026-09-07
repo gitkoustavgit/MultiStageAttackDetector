@@ -2,10 +2,11 @@
 Online multi-stage predictor -- the deployable inference path.
 
 Fixes the deployment gaps the audit found in the old live_predictor:
-  * It deploys the model that was actually benchmarked: the LSTM+XGBoost ensemble
-    smoothed by the causal HMM forward filter, not the LSTM alone.
-  * Smoothing is the SAME causal forward filter that was scored, with the same
-    validation-selected strength -- no offline Viterbi that peeks at the future.
+  * It deploys the LSTM+XGBoost ensemble that was actually benchmarked (not the LSTM
+    alone). CURRENT stage is the responsive ensemble emission; the causal HMM forward
+    filter is kept for the next-stage forecast and as an optional low-FP smoothed read.
+  * All decoding is causal -- the forward filter uses only past requests, never the
+    offline Viterbi that peeks at the future.
   * Sessions expire: a TTL evicts idle sessions so state does not grow without bound.
   * The alert threshold actually gates. Severity is compared to a configured minimum
     and that is the only gate; there is no `or is_attack` clause silently overriding it.
@@ -45,9 +46,9 @@ SEV_RANK = {"INFO": 0, "LOW": 1, "WARNING": 2, "CRITICAL": 3}
 class Prediction:
     session_id: str
     request_number: int
-    stage: str                 # causal forward-filter argmax at this step (CURRENT stage)
+    stage: str                 # CURRENT stage = responsive calibrated ensemble argmax
     confidence: float          # filtered posterior of `stage`
-    raw_stage: str             # ensemble emission argmax (pre-smoothing), for comparison
+    smoothed_stage: str        # forward-filter belief argmax (low-FP alternative reading)
     escalated: bool            # severity rose vs the previous step
     posterior: Dict[str, float]        # P(current stage | requests so far)
     next_stage: str = ""               # most likely NEXT stage
@@ -118,7 +119,8 @@ class OnlinePredictor:
         feature_row = state.extractor.feed(request)
         emission = self._emission(session_id, feature_row)
 
-        # causal forward-filter update
+        # Maintain the causal forward-filter belief (used for the next-stage forecast and
+        # offered as a low-false-positive smoothed reading).
         if state.alpha is None:
             alpha = self.pi * (emission + 1e-12)
         else:
@@ -126,14 +128,16 @@ class OnlinePredictor:
         alpha /= alpha.sum()
         state.alpha = alpha
 
-        stage_idx = int(alpha.argmax())
+        # CURRENT STAGE = the responsive calibrated ensemble emission, not the smoothed
+        # belief. On this data the forward filter costs accuracy and, worse, blunts
+        # transition detection (it resists change); reporting the emission tracks users
+        # moving between stages far better. `smoothed_stage` keeps the low-FP belief read.
+        stage_idx = int(emission.argmax())
         stage = STAGES[stage_idx]
-        raw_stage = STAGES[int(emission.argmax())]
+        smoothed_stage = STAGES[int(alpha.argmax())]
 
-        # NEXT-STAGE forecast: where will this user go WHEN they change phase? Propagate
-        # the current-stage belief through the self-loop-removed transition matrix. This
-        # answers "where can this user go next" -- the next distinct stage -- rather than
-        # the near-useless "the next request is probably the same stage".
+        # NEXT-STAGE forecast: propagate the belief (which integrates history) through the
+        # self-loop-removed transition matrix -- where the user goes WHEN they change phase.
         next_dist = alpha @ self.B
         s = next_dist.sum()
         next_dist = next_dist / s if s > 0 else next_dist
@@ -147,10 +151,10 @@ class OnlinePredictor:
             session_id=session_id,
             request_number=state.count,
             stage=stage,
-            confidence=float(alpha[stage_idx]),
-            raw_stage=raw_stage,
+            confidence=float(emission[stage_idx]),
+            smoothed_stage=smoothed_stage,
             escalated=escalated,
-            posterior={s: float(p) for s, p in zip(STAGES, alpha)},
+            posterior={s: float(p) for s, p in zip(STAGES, emission)},
             next_stage=STAGES[next_idx],
             next_posterior={s: float(p) for s, p in zip(STAGES, next_dist)},
         )

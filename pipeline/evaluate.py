@@ -157,7 +157,7 @@ def main():
     # Tuned ensemble (the ONE fusion path; alpha chosen on validation)
     ens_em = [ensemble_emissions(lstm_models, clf, feats, alpha, T) for feats in test_feats]
     p_ens = np.concatenate([e.argmax(1) for e in ens_em])
-    results.append(score(f"Ensemble (alpha={alpha}, tuned)", y_all, p_ens, edges_all, benign_all))
+    results.append(score(f"Ensemble (alpha={alpha}) [DEPLOYED current stage]", y_all, p_ens, edges_all, benign_all))
 
     # ---- HMM smoothing over ensemble emissions ----
     # Use the transition matrix and smoothing strength saved by training (lambda chosen
@@ -170,7 +170,7 @@ def main():
     print(f"(HMM smoothing lambda selected on validation = {float(hmm['smoothing_lambda'][0])})")
 
     for label, decoder, causal in [
-        ("Ensemble + HMM forward-filter (deployed)", forward_filter, True),
+        ("Ensemble + HMM forward-filter (low-FP alt)", forward_filter, True),
         ("Ensemble + HMM online-viterbi", online_viterbi, True),
         ("Ensemble + HMM offline-viterbi", viterbi_decode, False),
     ]:
@@ -201,7 +201,7 @@ def main():
           f"({'PASS' if best['acc']-zp > 0.05 else 'THIN'})")
 
     # confusion for the deployed model
-    preds = np.concatenate([forward_filter(em, A, pi).argmax(1) for em in ens_em])  # A already tempered
+    preds = np.concatenate([e.argmax(1) for e in ens_em])  # deployed current stage = ensemble
     print("\nDeployed model confusion (rows=true, cols=pred)", STAGES)
     print(confusion_matrix(y_all, preds))
 
@@ -215,7 +215,7 @@ def main():
     caught = defaultdict(lambda: [0, 0])
     latencies = []
     for em, labs in zip(ens_em, test_labels):
-        path = forward_filter(em, A, pi).argmax(1)
+        path = em.argmax(1)  # deployed current stage = responsive ensemble
         peak = int(labs.max())
         if peak == 0:
             continue

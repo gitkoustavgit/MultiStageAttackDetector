@@ -135,10 +135,15 @@ def main():
         model = build_lstm(nf, **arch)
         cw = class_weights(ytr_flat, cfg["wpow"])
         wtr = sample_weights(ytr, mtr, cw); wva = sample_weights(yva, mva, cw)
+        # Minimum 30 epochs: early stopping does not begin monitoring until epoch 30
+        # (start_from_epoch=30), so every model trains at least 30 epochs; up to 60, with
+        # the best-validation weights restored so the extra epochs cannot overfit-degrade
+        # the final model.
         model.fit(Xtr, ytr, sample_weight=wtr, validation_data=(Xva, yva, wva),
-                  epochs=40, batch_size=32, verbose=0,
+                  epochs=60, batch_size=32, verbose=0,
                   callbacks=[keras.callbacks.EarlyStopping(
-                      monitor="val_loss", patience=6, restore_best_weights=True)])
+                      monitor="val_loss", patience=8, start_from_epoch=30,
+                      restore_best_weights=True)])
         return model
 
     # ---- select LSTM config on validation ----

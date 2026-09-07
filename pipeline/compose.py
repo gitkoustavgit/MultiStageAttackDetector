@@ -59,6 +59,13 @@ _KILL_CHAIN = {
 # Where a session starts: mostly benign, sometimes recon, occasionally a direct attacker.
 _START = {"NORMAL": 0.62, "RECON": 0.20, "FUZZING": 0.06, "INJECTION": 0.08, "EXPLOITATION": 0.04}
 
+# A minority of sessions move ERRATICALLY: the next stage is drawn near-uniformly instead
+# of following the kill chain. These stress the current-stage tracker on genuinely
+# unpredictable movement (an attacker who jumps around, or noisy blended traffic). Kept a
+# minority so the learnable kill-chain structure still dominates for next-stage forecasting.
+ERRATIC_FRACTION = 0.18
+CHAIN = list(STAGES)
+
 # Per-block probability the session ends, rising with the number of blocks so far, so
 # sessions have realistic, varied length instead of a fixed cap.
 _END_BASE = 0.10
@@ -111,9 +118,9 @@ class BlockSampler:
         return list(pool[start:start + length])
 
 
-def _sample_stage_sequence(rng: random.Random, available) -> List[str]:
-    """Sample a block-level stage sequence from the kill-chain Markov process."""
-    # choose a start stage that has data
+def _sample_stage_sequence(rng: random.Random, available, erratic: bool = False) -> List[str]:
+    """Sample a block-level stage sequence. Normally from the kill-chain Markov process;
+    if `erratic`, the next stage is drawn near-uniformly (unpredictable movement)."""
     starts = {s: w for s, w in _START.items() if available(s)}
     if not starts:
         return []
@@ -125,7 +132,10 @@ def _sample_stage_sequence(rng: random.Random, available) -> List[str]:
         p_end = min(0.9, _END_BASE + _END_GROWTH * n_blocks)
         if rng.random() < p_end and n_blocks >= 1:
             break
-        row = {s: w for s, w in _KILL_CHAIN[stage].items() if available(s)}
+        if erratic:
+            row = {s: 1.0 for s in CHAIN if s != stage and available(s)}
+        else:
+            row = {s: w for s, w in _KILL_CHAIN[stage].items() if available(s)}
         if not row:
             break
         nexts = list(row)
@@ -194,7 +204,8 @@ def compose_sessions(
     attempts = 0
     while len(sessions) < n_sessions and attempts < n_sessions * 20:
         attempts += 1
-        stage_seq = _sample_stage_sequence(rng, sampler.available)
+        erratic = rng.random() < ERRATIC_FRACTION
+        stage_seq = _sample_stage_sequence(rng, sampler.available, erratic=erratic)
         if not stage_seq:
             continue
 
@@ -212,7 +223,7 @@ def compose_sessions(
         sessions.append(Session(
             session_id=f"{split.upper()}_{len(sessions):04d}",
             split=split,
-            archetype=_shape_name(stage_seq),
+            archetype=("erratic" if erratic else _shape_name(stage_seq)),
             requests=requests,
         ))
     return sessions

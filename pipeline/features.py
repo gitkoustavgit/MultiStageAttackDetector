@@ -71,6 +71,7 @@ BOUNDARY_LOW = 0
 BOUNDARY_HIGH = 500
 RECENT_WINDOW = 8      # sliding window (in requests) for all context features
 DECAY = 0.6            # geometric decay for the "recent attack pressure" signal
+ENUM_NORM = 6.0        # id-diversity that saturates enum_pressure to ~1
 
 # EXACT feature order. This list IS the schema; reordering requires retraining.
 FEATURE_KEYS: List[str] = [
@@ -109,6 +110,7 @@ FEATURE_KEYS: List[str] = [
     "path_diversity_recent",
     "error_rate_recent",
     "attack_pressure",       # decaying sqli/xss presence over recent requests
+    "enum_pressure",         # decaying "sustained id/value enumeration" (recon signal)
 ]
 
 NUM_FEATURES = len(FEATURE_KEYS)
@@ -140,19 +142,23 @@ def _regex_fraction(patterns, text: str) -> float:
 
 
 def _path_template(path: str) -> str:
+    # Collapse EVERY numeric segment to {id}, not just the trailing one, so that
+    # /rest/products/23/reviews and /rest/products/45/reviews share the template
+    # /rest/products/{id}/reviews. Reconnaissance shows up as systematic enumeration of
+    # ids on one template (product reviews, user ids, basket ids); the old trailing-only
+    # rule missed mid-path ids and so could not see that enumeration at all.
     segments = [p for p in path.split("/") if p]
-    if segments and _NUMERIC_RE.match(segments[-1]):
-        segments[-1] = "{id}"
-    return "/" + "/".join(segments)
+    segs = ["{id}" if _NUMERIC_RE.match(s) else s for s in segments]
+    return "/" + "/".join(segs)
 
 
 def _probe_value(path: str, params: List[Tuple[str, str]]) -> Optional[str]:
     if params:
         return unquote_plus(params[0][1])
-    segments = [p for p in path.split("/") if p]
-    if segments and _NUMERIC_RE.match(segments[-1]):
-        return segments[-1]
-    return None
+    # No query: the varied value is the numeric id(s) in the path. Joining them lets the
+    # diversity tracker count distinct ids enumerated against the same template.
+    nums = [s for s in path.split("/") if s and _NUMERIC_RE.match(s)]
+    return ",".join(nums) if nums else None
 
 
 def _is_boundary(value: Optional[str]) -> bool:
@@ -186,6 +192,7 @@ class SessionFeatureExtractor:
         self._recent_paths: Deque[str] = deque(maxlen=window)
         self._recent_errors: Deque[int] = deque(maxlen=window)
         self._attack_pressure = 0.0
+        self._enum_pressure = 0.0
 
     def feed(self, req: RequestView) -> List[float]:
         self.index += 1
@@ -219,6 +226,7 @@ class SessionFeatureExtractor:
         error_rate = (sum(self._recent_errors) / len(self._recent_errors)
                       if self._recent_errors else 0.0)
         attack_pressure = self._attack_pressure  # decayed value from before this request
+        enum_pressure = self._enum_pressure      # decayed sustained-enumeration signal
 
         inter_arrival = 0.0
         if req.epoch_seconds is not None and self.last_epoch is not None:
@@ -257,6 +265,7 @@ class SessionFeatureExtractor:
             float(path_diversity),
             error_rate,
             attack_pressure,
+            enum_pressure,
         ]
         assert len(vector) == NUM_FEATURES, (len(vector), NUM_FEATURES)
 
@@ -275,6 +284,7 @@ class SessionFeatureExtractor:
                 del self._recent_probe_by_template[key]
         # decaying attack pressure: bumped by this request's payload signal
         self._attack_pressure = DECAY * self._attack_pressure + (1 - DECAY) * max(sqli, xss)
+        self._enum_pressure = DECAY * self._enum_pressure + (1 - DECAY) * min(1.0, endpoint_diversity / ENUM_NORM)
 
         return vector
 

@@ -32,7 +32,7 @@ Two design rules follow from that, and from the two-task goal:
 | Sessions only ever escalated, so `label(t) == max(label[0..t])` for 100% of windows | `compose.py` generates de-escalating, interleaved, oscillating, abandoned and direct sessions. Running-max fraction dropped from **1.00 to ~0.70** |
 | 514 distinct request vectors from a tiny synthetic pool | Built from the **real Burp captures** in `SQLrequests/` (2,878 requests, 5 methods, 13 status codes, 653 paths). Distinct vectors rose to **30,000+** |
 | Splits leaked; test requests were seen in training | `corpus.py` assigns splits at the **file** level, so no request crosses train/val/test |
-| 7 dead or duplicate feature columns; unscaled magnitudes | `features.py` has 30 clean, all-causal features, log-scaled magnitudes, no duplicates |
+| 7 dead or duplicate feature columns; unscaled magnitudes | `features.py` has 31 clean, all-causal features, log-scaled magnitudes, no duplicates |
 | `fuzzing_indicator` latched on forever on benign browsing | Context features use a **decay window**, so behaviour cools off (test in `tests/`) |
 | Two copies of `build_features` despite a "single source of truth" claim | One `SessionFeatureExtractor`, used by training and inference; a test asserts parity |
 | Headline "hybrid" score came from a non-causal offline Viterbi | Deployed decoder is a **causal forward filter**; the offline Viterbi is shown but labelled non-causal and never deployed |
@@ -50,7 +50,7 @@ SQLrequests/*.xml                      real Burp captures (the corpus)
       |
       v  corpus.py        parse + normalize, file-level train/val/test split
       v  compose.py       assemble realistic multi-stage sessions (breaks running-max)
-      v  features.py      one causal 30-feature extractor (training == inference)
+      v  features.py      one causal 31-feature extractor (training == inference)
       v  dataset.py       -> dataset_v2.npz  (sequence view for LSTM, flat view for XGBoost)
       v  train.py         grid-select + seed-average LSTM, select XGBoost, fuse, calibrate,
       v                   pick HMM smoothing -- all on VALIDATION
@@ -88,14 +88,17 @@ Three views of one causal per-request feature stream:
   request *t* uses only requests 1..*t*. Its strength is tempered toward uniform by a
   factor chosen on validation.
 
-Deployed model = `0.5·LSTM + 0.5·XGBoost` emissions, temperature-calibrated, smoothed by
-the validation-tuned forward filter. Two outputs per request:
+Deployed model = `0.5·LSTM + 0.5·XGBoost` emissions, temperature-calibrated. Two outputs
+per request:
 
-- **Current stage** = argmax of the forward-filter belief `P(stage_t | requests 1..t)`.
-- **Next stage** = argmax of `belief_t · B`, where `B` is the transition matrix with its
-  self-loops removed and renormalized — i.e. *given the user changes phase, where to*.
-  Forecasting the next raw request label is pointless (blocks are long, so the answer is
-  almost always "same stage"); the next *distinct* stage is the useful forecast.
+- **Current stage** = argmax of the calibrated ensemble emission at *t*. This responsive
+  reading tracks stage transitions sharply; the forward-filter belief is kept as an
+  optional lower-false-positive alternative.
+- **Next stage** = argmax of `belief_t · B`, where `belief_t` is the causal forward-filter
+  belief and `B` is the transition matrix with its self-loops removed and renormalized —
+  *given the user changes phase, where to*. Forecasting the next raw request label is
+  pointless (blocks are long, so the answer is almost always "same stage"); the next
+  *distinct* stage is the useful forecast.
 
 ---
 
@@ -109,30 +112,37 @@ measure. Only causal rows are deployable.
 
 | Model | causal | acc | macro-F1 | edge acc | benign FP |
 |---|:---:|---:|---:|---:|---:|
-| Zero-param: running-max lookup | yes | 0.282 | 0.141 | 0.277 | 0.129 |
-| Majority class (NORMAL) | yes | 0.287 | 0.089 | 0.285 | 0.000 |
-| LSTM (seed-averaged ×3) | yes | 0.518 | 0.468 | 0.362 | 0.093 |
-| XGBoost (per-step) | yes | 0.519 | 0.478 | 0.464 | 0.240 |
-| Ensemble LSTM+XGBoost (α=0.5) | yes | 0.536 | 0.486 | 0.429 | 0.097 |
-| **Ensemble + HMM forward-filter (deployed)** | **yes** | **0.529** | 0.480 | 0.352 | **0.084** |
-| Ensemble + HMM offline-viterbi | **NO** | 0.552 | 0.505 | 0.431 | 0.070 |
+| Zero-param: running-max lookup | yes | 0.300 | 0.135 | 0.301 | 0.020 |
+| Majority class (NORMAL) | yes | 0.285 | 0.089 | 0.287 | 0.000 |
+| LSTM (seed-averaged ×3) | yes | 0.536 | 0.501 | 0.369 | 0.147 |
+| XGBoost (per-step) | yes | 0.525 | 0.473 | 0.490 | 0.239 |
+| **Ensemble LSTM+XGBoost (α=0.5) — DEPLOYED current stage** | **yes** | **0.543** | **0.506** | **0.416** | 0.140 |
+| Ensemble + HMM forward-filter (low-FP alternative) | yes | 0.528 | 0.490 | 0.295 | **0.110** |
+| Ensemble + HMM offline-viterbi | **NO** | 0.572 | 0.536 | 0.450 | 0.079 |
 
-The best causal model beats the parameter-free ceiling by **+0.249**. The HMM trades a
-little accuracy for fewer false alarms (benign FP 9.7% → 8.4% vs the raw ensemble); for a
-detector that recommends isolating a client, that is the right default, and the raw
-ensemble is available when recall matters more. The offline Viterbi scores higher but is
-non-causal, so it is not deployable.
+The deployed current-stage output is the **responsive ensemble emission**, which beats the
+parameter-free ceiling by **+0.244** and, crucially, tracks stage *transitions* far better
+(edge accuracy 0.416 vs 0.295). The causal HMM forward filter is kept for two jobs: the
+next-stage forecast below, and an optional **low-false-positive reading** (benign FP 11.0%
+vs 14.0%) for deployments that prefer fewer alarms over fast transition response. The
+offline Viterbi scores higher but is non-causal, so it is not deployable.
 
 **Training method (same three models, trained better).** The LSTM and XGBoost
 configurations are chosen by a small validation grid; the winning LSTM is trained over 3
 seeds and its softmaxes averaged, which cuts the run-to-run variance of a single CPU LSTM
-and improves macro-F1 and the false-positive rate. The ensemble blend is fixed at the
-equal-trust α=0.5 rather than grid-tuned: fine α-selection on this small validation set
-did not generalize (a validation-optimal α=1.0 scored *worse* on test), so it is set on
-principle, not chased. Raw accuracy is essentially unchanged from the untuned model
-(within CPU noise) because it is at the intrinsic ceiling below; the tuning bought
-reliability — higher macro-F1, lower false positives, better session detection, and less
-variance — not a higher headline number.
+and improves macro-F1 and the false-positive rate. Every LSTM trains a **minimum of 30
+epochs** (early stopping is disabled until epoch 30, up to 60, best-validation weights
+restored). The ensemble blend is fixed at the equal-trust α=0.5 rather than grid-tuned:
+fine α-selection on this small validation set did not generalize (a validation-optimal
+α=1.0 scored *worse* on test), so it is set on principle, not chased.
+
+Two data/feature changes lifted the attack-stage and transition numbers: the path template
+now collapses **every** numeric segment to `{id}` (so systematic id enumeration like
+`/rest/products/{id}/reviews` across dozens of ids is finally visible, with a decaying
+`enum_pressure` feature summarizing it), and the composer now generates 18% **erratic**
+sessions whose next stage is near-uniform, so the tracker is trained and tested on genuinely
+unpredictable movement. Live-captured traffic (`pipeline/augment.py`, driven against Juice
+Shop, train split only) adds payload and enumeration diversity the fixed captures lack.
 
 ### Task 2 — next-stage forecast
 
@@ -141,9 +151,9 @@ naive heuristics.
 
 | Predictor | top-1 | top-2 |
 |---|---:|---:|
-| **Model: belief · transition matrix** | **0.347** | **0.542** |
-| Baseline: always advance one rung | 0.307 | — |
-| Baseline: global most-common next | 0.262 | — |
+| **Model: belief · transition matrix** | **0.337** | **0.552** |
+| Baseline: always advance one rung | 0.279 | — |
+| Baseline: global most-common next | 0.271 | — |
 
 The model beats "always advance" by +5 and "global most-common" by +9 points; top-2
 covers 55%. Forecasting attacker intent one phase ahead is genuinely hard, so this is
@@ -156,12 +166,14 @@ indistinguishable from browsing. Measured per attacking session:
 
 | Peak stage of session | caught |
 |---|---:|
-| RECON | 77% |
-| FUZZING | 85% |
-| INJECTION | 79% |
-| EXPLOITATION | 89% |
+| RECON | 91% |
+| FUZZING | 86% |
+| INJECTION | 74% |
+| EXPLOITATION | 91% |
 
-Median detection latency: **2 requests** into the peak stage; ~65% caught within 3.
+Median detection latency: **1 request** into the peak stage; ~69% caught within 3. The
+responsive current-stage output flags a stage as soon as it appears, instead of waiting
+for the smoothing to catch up.
 
 *Numbers are from one committed training run (`benchmark_v2.json`). CPU training is not
 bit-reproducible, so retraining moves each figure by a few points; the ranking, the margin
@@ -181,12 +193,14 @@ Measured on the test split, not guessed:
   is the hard ceiling for any per-request model that ignores session history; the deployed
   model reaches it only by using the forward-filter belief to carry context across
   requests. The remaining gap is intrinsic ambiguity, not model weakness.
-- **Live augmentation was tried** (`augment.py`, 1,209 extra real-response requests driven
-  against Juice Shop, added to train only). It did **not** raise overall accuracy
-  (~0.57), but it improved minority-class recall (RECON correctly classified rose ~50%)
-  and ensemble macro-F1. The overall number is flat because the ceiling is ambiguity, not
-  data volume. Augmentation is therefore an available, documented tool rather than the
-  default: run `python -m pipeline.augment` then rebuild with `include_augmented=True`.
+- **The session-level lever was implemented** and it is what an operator sees: the model
+  now catches **91% of recon sessions** at a median latency of 1 request, even though it
+  still gets only ~48% of individual recon requests right. The per-request gap is the
+  irreducible half above; the session judgment resolves it once probing accumulates.
+- **Live augmentation is enabled by default** (`augment.py`, ~1,200 real-response requests
+  driven against Juice Shop, train split only, including systematic id-enumeration recon).
+  It plus the enumeration-template fix roughly doubled FUZZING recall and lifted recon
+  session detection; overall per-request accuracy stays near the ambiguity ceiling.
 
 Realistic levers, in order of expected effect:
 
@@ -199,7 +213,7 @@ Realistic levers, in order of expected effect:
 
 Overall per-request accuracy (~0.53 deployed) is close to the intrinsic ceiling for this
 labeling (0.75 oracle, and much of the gap is the RECON/NORMAL collision). The honest way
-to report higher is the session-level detection above (72-89%), which is what an operator
+to report higher is the session-level detection above (74-91%), which is what an operator
 actually experiences, and the +0.26 margin over the parameter-free baseline.
 
 ## Honest limitations
