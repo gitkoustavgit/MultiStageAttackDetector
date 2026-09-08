@@ -22,3 +22,7 @@ docs/
 #docs and excels
 *.docx
 *.xlsx
+dataset_v2.npz
+pipeline/__pycache__/
+tests/__pycache__/
+augmented_corpus.json

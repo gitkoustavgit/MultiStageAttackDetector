@@ -1,0 +1,19 @@
+# Pinned to the versions this pipeline was built and verified against.
+# The Keras major/minor is pinned because model artifacts are version-sensitive; the
+# LSTM is saved as weights-only and reloaded by rebuilding the architecture, but keeping
+# Keras fixed avoids surprises. See the audit: the old .keras was saved by Keras 3.15.1
+# and would not load under 3.12.1.
+tensorflow-cpu==2.21.0
+keras==3.12.1
+xgboost==3.2.0
+scikit-learn==1.7.2
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.2.3
+requests==2.32.3
+# only needed to re-parse the raw Burp XML captures
+beautifulsoup4==4.10.0
+lxml==4.9.4
+# optional: only for the legacy MongoDB path, not needed by the pipeline
+# pymongo==4.18.0
+# python-dotenv==1.2.1

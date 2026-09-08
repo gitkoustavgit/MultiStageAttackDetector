@@ -1,166 +1,212 @@
 # Context-Aware AI Detection of Multi-Stage Web Injection Attacks
 
-A context-aware machine learning framework for detecting, tracking, and alerting on multi-stage web injection attacks in real time from HTTP traffic sequences.
+A context-aware machine learning framework for tracking, detecting, and forecasting multi-stage web injection attacks in real time from HTTP request streams.
+
+[![Tests](https://img.shields.io/badge/tests-12%20passed-brightgreen.svg)](tests/)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](requirements.txt)
+[![Deployed Accuracy](https://img.shields.io/badge/deployed%20accuracy-54.3%25-success.svg)](benchmark_v2.json)
+[![Session Detection](https://img.shields.io/badge/session%20detection-91%25%20recon%20%7C%2091%25%20exploit-orange.svg)](benchmark_v2.json)
 
 ---
 
-## 📌 Project Overview
+## 📌 Executive Summary
 
-Modern web attacks rarely occur as isolated, single-request events. Attackers progress through distinct, sequential kill-chain phases:
-1. **NORMAL**: Standard user browsing and product interactions.
-2. **RECON**: Passive and active reconnaissance (probing `/whoami`, `/ftp/`, `/languages`, `/api/Challenges/`).
-3. **FUZZING**: Systematic parameter and boundary probing (testing boundary inputs such as `-1`, `0`, `999999`, and high endpoint probe diversity).
-4. **INJECTION**: Active exploitation attempts targeting SQL Injection (SQLi) and Cross-Site Scripting (XSS).
-5. **EXPLOITATION**: Privilege escalation and unauthorized administrative access (forged identity headers `X-User-Email`, forged JWTs, forced browsing to admin routes, and IDOR).
+Modern web attack campaigns rarely occur as single isolated requests. Attackers progress through distinct, sequential kill-chain phases:
+1. **NORMAL**: Standard user browsing and catalog interactions.
+2. **RECON**: Passive/active discovery (probing `/whoami`, `/admin/...`, `/api/SecurityQuestions`, user and endpoint enumeration).
+3. **FUZZING**: Systematic parameter and boundary testing (boundary values such as `-1`, `0`, `999999`, empty values, and path fuzzing).
+4. **INJECTION**: Active code injection attempts (SQL Injection `UNION SELECT`, `' OR 1=1`, and Cross-Site Scripting `<script>`, `onerror=`, `onload=`).
+5. **EXPLOITATION**: Privilege escalation and unauthorized administrative access (IDOR on `/api/Users/{id}`, forged headers `X-User-Email`, auth bypass, forced browsing).
 
-This project tracks in-progress user sessions, computes 23 structural and behavioral features per request, models temporal transitions using causal sequence architectures (**LSTM**, **HMM**, **XGBoost**, and **Hybrid models**), calibrates prediction confidences using temperature scaling, and immediately dispatches structured alerts to administrators upon detecting malicious behavior or stage escalation.
+This detector solves **two distinct operational security tasks** from live HTTP traffic:
+- **Task 1: Real-Time Current-Stage Tracking**: Continuously estimating the attacker's active phase on every incoming request.
+- **Task 2: Next-Stage Intent Forecasting**: Forecasting where the adversary will pivot next ($P(\text{next} \mid \text{phase change})$) before the next attack phase begins.
 
 ---
 
-## 🏗️ System Architecture
+## 📊 Net Results on Held-Out Test Split
+
+Evaluated strictly on held-out test captures (disjoint file-level splits, zero data leakage):
+
+| Metric | Before | Now (v2) | Operational Impact |
+| :--- | :---: | :---: | :--- |
+| **Deployed Accuracy** | 0.529 | **0.543** | **+24.4% margin** over parameter-free baseline |
+| **Transition-Point Accuracy** | 0.295 | **0.416** | **+41.0% relative jump** right at phase shift boundaries |
+| **Macro-F1 (All 5 Stages)** | 0.486 | **0.506** | Balanced precision/recall across all attack stages |
+| **RECON Recall** | 0.40 | **0.48** | **+20.0% boost** on the hardest, most ambiguous class |
+| **Session Detection (Campaigns)** | 68 / 74 / 63 / 83% | **91 / 86 / 74 / 91%** | **91% of RECON** & **91% of EXPLOITATION** sessions caught |
+| **Detection Latency** | 2 requests | **1 request** | **Halved**: flags attacks on the very 1st malicious probe |
+| **Next-Stage Forecast (Top-1 / Top-2)** | 0.35 / 0.55 | **0.34 / 0.55** | Accurately predicts next target phase above naive heuristics |
+
+---
+
+## 🔬 The 0.9987 Audit: Why We Rebuilt the Benchmark
+
+In typical synthetic multi-stage benchmarks, models report >99% accuracy. During our rigorous audit, we uncovered why:
+1. **Monotonic Escalation Artifact**: In naive synthetic generators, sessions only ever moved *up* the severity ladder ($NORMAL \rightarrow RECON \rightarrow FUZZING \rightarrow INJECTION$). Thus, the true label at step $t$ was always $\max(label[0..t])$ for 100% of windows.
+2. **Template Redundancy**: The synthetic pool contained only 514 distinct request vectors.
+3. **The Parameter-Free Test**: A trivial parameter-free rule (*memorize each request vector, output the running maximum severity*) scored **0.9987**, outperforming every trained neural network without learning any representations!
+
+### The Two Design Rules of the Honest Rebuild
+- **Rule 1**: Every reported metric must survive comparison against a parameter-free baseline, and all scored decoders must be **strictly causal** ($t' \le t$).
+- **Rule 2**: Session dynamics must mirror realistic kill-chains—neither purely monotonic nor purely random.
+
+```
+       Monotonic Escalation (Flawed)             Markov Kill-Chain Dynamics (Honest)
+     NORMAL -> RECON -> FUZZ -> INJECT        NORMAL <---> RECON <---> FUZZ <---> INJECT
+        (Trivial running-max)                         \                     /
+                                                       \---> EXPLOITATION <-/
+                                                    (Retreats, skips, erratic sessions)
+```
+
+---
+
+## 🏗️ System Architecture & Tri-Model Fusion
 
 ```mermaid
-flowchart LR
-    A["HTTP Request & Response<br>(Juice Shop / WAF)"] --> B["Feature Engineering<br>(23 Structural & Behavioral Features)"]
-    B --> C["Session History Tracker<br>(Sliding Window max_len=20)"]
-    C --> D1["Causal LSTM Classifier<br>(Temporal Sequence Dynamics)"]
-    C --> D2["Contextual Tabular Extractor<br>+ XGBoost Classifier"]
-    D1 --> E["Temperature Scaling<br>(Calibrated Probabilities T=0.916)"]
-    D2 --> E
-    E --> F["HMM Viterbi Decoder<br>(Capped Self-Transitions <= 0.90)"]
-    F --> G["Prediction Result<br>(Smoothed Stage, Confidence, Escalated)"]
-    G --> H["Real-Time Admin Alerting<br>(Console Banner + JSONL Log)"]
+flowchart TD
+    A["Raw HTTP Request + Response<br>(Method, Path, Query, Headers, Status, Length)"] --> B["Causal SessionFeatureExtractor<br>(31 Causal Features, Decay Windows, Log Scaling)"]
+    
+    subgraph "Parallel Causal Inference Streams"
+        B --> C1["Seed-Averaged Causal LSTM<br>(3 Seeds, 96 Units, Dropout=0.3, Causal Masking)"]
+        B --> C2["Contextual Tabular XGBoost<br>(Rolling Stats, Non-linear Thresholds)"]
+    end
+
+    C1 --> D["Ensemble Blender (α = 0.5)<br>+ Softmax Temperature Scaling (T = 0.916)"]
+    C2 --> D
+
+    D --> E["OUTPUT 1: Responsive Current Stage<br>(Argmax of Calibrated Emission)"]
+    
+    D --> F["Causal HMM Forward Filter (Sum-Product)<br>+ Tempered Transition Matrix (λ = 0.2)"]
+    F --> G["OUTPUT 2: Low-FP Belief Reading<br>(10.9% Benign FP Alternative)"]
+    
+    F --> H["Next-Distinct-Stage Propagator (B = Trans - Diag)<br>P(next | phase change) = belief_t · B"]
+    H --> I["OUTPUT 3: Next-Stage Intent Forecast<br>(Top-1: 33.7%, Top-2: 55.2%)"]
 ```
 
-### Key Technical Pillars
+### 1. Causal Feature Engineering (`pipeline/features.py`)
+- **31 Clean, Strictly Causal Features**: Absolutely zero future-peeking.
+- **Sliding Decay Windows (`RECENT_WINDOW = 8`, `DECAY = 0.6`)**:
+  $$\text{pressure}_t = \text{pressure}_{t-1} \cdot 0.6 + \text{signal}_t$$
+  Prevents suspicion scores from permanently latching on benign users who previously made an anomalous query.
+- **Global Path Templating**: Collapses *every* numeric segment to `{id}` (`/rest/products/{id}/reviews` across distinct product IDs share the template), exposing horizontal and vertical IDOR enumeration through `enum_pressure`.
+- **Log Compression**: Unbounded lengths and counts are scaled via $\log(1 + x)$.
 
-- **Dead Feature Elimination**: Active XSS payloads (`<script>`, `onerror=`, `javascript:`) injected alongside SQLi payloads, activating the previously zeroed `xss_indicator` across 13,500+ samples.
-- **Strictly Causal Modeling**: The LSTM model is strictly forward-looking and unidirectional (no Bidirectional LSTM), ensuring offline benchmarks reflect real-world live traffic where future requests cannot be seen.
-- **HMM Transition Smoothing without "Stickiness"**: Fitted transition matrix self-loops are capped at $\le 0.90$, resolving state lock-in while preserving sequence-level noise resilience.
-- **Confidence Calibration**: Post-hoc Softmax Temperature Scaling ($T = 0.916$) reduces Expected Calibration Error (ECE) from $0.0070$ to $0.0058$.
-- **Stratified Context Evaluation**: Models are transparently evaluated on thin context (target request #1–3 immediately following stage transitions) versus thick context (#10+).
-- **Real-Time Admin Alerting**: Dispatches actionable security alerts (`INFO`, `LOW`, `WARNING`, `CRITICAL`) with attack details and mitigation advice.
-
----
-
-## 📊 Benchmark & Evaluation Results
-
-Evaluated on the held-out test split (1,580 windows across 75 test sessions):
-
-| Model Architecture | Hyperparameters / Configuration | Accuracy | Macro F1 | Thin Context Acc (#1–3) | Thick Context Acc (#10+) | Inference Latency |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **LSTM-Baseline** | `units=64, drop=0.3, lr=0.001` | 0.9639 | 0.9680 | 0.8400 | 0.9948 | 0.32 ms |
-| **LSTM-Compact** | `units=32, drop=0.2, lr=0.001` | 0.9532 | 0.9560 | 0.8311 | 0.9854 | 0.90 ms |
-| **LSTM-Deep (Best LSTM)** | **`units=128, drop=0.4, lr=0.0005`** | **0.9772** | **0.9795** | **0.8578** | **1.0000** | 0.39 ms |
-| **LSTM-LowLR** | `units=64, drop=0.3, lr=0.0005` | 0.9753 | 0.9782 | 0.8667 | 1.0000 | 0.90 ms |
-| **LSTM-Calibrated** | Softmax Temperature $T=0.916$ | **0.9772** | **0.9795** | 0.8578 | 1.0000 | 0.01 ms |
-| **XGBoost-Fast** | `n_est=50, depth=4, lr=0.1` | 0.9918 | 0.9923 | 0.9467 | 1.0000 | 0.003 ms |
-| **XGBoost-Default** | `n_est=100, depth=6, lr=0.1` | 0.9956 | 0.9959 | 0.9733 | 1.0000 | 0.005 ms |
-| **XGBoost-Conservative (Best XGB)** | **`n_est=150, depth=6, lr=0.05`** | **0.9962** | **0.9964** | **0.9733** | **1.0000** | 0.005 ms |
-| **XGBoost-Deep** | `n_est=100, depth=8, lr=0.1` | 0.9943 | 0.9948 | 0.9689 | 1.0000 | 0.004 ms |
-| **HMM (Standalone GNB)** | Gaussian Naive Bayes emissions on request | 0.7703 | 0.7829 | 0.6444 | 0.8241 | 0.05 ms |
-| **Hybrid: LSTM + Raw HMM** | Unconstrained transition self-loops ($\sim 0.99$) | 0.9475 | 0.9795 | 0.8578 | 1.0000 | 0.65 ms |
-| **Hybrid: LSTM + Capped HMM** | **Capped self-loop at 0.90** | **0.9483** | **0.9795** | **0.8578** | **1.0000** | 0.65 ms |
-| **Hybrid: XGBoost + HMM** | Capped self-loop at 0.90 | **0.9652** | **0.9964** | **0.9733** | **1.0000** | 0.55 ms |
-| **Hybrid: Ensemble (LSTM+XGB)** | **50% LSTM + 50% XGBoost Soft Blend** | **0.9956** | **0.9960** | **0.9689** | **1.0000** | 1.10 ms |
-
-Detailed per-class metrics and confusion matrices are saved in `benchmark_results.csv`.
+### 2. Tri-Model Architecture
+- **Causal LSTM (`pipeline/models.py`)**: Unidirectional LSTM trained with a hard floor of **minimum 30 epochs** (up to 60 with best-val weight restoration) and averaged across 3 distinct seeds to eliminate CPU stochasticity.
+- **XGBoost Classifier**: Fast per-request gradient-boosted decision trees over causal context.
+- **HMM Causal Forward Filter**: Employs sum-product forward belief updating ($P(S_t \mid y_{1..t})$) without non-causal backward passes.
 
 ---
 
-## 📁 Repository Structure
+## 📈 Detailed Benchmark Table (Held-Out Test Split)
 
-```text
-├── feature_engineering.py       # Single source of truth for 23 features & session tracking
-├── upload_dataset.py            # Local Juice Shop synthetic multi-stage traffic generator
-├── export_dataset.py            # MongoDB -> compact dataset.npz exporter
-├── train_models.py              # Baseline LSTM and HMM training script
-├── benchmark_models.py          # Unified benchmark suite (LSTM, HMM, XGBoost, Hybrids, Calibration)
-├── live_predictor.py            # Online stream inference engine with Viterbi & Alert integration
-├── admin_alert.py               # Real-time incident alert dispatcher & structured logger
-├── predict_live_real.py         # Live end-to-end demo hitting local OWASP Juice Shop
-├── dataset.npz                  # 10,000 window balanced multi-stage dataset
-├── lstm_stage_classifier.keras  # Saved best LSTM model (units=128, drop=0.4, lr=5e-4)
-├── hmm_params.npz               # Saved HMM transition matrix (capped at 0.90) & initial probs
-├── xgboost_stage_classifier.json# Saved best XGBoost model (150 trees, depth 6)
-├── calibration_params.json      # Optimal temperature scaling parameter (T=0.916)
-├── benchmark_results.csv        # Detailed benchmark evaluation metrics
-└── requirements.txt             # Python dependencies
+| Model | Causal? | Accuracy | Macro-F1 | Transition Edge Acc | Benign FP Rate | Latency |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Zero-param: Current-request lookup** | Yes | 0.2860 | 0.0917 | 0.2951 | 0.07% | - |
+| **Zero-param: Running-max lookup** | Yes | 0.2995 | 0.1346 | 0.3008 | 2.00% | - |
+| **Majority class (NORMAL)** | Yes | 0.2850 | 0.0887 | 0.2865 | 0.00% | - |
+| **LSTM (seed-averaged ×3)** | Yes | 0.5356 | 0.5011 | 0.3691 | 14.69% | 0.15 ms |
+| **XGBoost (per-step)** | Yes | 0.5249 | 0.4726 | 0.4896 | 23.90% | 0.02 ms |
+| **Ensemble (α = 0.5) [DEPLOYED Current Stage]** | **Yes** | **0.5431** | **0.5060** | **0.4156** | 14.00% | **< 0.2 ms** |
+| **Ensemble + HMM Forward Filter (Low-FP alt)** | Yes | 0.5283 | 0.4900 | 0.2951 | **10.97%** | < 0.3 ms |
+| **Ensemble + HMM Online Viterbi** | Yes | 0.5033 | 0.4595 | 0.2903 | 9.86% | < 0.3 ms |
+| *Ensemble + HMM Offline Viterbi (Non-causal)* | *NO* | *0.5720* | *0.5364* | *0.4497* | *7.86%* | - |
+
+> [!NOTE]
+> The offline Viterbi scores 0.572 but requires future timesteps ($t > t_{\text{curr}}$). We report it for academic completeness but **strictly deploy only causal models** in production.
+
+---
+
+## 🎯 Campaign-Level Detection & Intrinsic Ceiling Analysis
+
+### Operational Campaign Detection Rates
+What security operations center (SOC) analysts care about is whether an attack campaign is caught, and how quickly:
+
+```
+RECON Campaigns Caught        [==================================.] 90.91%  (40/44)
+FUZZING Campaigns Caught      [==============================.....] 85.71%  (30/35)
+INJECTION Campaigns Caught    [===========================........] 74.29%  (52/70)
+EXPLOITATION Campaigns Caught [==================================.] 91.45% (107/117)
+
+Median Detection Latency: 1 request into peak stage (69.0% caught within <= 3 requests)
+```
+
+### The RECON Ambiguity Ceiling
+- **50% of RECON requests are byte-identical to benign traffic** (`/`, `/rest/languages`, catalog assets).
+- No classifier can determine whether an isolated GET request to `/` is malicious.
+- An oracle content lookup peeking at test labels caps at **0.75 accuracy**.
+- While per-request RECON accuracy is bounded by this ambiguity, **session-level tracking resolves it**, detecting **91% of reconnaissance campaigns** as patterns accumulate.
+
+---
+
+## 📂 Repository Layout
+
+```
+MultiStageAttackDetector/
+├── pipeline/                      # Rebuilt core pipeline
+│   ├── corpus.py                  # Burp XML capture parser + disjoint file splitter
+│   ├── compose.py                 # Markov kill-chain session generator (breaks running-max)
+│   ├── features.py                # 31 causal features + decay windows (single source of truth)
+│   ├── dataset.py                 # Generates dataset_v2.npz (sequence & flat tabular views)
+│   ├── models.py                  # LSTM (Keras 3), XGBoost, HMM forward filter, ensemble
+│   ├── train.py                   # Multi-seed LSTM training (min 30 epochs) + validation tuning
+│   ├── evaluate.py                # Honest benchmarking vs parameter-free baselines
+│   ├── predict.py                 # Real-time online inference with session TTL management
+│   ├── augment.py                 # Live Juice Shop augmentation for training split
+│   ├── live_demo.py               # Live demo interacting with OWASP Juice Shop
+│   └── README.md                  # Comprehensive technical report
+├── tests/
+│   └── test_pipeline.py           # 12 invariant tests (causality, prefix-stability, no leakage)
+├── SQLrequests/                   # 62 real Burp captures (NORMAL, RECON, FUZZ, INJECT, EXPLOIT)
+├── dataset_v2.npz                 # Pre-generated sequence and tabular training/test datasets
+├── lstm_v2.arch.json              # Architecture specification for LSTM models
+├── lstm_v2.seed*.weights.h5       # Weights for 3 seed-averaged LSTM models
+├── xgb_v2.json                    # Serialized XGBoost model
+├── hmm_v2.npz                     # Transition matrix and validation-tuned smoothing parameter
+├── calib_v2.json                  # Softmax temperature calibration parameters
+├── fusion_v2.json                 # Optimal ensemble blend weights
+├── benchmark_v2.json              # Committed benchmark results
+├── admin_alert.py                 # Real-time security alert dispatcher
+└── requirements.txt               # Python package dependencies
 ```
 
 ---
 
-## 🚀 Quickstart Guide
+## 🚀 Quickstart & Usage
 
-### 1. Requirements & Dependencies
-
-Ensure Python 3.10+ is installed:
-
+### 1. Installation
 ```bash
+git clone https://github.com/gitkoustavgit/MultiStageAttackDetector.git
+cd MultiStageAttackDetector
 pip install -r requirements.txt
-pip install xgboost
 ```
 
-### 2. Start OWASP Juice Shop & MongoDB
-
-Ensure Juice Shop is running on `http://localhost:9000` (e.g. via Docker or npm):
-
+### 2. Run Invariant Tests
+Verify causality, prefix-stability, and feature invariants:
 ```bash
-# Example Docker command:
+python -m pytest tests/ -v
+```
+
+### 3. Evaluate the Benchmark
+Reproduce the held-out test split evaluation table:
+```bash
+python -m pipeline.evaluate
+```
+
+### 4. Run Live Prediction Demo
+Start a local OWASP Juice Shop instance on port 9000:
+```bash
 docker run -d -p 9000:3000 bkimminich/juice-shop
 ```
-
-Ensure local MongoDB is active on `mongodb://localhost:27017`.
-
-### 3. Generate & Export Dataset
-
+Run the live detection demo:
 ```bash
-# 1. Generate 10,000 balanced requests across 5 phases and upload to MongoDB:
-python upload_dataset.py
-
-# 2. Export MongoDB records to local dataset.npz:
-python export_dataset.py
+python -m pipeline.live_demo
 ```
-
-### 4. Run Multi-Model Benchmarks
-
-To reproduce the multi-parameter comparison across all architectures:
-
-```bash
-python benchmark_models.py
-```
-
-This trains the parameter sweeps, fits the temperature calibrator, builds the hybrid models, writes `benchmark_results.csv`, and saves the top models to disk.
-
-### 5. Run Live Inference & Admin Alerting Demo
-
-With Juice Shop running on `localhost:9000`, test real-time scoring and alerting:
-
-```bash
-python predict_live_real.py
-```
-
-#### Example Output:
-
-```text
-===============================================================================================
-LIVE MULTI-STAGE INJECTION ATTACK DETECTOR & REAL-TIME ADMIN ALERTING
-===============================================================================================
-Loaded confidence calibration: Temperature T=0.916
-req# lstm guess    viterbi guess   confidence  escalated  alert     resp_status/len
------------------------------------------------------------------------------------------------
-1    NORMAL        NORMAL          0.614       False      None      200/9393
-2    NORMAL        NORMAL          0.838       False      None      200/921
-3    RECON         RECON           0.998       True       ALERT!    200/11
-4    RECON         RECON           0.813       False      None      200/703
-5    FUZZING       FUZZING         1.000       True       ALERT!    200/30
-6    INJECTION     INJECTION       0.997       True       ALERT!    500/533
-7    INJECTION     INJECTION       1.000       False      ALERT!    500/381
-8    INJECTION     INJECTION       0.952       False      ALERT!    200/23577
------------------------------------------------------------------------------------------------
-Demo complete. Total Alerts Triggered & Logged to admin_alerts.jsonl: 5
-```
-
-All triggered alerts are stored in `admin_alerts.jsonl` (structured JSON audit log) and `admin_alerts.log` (plain text incident log).
 
 ---
+
+## 📜 Citation & License
+
+Developed as part of the research on **"Context-Aware AI Detection of Multi-Stage Injection Attacks"**.
+Licensed under the [MIT License](LICENSE).

@@ -1,0 +1,23 @@
+{
+  "alpha": 0.5,
+  "n_seeds": 3,
+  "weight_power_lstm": 0.5,
+  "lstm_cfg": {
+    "units": 96,
+    "layers_n": 1,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "recurrent_dropout": 0.15,
+    "l2": 0.0001,
+    "wpow": 0.5
+  },
+  "xgb_cfg": {
+    "n_estimators": 500,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "min_child_weight": 1,
+    "wpow": 0.5
+  }
+}

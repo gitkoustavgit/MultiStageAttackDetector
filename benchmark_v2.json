@@ -1,0 +1,83 @@
+[
+  {
+    "model": "Zero-param: current-request lookup",
+    "causal": true,
+    "acc": 0.2860231963829369,
+    "macro_f1": 0.0917356029410589,
+    "edge_acc": 0.29506641366223907,
+    "benign_fp": 0.000689655172413793,
+    "latency_ms": null
+  },
+  {
+    "model": "Zero-param: running-max lookup",
+    "causal": true,
+    "acc": 0.2994888932573226,
+    "macro_f1": 0.13459615514287235,
+    "edge_acc": 0.30075901328273247,
+    "benign_fp": 0.02,
+    "latency_ms": null
+  },
+  {
+    "model": "Majority class (NORMAL)",
+    "causal": true,
+    "acc": 0.28504029880086496,
+    "macro_f1": 0.08872571515985926,
+    "edge_acc": 0.286527514231499,
+    "benign_fp": 0.0,
+    "latency_ms": null
+  },
+  {
+    "model": "LSTM (seed-avg x3)",
+    "causal": true,
+    "acc": 0.5355808924710045,
+    "macro_f1": 0.5011438017533454,
+    "edge_acc": 0.36907020872865276,
+    "benign_fp": 0.14689655172413793,
+    "latency_ms": 0.15019627481544104
+  },
+  {
+    "model": "XGBoost (per-step)",
+    "causal": true,
+    "acc": 0.5248673088264203,
+    "macro_f1": 0.47258991763101427,
+    "edge_acc": 0.48956356736242884,
+    "benign_fp": 0.23896551724137932,
+    "latency_ms": 0.02156460585124997
+  },
+  {
+    "model": "Ensemble (alpha=0.5) [DEPLOYED current stage]",
+    "causal": true,
+    "acc": 0.5430509140947514,
+    "macro_f1": 0.5059522312981628,
+    "edge_acc": 0.4155597722960152,
+    "benign_fp": 0.14,
+    "latency_ms": null
+  },
+  {
+    "model": "Ensemble + HMM forward-filter (low-FP alt)",
+    "causal": true,
+    "acc": 0.5283074503636721,
+    "macro_f1": 0.4899827979308714,
+    "edge_acc": 0.29506641366223907,
+    "benign_fp": 0.1096551724137931,
+    "latency_ms": null
+  },
+  {
+    "model": "Ensemble + HMM online-viterbi",
+    "causal": true,
+    "acc": 0.5033418517790447,
+    "macro_f1": 0.4594744081763185,
+    "edge_acc": 0.2903225806451613,
+    "benign_fp": 0.09862068965517241,
+    "latency_ms": null
+  },
+  {
+    "model": "Ensemble + HMM offline-viterbi",
+    "causal": false,
+    "acc": 0.5720463927658738,
+    "macro_f1": 0.5364055611393719,
+    "edge_acc": 0.4497153700189753,
+    "benign_fp": 0.07862068965517241,
+    "latency_ms": null
+  }
+]
