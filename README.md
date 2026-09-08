@@ -205,8 +205,3 @@ python -m pipeline.live_demo
 ```
 
 ---
-
-## 📜 Citation & License
-
-Developed as part of the research on **"Context-Aware AI Detection of Multi-Stage Injection Attacks"**.
-Licensed under the [MIT License](LICENSE).
