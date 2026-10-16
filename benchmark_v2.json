@@ -33,7 +33,7 @@
     "macro_f1": 0.5011438017533454,
     "edge_acc": 0.36907020872865276,
     "benign_fp": 0.14689655172413793,
-    "latency_ms": 0.15019627481544104
+    "latency_ms": 0.2462935521918795
   },
   {
     "model": "XGBoost (per-step)",
@@ -42,7 +42,7 @@
     "macro_f1": 0.47258991763101427,
     "edge_acc": 0.48956356736242884,
     "benign_fp": 0.23896551724137932,
-    "latency_ms": 0.02156460585124997
+    "latency_ms": 0.03668956162807404
   },
   {
     "model": "Ensemble (alpha=0.5) [DEPLOYED current stage]",
