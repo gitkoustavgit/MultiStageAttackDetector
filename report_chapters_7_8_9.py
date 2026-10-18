@@ -36,8 +36,11 @@ def add_p(container, text="", size_pt=12, bold=False, italic=False, align=WD_ALI
         set_run_font(r, size_pt=size_pt, bold=bold, italic=italic)
     return p
 
-def add_h1(container, text):
-    return add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+def add_h1(container, text, page_break_before=False):
+    p = add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+    if page_break_before:
+        p.paragraph_format.page_break_before = True
+    return p
 
 def add_h2(container, text):
     return add_p(container, text, size_pt=13, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=12, space_after=4)
@@ -48,7 +51,7 @@ def add_h3(container, text):
 def append_chapters_7_8_9(doc):
     print("Appending Chapter 7: Discussion...")
     
-    add_h1(doc, "7. DISCUSSION")
+    add_h1(doc, "7. DISCUSSION", page_break_before=True)
     
     # 7.1
     add_h2(doc, "7.1 The Value of Context in Web Application Security")
@@ -137,10 +140,10 @@ def append_chapters_7_8_9(doc):
     add_p(doc, 
         "In this study, strict partition disjunction is enforced across the 2,100 sessions (72,269 request instances), composed from real Burp Suite "
         "captures on OWASP Juice Shop and partitioned at the source capture file level into 1,500 training sessions, 300 validation sessions, and 300 test sessions. "
-        "Because source capture files and request blocks were split-disjoint prior to session composition, no raw transaction sequence, dynamic session cookie, "
-        "or specific attack payload variant in the held-out test corpus crossed into feature normalization, classifier training, or HMM transition estimation. "
-        "While common application endpoints (such as /rest/user/login) naturally exist across partitions as standard application routes, session dynamics "
-        "and attack footprints remain strictly isolated. The 54.31% accuracy, 0.5060 Macro-F1, and 91.45% exploitation catch rate reported in Chapter 6 represent "
+        "Source capture files and request blocks are strictly split-disjoint prior to session composition, preventing multi-request session sequences and dynamic session context "
+        "from crossing into feature normalization, classifier training, or HMM transition estimation. While common application endpoints (such as /rest/user/login) "
+        "and potentially repeated payload patterns may legitimately occur across partitions as in standard web traffic, session dynamics and sequence trajectories "
+        "remain split-disjoint. The 54.31% accuracy, 0.5060 Macro-F1, and 91.45% exploitation catch rate reported in Chapter 6 represent "
         "unbiased, leak-free empirical performance."
     )
     
@@ -168,7 +171,7 @@ def append_chapters_7_8_9(doc):
     
     # CHAPTER 8
     print("Appending Chapter 8: Conclusion and Future Work...")
-    add_h1(doc, "8. CONCLUSION AND FUTURE WORK")
+    add_h1(doc, "8. CONCLUSION AND FUTURE WORK", page_break_before=True)
     
     add_h2(doc, "8.1 Summary of Contributions")
     add_p(doc, 
@@ -223,7 +226,7 @@ def append_chapters_7_8_9(doc):
     
     # CHAPTER 9: REFERENCES
     print("Appending Chapter 9: References...")
-    add_h1(doc, "9. REFERENCES")
+    add_h1(doc, "9. REFERENCES", page_break_before=True)
     
     refs = [
         "[1] T. Wisanwanichthan and M. Thammawichai, \"A Double-Layered Hybrid Approach for Network Intrusion Detection System Using Combined Naive Bayes and SVM,\" IEEE Access, vol. 9, pp. 138432-138450, 2021, doi: 10.1109/ACCESS.2021.3118449.",

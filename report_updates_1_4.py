@@ -506,6 +506,10 @@ def apply_updates_ch1_to_4(doc):
     # ----------------------------------------------------
     # CHAPTER 4: DESIGN APPROACH AND DETAILS
     # ----------------------------------------------------
+    # Ensure Chapter 4 starts cleanly on a new page (Page 17)
+    p145 = doc.paragraphs[145]
+    p145.paragraph_format.page_break_before = True
+    
     # P150 in backup: 4.1 System Architecture Text
     p150 = doc.paragraphs[150]
     p150.text = ""

@@ -43,8 +43,11 @@ def add_p(container, text="", size_pt=12, bold=False, italic=False, align=WD_ALI
         set_run_font(r, size_pt=size_pt, bold=bold, italic=italic)
     return p
 
-def add_h1(container, text):
-    return add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+def add_h1(container, text, page_break_before=False):
+    p = add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+    if page_break_before:
+        p.paragraph_format.page_break_before = True
+    return p
 
 def add_h2(container, text):
     return add_p(container, text, size_pt=13, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=12, space_after=4)
@@ -150,7 +153,7 @@ def add_figure_or_callout(container, fig_num, title, img_filename, description, 
 def append_chapter_5(doc):
     print("Appending Chapter 5: Implementation and Experimental Methodology...")
     
-    add_h1(doc, "5. IMPLEMENTATION AND EXPERIMENTAL METHODOLOGY")
+    add_h1(doc, "5. IMPLEMENTATION AND EXPERIMENTAL METHODOLOGY", page_break_before=True)
     
     # 5.1
     add_h2(doc, "5.1 Implementation Environment and Specifications")
@@ -288,9 +291,10 @@ def append_chapter_5(doc):
         "the corpus enforces strict whole-file-level partitioning before session composition (pipeline/corpus.py: assign_file_splits). Source capture "
         "files and raw request sequences are partitioned disjointly across splits (60% training, 20% validation, 20% test). Multi-stage sessions are "
         "composed by sampling request blocks exclusively from capture files assigned to that session's designated split; no source block or request sequence "
-        "ever crosses a split boundary. While common benign and application-specific endpoint paths (e.g., /rest/user/login, /rest/products/search) "
-        "legitimately appear in both training and testing sessions as in any real-world web application, the specific request payloads, cookie sequences, "
-        "and temporal trajectories are strictly split-disjoint. The verified corpus comprises exactly 2,100 complete sessions totaling 72,269 HTTP request "
+        "ever crosses a split boundary. While common application endpoints (e.g., /rest/user/login, /rest/products/search) and potentially repeated payload patterns "
+        "may legitimately occur across partitions as in standard operational web traffic, source capture files and raw request blocks are "
+        "strictly split-disjoint, ensuring that multi-request session sequences and temporal trajectories remain partitioned without split overlap. "
+        "The verified corpus comprises exactly 2,100 complete sessions totaling 72,269 HTTP request "
         "instances. Exactly 1,500 sessions (50,975 requests) are assigned to training, 300 sessions (11,120 requests) to validation, and 300 sessions "
         "(10,174 requests) to the held-out test split. No session or request sequence in the test split was ever observed during feature scaling, model "
         "training, or hyperparameter selection."

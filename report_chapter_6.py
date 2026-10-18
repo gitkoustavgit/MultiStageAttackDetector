@@ -41,8 +41,11 @@ def add_p(container, text="", size_pt=12, bold=False, italic=False, align=WD_ALI
         set_run_font(r, size_pt=size_pt, bold=bold, italic=italic)
     return p
 
-def add_h1(container, text):
-    return add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+def add_h1(container, text, page_break_before=False):
+    p = add_p(container, text, size_pt=14, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=16, space_after=6)
+    if page_break_before:
+        p.paragraph_format.page_break_before = True
+    return p
 
 def add_h2(container, text):
     return add_p(container, text, size_pt=13, bold=True, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=12, space_after=4)
@@ -148,7 +151,7 @@ def add_figure_or_callout(container, fig_num, title, img_filename, description, 
 def append_chapter_6(doc):
     print("Appending Chapter 6: Results and Evaluation...")
     
-    add_h1(doc, "6. RESULTS AND EVALUATION")
+    add_h1(doc, "6. RESULTS AND EVALUATION", page_break_before=True)
     
     # 6.1
     add_h2(doc, "6.1 Benchmark Comparison on Held-Out Test Set")
