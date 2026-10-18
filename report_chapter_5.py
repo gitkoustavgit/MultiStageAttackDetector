@@ -441,7 +441,7 @@ def append_chapter_5(doc):
         "2. Gradient Boosted Decision Trees (XGBoost): A per-request non-linear tree ensemble trained using the XGBoost framework. "
         "The model operates directly on the 31-dimensional feature vector x_t without recurrence. Hyperparameters were tuned on the validation set: "
         "max_depth = 6, n_estimators = 100, learning_rate = 0.10, subsample = 0.8, colsample_bytree = 0.8, and multi:softprob objective function. "
-        "XGBoost serves as an exceptionally strong single-request baseline."
+        "XGBoost serves as a robust single-request baseline."
     )
     add_p(doc, 
         "3. Long Short-Term Memory (LSTM) Recurrent Neural Network: A sequential deep neural network designed to capture temporal "
@@ -468,7 +468,7 @@ def append_chapter_5(doc):
         "additive Laplace smoothing (smoothing parameter lambda_s = 0.20 selected via grid search on the validation set)."
     )
     add_p(doc, 
-        "Observation Emissions and Forward Filtering: Rather than emitting discrete symbols, our continuous observation vector o_t consists of "
+        "Observation Emissions and Forward Filtering: Rather than emitting discrete symbols, the continuous observation vector o_t consists of "
         "the calibrated posterior probabilities emitted by the neural and tree classifiers. The forward algorithm computes the joint probability "
         "alpha_t(j) = P(o_1, o_2, ..., o_t, q_t = s_j | lambda) recursively:"
     )

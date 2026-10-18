@@ -213,7 +213,7 @@ def append_chapter_6(doc):
     add_p(doc, 
         "Finally, the non-causal Offline Viterbi decoder achieves 57.20% accuracy and 0.5364 Macro-F1. However, as established in Section 5.4, "
         "Offline Viterbi uses backward dynamic programming over future requests (t+1 to T) and cannot be deployed in live proxies. "
-        "The 2.89 percentage point gap between our online causal ensemble (54.31%) and the theoretical offline ceiling (57.20%) represents "
+        "The 2.89 percentage point gap between the online causal ensemble (54.31%) and the theoretical offline ceiling (57.20%) represents "
         "the exact, modest price of strict operational causality."
     )
     

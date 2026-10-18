@@ -32,9 +32,9 @@ def apply_updates_ch1_to_4(doc):
     r28 = p28.add_run(
         "Web application attacks often manifest as a sequence of orchestrated activities instead of isolated, "
         "single-use malicious requests. This operational reality necessitates intrusion detection systems to shift "
-        "away from stateless, request-centric inspection toward causal, session-level sequential analysis. In this "
-        "work, we present a context-aware artificial intelligence framework designed to detect, track, and forecast "
-        "multi-stage web injection attacks across sequential HTTP transactions. We define a comprehensive five-stage "
+        "away from stateless, request-centric inspection toward causal, session-level sequential analysis. This "
+        "work presents a context-aware artificial intelligence framework designed to detect, track, and forecast "
+        "multi-stage web injection attacks across sequential HTTP transactions. The framework defines a comprehensive five-stage "
         "attack taxonomy consisting of Normal, Reconnaissance, Fuzzing, Injection, and Exploitation stages, enabling "
         "defenders to track individual HTTP transactions and establish their exact placement within an active attack campaign."
     )
@@ -49,7 +49,7 @@ def apply_updates_ch1_to_4(doc):
         "and approximately 1,200 live-response requests. To evaluate non-trivial sequential dynamics without synthetic shortcuts, "
         "these real HTTP request blocks were composed into an extensive multi-stage corpus of 2,100 sessions containing 72,269 total "
         "request instances, partitioned using a split-disjoint file protocol to prevent source block overlap across splits. "
-        "To enforce strict operational causality without future lookahead bias, we engineer a 31-dimensional causal feature extraction "
+        "To enforce strict operational causality without future lookahead bias, the system employs a 31-dimensional causal feature extraction "
         "framework incorporating request morphology, payload regex signatures, endpoint sensitivity classes, response status metrics, "
         "and decaying session-context indicators. Current-stage detection is executed via a responsive causal ensemble combining "
         "a per-request gradient boosted decision tree (XGBoost) and a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network, "
@@ -251,11 +251,11 @@ def apply_updates_ch1_to_4(doc):
         "injection defense, Li et al. [25] proposed ModSec-AdvLearn to counter adversarial SQL injections through robust feature spaces; Lakhina et al. [26] "
         "analyzed IP traffic anomaly detection across variable granularities; Sarhan et al. [27] applied Explainable AI (XAI) to interpret feature "
         "importance in network classifiers; and Bharadwaj and Khekare [29] analyzed detection gaps and security risks in SQL injections within "
-        "large-language-model-generated database queries. Furthermore, our five-stage operational taxonomy is conceptually informed by established industry frameworks, "
+        "large-language-model-generated database queries. Furthermore, the proposed five-stage operational taxonomy is conceptually informed by established industry frameworks, "
         "specifically the Lockheed Martin Cyber Kill Chain (Hutchins et al., 2011) and the MITRE ATT&CK Matrix for Enterprise (Strom et al., 2018), translating high-level "
         "tactics—including Active Scanning (T1595), Exploit Public-Facing Application (T1190), and Credential Access (T1212)—into observable application-layer session states. "
         "Whereas foundational alert correlation research (e.g., Valeur et al., IEEE TDSC 2004; Ning et al., ACM TISSEC 2004) focused on complex post-hoc graph reconstruction "
-        "of disconnected network alarms, our approach provides lightweight, online Bayesian HMM forward filtering that executes in line-rate without alert flooding."
+        "of disconnected network alarms, the proposed approach provides lightweight, online Bayesian HMM forward filtering that executes in line-rate without alert flooding."
     )
     set_run_font(r69_extra, size_pt=12)
     
