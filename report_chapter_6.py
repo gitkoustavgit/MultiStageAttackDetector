@@ -72,6 +72,15 @@ def style_table(table, col_widths=None):
             for idx, width in enumerate(col_widths):
                 if idx < len(row.cells):
                     row.cells[idx].width = Inches(width)
+                    
+    # Repeat header row on continuation pages
+    header_tr = table.rows[0]._tr.get_or_add_trPr()
+    header_tr.append(parse_xml(f'<w:tblHeader {nsdecls("w")}/>'))
+    
+    # Prevent rows from breaking across page breaks
+    for row in table.rows:
+        trPr = row._tr.get_or_add_trPr()
+        trPr.append(parse_xml(f'<w:cantSplit {nsdecls("w")}/>'))
 
 def set_cell_bg(cell, hex_color="F2F2F2"):
     tcPr = cell._element.get_or_add_tcPr()
@@ -186,8 +195,10 @@ def append_chapter_6(doc):
     add_p(doc, 
         "The experimental results establish several pivotal findings. First, the deployed Causal Ensemble (alpha = 0.50) achieves "
         "an overall accuracy of 54.31% and a Macro-F1 score of 0.5060 on the held-out test corpus. Compared to the best parameter-free "
-        "heuristic (Running-Max Lookup at 29.95%), the deployed ensemble achieves a statistically decisive margin of +24.36 percentage "
-        "points (+0.2436). This overwhelming performance margin soundly refutes any hypothesis that the model relies on static keyword heuristics."
+        "heuristic (Running-Max Lookup at 29.95%), the deployed ensemble achieves a substantial empirical margin of +24.36 percentage "
+        "points (+0.2436), demonstrating genuine learning of multi-stage sequential patterns over static lookup heuristics. "
+        "At the same time, this accuracy reflects the realistic difficulty of request-level discrimination in web traffic: while early reconnaissance "
+        "and late exploitation are detected reliably, intermediate probing stages exhibit significant syntactic overlap, as detailed in Section 6.2."
     )
     add_p(doc, 
         "Second, comparing standalone XGBoost against the deployed ensemble reveals the indispensable value of temporal sequence integration. "
@@ -276,8 +287,8 @@ def append_chapter_6(doc):
         "Conversely, Table 7 reveals significant cross-stage boundary leakage between Stage 2 (Fuzzing) and Stage 3 (Injection). Out of 1,699 true "
         "injection requests, 794 (46.7%) were classified as Fuzzing, while 496 of 1,758 true fuzzing requests (28.2%) were classified as Injection. "
         "This boundary confusion is technically well-founded: input fuzzing probes frequently inject single quotes, backslashes, and comment symbols "
-        "to test parser boundaries, which closely mimic embryonic SQL injection payloads. We explore the architectural implications of this "
-        "inter-stage overlap in Section 7.2."
+        "to test parser boundaries, which closely mimic embryonic SQL injection payloads. The architectural implications of this "
+        "inter-stage overlap are explored in Section 7.2."
     )
     
     # Figure 9
@@ -302,7 +313,7 @@ def append_chapter_6(doc):
         "As documented in Table 5, the deployed Causal Ensemble achieves an Edge Accuracy of 0.4156 (41.56%), compared to 0.2865 for the majority "
         "baseline and 0.3008 for running-max lookup. The integration of the LSTM hidden state and HMM transition matrix penalizes wild non-physical "
         "stage hops (such as jumping directly from Stage 0 to Stage 4 and immediately reverting to Stage 0 without intermediate probing), "
-        "guaranteeing coherent, monotonic session trajectory tracking."
+        "markedly improving sequential consistency while naturally accommodating tactical retreats, intermittent pauses, and skipped phases observed in real-world adversarial behavior."
     )
     
     # 6.4
@@ -359,11 +370,11 @@ def append_chapter_6(doc):
                 set_cell_bg(tbl8.rows[r_idx+1].cells[c_idx], "F9F9F9")
                 
     add_p(doc, 
-        "As shown in Table 8, the deployed model achieves outstanding operational catch rates: 90.91% of reconnaissance campaigns (40 of 44 sessions), "
+        "As shown in Table 8, the deployed model achieves strong session-level operational catch rates: 90.91% of reconnaissance campaigns (40 of 44 sessions), "
         "85.71% of fuzzing campaigns (30 of 35 sessions), 74.29% of injection campaigns (52 of 70 sessions), and 91.45% of critical exploitation "
         "campaigns (107 of 117 sessions). Across all 266 attacking sessions in the test corpus, the detector successfully raised alarms on 229 sessions, "
         "yielding an aggregate session-level campaign catch rate of 86.09%. This demonstrates that even when individual intermediate requests are "
-        "ambiguous, the multi-request sequential footprint reliably exposes the overarching intrusion."
+        "ambiguous (such as early boundary fuzzing probes or injection verification queries), the multi-request sequential footprint reliably exposes the overarching intrusion."
     )
     
     # 6.6
@@ -374,7 +385,7 @@ def append_chapter_6(doc):
         "computed for all 229 caught attack campaigns, as plotted in Fig. 10."
     )
     add_p(doc, 
-        "The empirical detection latency distribution exhibits an exceptional median latency of exactly 1 request into the active attack stage. "
+        "The empirical detection latency distribution exhibits a median detection latency of exactly 1 request into the active attack stage. "
         "The mean detection latency is 3.3 requests, and exactly 69.00% of all attack campaigns are successfully detected within <= 3 requests of onset. "
         "Crucially, evaluating the operational lead-time metric—the interval between the first attack alert and the final exploitation request—reveals "
         "that security operations centers receive a median defensive lead time of 7 requests prior to database compromise. This rapid response provides "
@@ -395,35 +406,45 @@ def append_chapter_6(doc):
     # 6.7
     add_h2(doc, "6.7 Next-Stage Attack Intent Forecasting")
     add_p(doc, 
-        "Traditional intrusion detection systems are purely reactive: they report what an attacker has already done. In contrast, our framework "
-        "implements proactive intent forecasting. Evaluating next-request prediction on raw sequential data is trivial and misleading because "
-        "consecutive requests within the same stage exhibit strong persistence (~0.49), causing naive 'predict same stage' heuristics to dominate. "
-        "The clinically meaningful question is: when an attacker transitions to a new phase, which distinct stage will they target next?"
+        "Traditional intrusion detection systems are purely reactive: they report what an attacker has already done. In contrast, the proposed "
+        "framework implements proactive intent forecasting. In sequential web attack analysis, next-stage prediction must be carefully formulated to avoid "
+        "trivial baseline dominance. Two distinct forecasting tasks arise in this setting:"
     )
     add_p(doc, 
-        "To rigorously evaluate this capability, next-distinct-stage forecasting was evaluated across 754 ground-truth phase transitions in the held-out "
-        "test set using the normalized transition matrix with self-loops removed, B = norm(A - diag(A)). The Bayesian belief vector b_t was projected "
-        "one step ahead: v_next = b_t * B. Performance was benchmarked against two standard baselines: (1) Naive advance ('always guess current stage + 1'), "
-        "and (2) Global most-common next stage (the most frequent phase transition in the training set). The results are summarized in Table 9."
+        "1. Task A (Continuous Next-Request Prediction): Predicting y_{t+1} from observations 1..t across every transaction in the continuous request stream. "
+        "Because consecutive requests within an attack block naturally remain in the same operational stage with high probability, consecutive requests share "
+        "the same label in 49.34% of instances across the test corpus. Therefore, a naive 'same-stage persistence' heuristic (hat{y}_{t+1} = y_t) achieves "
+        "49.34% accuracy simply by capitalizing on session block continuation. However, forecasting that an adversary will merely continue their current activity "
+        "provides zero actionable forewarning of tactical escalation or stage transitions."
+    )
+    add_p(doc, 
+        "2. Task B (Next-Distinct-Stage Intent Forecasting): The critical operational challenge for proactive defense is determining which distinct stage an adversary "
+        "will target when they transition (y_{t+1} != y_t). To rigorously evaluate this capability, next-distinct-stage intent forecasting was benchmarked across "
+        "all 754 ground-truth phase transitions in the held-out test set. At these transition boundaries, the same-stage persistence baseline is definitionally "
+        "0.00% because the stage has changed by definition. Using the normalized transition matrix with self-loops removed, B = norm(A - diag(A)), the model "
+        "projects the current Bayesian belief vector b_t one phase ahead: v_next = b_t * B. Performance was benchmarked against relevant baseline heuristics: "
+        "(1) Uniform Random Guess across the 4 candidate alternative stages (25.00% Top-1, 50.00% Top-2), (2) Global most-common next distinct stage from the training "
+        "corpus (27.06% Top-1), and (3) Naive linear advance ('always guess min(y_t + 1, 4)', 27.85% Top-1). The comparative empirical results are detailed in Table 9."
     )
     
     # Table 9: Next-Stage Intent Forecasting
     add_caption(doc, "Table 9: Next-Distinct-Stage Intent Forecasting Accuracy at 754 Real Phase Transitions")
-    tbl9 = doc.add_table(rows=4, cols=3)
+    tbl9 = doc.add_table(rows=5, cols=3)
     style_table(tbl9, col_widths=[3.5, 1.5, 1.5])
     
-    headers9 = ["Forecasting Architecture / Baseline", "Top-1 Accuracy", "Top-2 Accuracy"]
+    headers9 = ["Forecasting Architecture / Baseline (Task B)", "Top-1 Accuracy", "Top-2 Accuracy"]
     for i, h in enumerate(headers9):
         format_cell(tbl9.rows[0].cells[i], h, bold=True, align=WD_ALIGN_PARAGRAPH.CENTER)
         set_cell_bg(tbl9.rows[0].cells[i], "E6E6E6")
         
     forecast_data = [
-        ["Baseline: Global Most-Common Next Stage", "27.06%", "-"],
-        ["Baseline: Naive 'Always Advance One Rung'", "27.85%", "-"],
+        ["Baseline 1: Uniform Random Guess (1 in 4 distinct)", "25.00%", "50.00%"],
+        ["Baseline 2: Global Most-Common Next Distinct Stage", "27.06%", "-"],
+        ["Baseline 3: Naive Linear Advance (min(s+1, 4))", "27.85%", "-"],
         ["Proposed Model: Bayesian Belief @ Transition Matrix", "33.69%", "55.17%"],
     ]
     for r_idx, row_vals in enumerate(forecast_data):
-        is_model = (r_idx == 2)
+        is_model = (r_idx == 3)
         for c_idx, val in enumerate(row_vals):
             align = WD_ALIGN_PARAGRAPH.LEFT if c_idx == 0 else WD_ALIGN_PARAGRAPH.CENTER
             format_cell(tbl9.rows[r_idx+1].cells[c_idx], val, bold=is_model, align=align)
@@ -433,27 +454,35 @@ def append_chapter_6(doc):
                 set_cell_bg(tbl9.rows[r_idx+1].cells[c_idx], "F9F9F9")
                 
     add_p(doc, 
-        "As documented in Table 9, our Bayesian intent forecasting engine achieves 33.69% Top-1 accuracy and 55.17% Top-2 accuracy, outperforming "
-        "both the global frequency baseline (27.06%) and the naive linear advance baseline (27.85%). More than half the time, the attacker's "
-        "subsequent objective is accurately captured within the top two forecasted candidates. This predictive intelligence enables automated security "
-        "orchestration platforms to pre-emptively tighten specific controls (e.g., dynamically activating SQL query parameterized guards or tightening "
-        "WAF regex filters) before exploit packets arrive."
+        "*Note: Table 9 evaluates Task B (forecasting next distinct stage when y_{t+1} != y_t across 754 phase transitions). In contrast, on the unconstrained "
+        "continuous stream (Task A), consecutive requests share identical labels in 49.34% of instances; at true phase transitions, however, same-stage persistence "
+        "is definitionally 0.00% and does not apply."
+    )
+    add_p(doc, 
+        "As documented in Table 9, the Bayesian intent forecasting engine achieves 33.69% Top-1 accuracy and 55.17% Top-2 accuracy at real phase "
+        "transitions, outperforming random chance (25.00%), the global frequency baseline (27.06%), and the naive linear advance baseline (27.85%). "
+        "In over half of all phase transitions (55.17%), the adversary's subsequent objective is accurately captured within the top two forecasted candidates. "
+        "This predictive intelligence provides security operations centers with tangible early-warning lead time to pre-emptively tighten defensive controls—such as "
+        "dynamically activating parameterized query verification or tightening WAF inspection rules—before exploitation payloads arrive."
     )
     
     # 6.8
     add_h2(doc, "6.8 Real-Time Streaming and Inference Latency")
     add_p(doc, 
-        "To validate deployment viability in live enterprise proxy environments, end-to-end processing latency was profiled across the full "
-        "inference pipeline on 10,174 test requests. The per-request execution latency decomposes into four discrete stages: "
+        "To validate deployment viability in live enterprise proxy environments, computational execution latency was profiled across the full "
+        "inference pipeline on 10,174 test requests. The per-request execution latency decomposes into four discrete processing stages: "
         "(1) 31-dimensional causal feature extraction: 0.03 ms; "
         "(2) XGBoost decision tree inference: 0.03 ms; "
         "(3) 3-seed LSTM forward pass: 0.14 ms; and "
         "(4) HMM forward belief state update and intent forecasting: 0.01 ms."
     )
     add_p(doc, 
-        "Total end-to-end inference latency averages 0.18 ms per request (consistently under 0.20 ms per request) on standard CPU hardware without GPU acceleration. This enables a single "
-        "CPU core to sustain an inspection throughput exceeding 5,000 HTTP requests per second, demonstrating that the context-aware pipeline "
-        "imposes negligible latency overhead on protected web infrastructure. A live console execution run is illustrated in Fig. 11."
+        "Total algorithmic processing latency averages 0.18 ms per request (consistently under 0.20 ms per request) on standard CPU hardware without GPU acceleration. "
+        "This latency measurement strictly reflects the computational cost of feature extraction, model inference, and belief state updating; it deliberately "
+        "excludes network transmission delay and reverse-proxy socket I/O, which vary by network environment. Based on this computational profile, "
+        "a single CPU core possesses a theoretical algorithmic processing capacity exceeding 5,000 HTTP requests per second, demonstrating that the context-aware "
+        "detection pipeline imposes negligible algorithmic overhead when integrated into high-throughput web proxy infrastructure. A live console execution run "
+        "is illustrated in Fig. 11."
     )
     
     # Figure 11

@@ -100,8 +100,8 @@ def update_table_of_contents(doc):
         ("", "5.8 Evaluation Metrics", "25", False),
         ("", "5.9 Experimental Setup and Reproducibility", "26", False),
         ("6.", "RESULTS AND EVALUATION", "27", True),
-        ("", "6.1 Benchmark Comparison on Held-Out Test Set", "25", False),
-        ("", "6.2 Per-Class Performance and Confusion Matrix Analysis", "27", False),
+        ("", "6.1 Benchmark Comparison on Held-Out Test Set", "27", False),
+        ("", "6.2 Per-Class Performance and Confusion Matrix Analysis", "28", False),
         ("", "6.3 Transition Edge Accuracy and Sequential Consistency", "29", False),
         ("", "6.4 False-Positive Rate Reduction via Temporal Context", "30", False),
         ("", "6.5 Session-Level Attack Campaign Detection", "31", False),
@@ -218,6 +218,11 @@ def main():
     doc.save(DOC_PATH)
     print("[SUCCESS] Document successfully generated and saved!")
     
+    local_repo_doc = os.path.join(os.path.dirname(os.path.abspath(__file__)), "BCSE497J Project I Report.docx")
+    if os.path.abspath(DOC_PATH) != os.path.abspath(local_repo_doc):
+        shutil.copyfile(DOC_PATH, local_repo_doc)
+        print(f"Copied updated document to local repo: {local_repo_doc}")
+        
     # Step 7: Verify saved document
     doc_check = docx.Document(DOC_PATH)
     print(f"Verification: Document reloaded successfully!")

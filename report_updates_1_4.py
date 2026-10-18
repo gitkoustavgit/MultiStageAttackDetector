@@ -44,15 +44,18 @@ def apply_updates_ch1_to_4(doc):
     p30.text = ""
     p30.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r30 = p30.add_run(
-        "An extensive in-house experimental dataset was generated using an air-gapped, containerized deployment of the "
-        "OWASP Juice Shop vulnerable web application, intercepted via mitmproxy and Burp Suite. Traffic was captured as "
-        "multi-request sessions in XML and JSON formats, preserving precise causal temporal dependencies. To enforce strict "
-        "operational causality without future lookahead bias, we engineer a 31-dimensional causal feature extraction framework "
-        "incorporating request morphology, payload regex signatures, endpoint sensitivity classes, response status metrics, "
-        "and decaying session-context indicators. Detection is orchestrated through a multi-tiered causal ensemble combining "
-        "a per-request gradient boosted decision tree (XGBoost), a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network, "
-        "and a Hidden Markov Model (HMM) forward filter for Bayesian state estimation. Model predictions are fused via ensemble "
-        "blending (alpha = 0.50) and calibrated through temperature scaling (T = 0.916) to provide reliable posterior stage probabilities."
+        "An empirical experimental dataset was constructed using an air-gapped, containerized deployment of the "
+        "OWASP Juice Shop vulnerable web application, intercepted via mitmproxy and Burp Suite across 62 capture files "
+        "and approximately 1,200 live-response requests. To evaluate non-trivial sequential dynamics without synthetic shortcuts, "
+        "these real HTTP request blocks were composed into an extensive multi-stage corpus of 2,100 sessions containing 72,269 total "
+        "request instances, partitioned using a split-disjoint file protocol to prevent source block overlap across splits. "
+        "To enforce strict operational causality without future lookahead bias, we engineer a 31-dimensional causal feature extraction "
+        "framework incorporating request morphology, payload regex signatures, endpoint sensitivity classes, response status metrics, "
+        "and decaying session-context indicators. Current-stage detection is executed via a responsive causal ensemble combining "
+        "a per-request gradient boosted decision tree (XGBoost) and a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network, "
+        "fused via equal-weight probability blending (alpha = 0.50) and calibrated through temperature scaling (T = 0.916). "
+        "A causal Hidden Markov Model (HMM) forward filter tracks Bayesian state belief, enabling proactive next-distinct-stage intent "
+        "forecasting and providing an optional lower-false-positive operating mode."
     )
     set_run_font(r30, size_pt=12)
     
@@ -60,15 +63,15 @@ def apply_updates_ch1_to_4(doc):
     p32.text = ""
     p32.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r32 = p32.add_run(
-        "The proposed system was empirically evaluated on a held-out, leak-free test corpus consisting of 300 sessions and "
+        "The proposed system was empirically evaluated on a held-out, split-disjoint test corpus consisting of 300 sessions and "
         "10,174 HTTP requests. The deployed causal ensemble achieves an overall accuracy of 54.31% and a Macro-F1 score of 0.5060, "
-        "outperforming zero-parameter and running-max baselines by +24.36 percentage points. The transition edge accuracy reaches 0.4156, "
+        "substantially outperforming zero-parameter and running-max baselines by +24.36 percentage points. The transition edge accuracy reaches 0.4156, "
         "demonstrating strong sequential path continuity. Causal context filtering constrains benign false-positive rates to 14.00% "
         "(and 10.97% in pure HMM forward-filtering mode), representing a 41.4% reduction in false alarms compared to standalone XGBoost. "
         "At the session campaign level, the detector catches 90.91% of reconnaissance campaigns and 91.45% of exploitation attacks, "
         "with a median detection latency of just 1 request into the attack stage. Furthermore, Bayesian next-distinct-stage intent forecasting "
         "achieves 33.69% Top-1 and 55.17% Top-2 accuracy at real phase transitions, providing actionable early-warning lead time for "
-        "security operations centers while sustaining an end-to-end inference latency under 0.20 ms per request."
+        "security operations centers while sustaining an end-to-end algorithmic inference latency averaging 0.18 ms per request."
     )
     set_run_font(r32, size_pt=12)
     
@@ -241,18 +244,18 @@ def apply_updates_ch1_to_4(doc):
     # Check if P70 is available or we add text: in backup doc, P69 was followed by P70 (2.2 Research Gap)
     # Let's see: we can append the Web Datasets & Kill Chain text into P69 or right before P70!
     r69_extra = p69.add_run(
-        "\n\nA critical limitation of intrusion detection research lies in benchmark dataset design. Widely cited web datasets—such as CSIC 2010 HTTP Dataset "
-        "and the ECML/PKDD 2007 Discovery Challenge—contain thousands of tagged HTTP requests but entirely lack multi-request session attack progressions, "
+        "\n\nA critical limitation of intrusion detection research lies in benchmark dataset design. Widely cited web datasets—such as the CSIC 2010 HTTP Dataset "
+        "(Álvarez et al., CSIC) and the ECML/PKDD 2007 Discovery Challenge—contain thousands of tagged HTTP requests but entirely lack multi-request session attack progressions, "
         "rendering them unsuitable for sequential modeling. General-purpose intrusion datasets such as CICIDS-2017 (benchmarked by Maseer et al. [21] "
         "and analyzed with Information Gain feature selection by Panigrahi and Borah [24]) evaluate isolated packet captures. In the domain of SQL "
         "injection defense, Li et al. [25] proposed ModSec-AdvLearn to counter adversarial SQL injections through robust feature spaces; Lakhina et al. [26] "
         "analyzed IP traffic anomaly detection across variable granularities; Sarhan et al. [27] applied Explainable AI (XAI) to interpret feature "
         "importance in network classifiers; and Bharadwaj and Khekare [29] analyzed detection gaps and security risks in SQL injections within "
-        "large-language-model-generated database queries. Furthermore, our five-stage taxonomy directly aligns with the Lockheed Martin Cyber Kill Chain "
-        "(Reconnaissance, Weaponization, Delivery, Exploitation) and the MITRE ATT&CK Matrix for Enterprise (Web Application Techniques: Active Scanning T1595, "
-        "Gather Victim Host Info T1592, Exploit Public-Facing Application T1190, Command and Scripting Interpreter T1059, Server Software Component T1505). "
-        "While historical alert correlation research focused on complex post-hoc graph reconstruction, our approach provides lightweight, online "
-        "Bayesian HMM forward filtering that executes in wire-speed without alert flooding."
+        "large-language-model-generated database queries. Furthermore, our five-stage operational taxonomy is conceptually informed by established industry frameworks, "
+        "specifically the Lockheed Martin Cyber Kill Chain (Hutchins et al., 2011) and the MITRE ATT&CK Matrix for Enterprise (Strom et al., 2018), translating high-level "
+        "tactics—including Active Scanning (T1595), Exploit Public-Facing Application (T1190), and Credential Access (T1212)—into observable application-layer session states. "
+        "Whereas foundational alert correlation research (e.g., Valeur et al., IEEE TDSC 2004; Ning et al., ACM TISSEC 2004) focused on complex post-hoc graph reconstruction "
+        "of disconnected network alarms, our approach provides lightweight, online Bayesian HMM forward filtering that executes in line-rate without alert flooding."
     )
     set_run_font(r69_extra, size_pt=12)
     
@@ -284,15 +287,41 @@ def apply_updates_ch1_to_4(doc):
     )
     set_run_font(r72, size_pt=12)
     
-    # P75 in backup: 2.3 Objectives
+    # P75 in backup: 2.3 Objectives - Header & Introductory Statement
     p75 = doc.paragraphs[75]
     p75.text = ""
     p75.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r75 = p75.add_run(
-        "The primary objective of this project is to develop and empirically validate a context-aware AI detection framework for multi-stage web "
-        "injection attacks. The specific technical objectives accomplished in this study are:"
+        "The primary objective of this project was to develop, implement, and empirically validate a context-aware AI detection framework for "
+        "multi-stage web injection attacks across sequential HTTP transactions. The specific technical objectives accomplished in this study are:"
     )
     set_run_font(r75, size_pt=12)
+    
+    # P76 in backup: 2.3 Objectives - Paragraph 1 (Converted to Past/Present Tense)
+    p76 = doc.paragraphs[76]
+    p76.text = ""
+    p76.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r76 = p76.add_run(
+        "1. Formulated an operational five-stage attack taxonomy (Normal, Reconnaissance, Fuzzing, Injection, Exploitation) and engineered a "
+        "31-dimensional causal feature extraction engine that combines per-request syntactic morphology, regex signatures, endpoint sensitivity, "
+        "and decaying session-context indicators, guaranteeing strict zero future lookahead.\n"
+        "2. Curated an authentic, leak-free experimental corpus of 2,100 sessions totaling 72,269 HTTP requests from real Burp Suite captures on an "
+        "air-gapped OWASP Juice Shop testbed, enforcing whole-file-level partitioning prior to block composition to prevent split leakage."
+    )
+    set_run_font(r76, size_pt=12)
+    
+    # P77 in backup: 2.3 Objectives - Paragraph 2 (Converted to Past/Present Tense)
+    p77 = doc.paragraphs[77]
+    p77.text = ""
+    p77.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r77 = p77.add_run(
+        "3. Constructed and deployed a multi-model causal ensemble architecture fusing a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network "
+        "with an XGBoost tree classifier via calibrated temperature scaling (T = 0.916) for responsive current-stage tracking, coupled with a Hidden Markov Model "
+        "(HMM) forward filter for Bayesian state estimation and next-distinct-stage intent forecasting.\n"
+        "4. Conducted comprehensive empirical evaluation on a held-out test split of 10,174 requests, quantifying overall accuracy, Macro-F1 score, "
+        "transition edge accuracy, false-positive suppression, campaign catch rates, defensive lead time, and sub-0.20 ms streaming latency."
+    )
+    set_run_font(r77, size_pt=12)
     
     # P80 in backup: 2.4 Problem Statement
     p80 = doc.paragraphs[80]
@@ -375,9 +404,10 @@ def apply_updates_ch1_to_4(doc):
     r116_b = p116.add_run("Infrastructure: ")
     set_run_font(r116_b, size_pt=12, bold=True)
     r116_t = p116.add_run(
-        "The development infrastructure utilized multi-core workstations equipped with an NVIDIA GPU for accelerated batch training "
-        "of the deep LSTM recurrent networks, while streaming inference was optimized for standard multi-core CPU architectures, ensuring "
-        "that live deployment does not depend on expensive GPU hardware."
+        "The development and evaluation infrastructure utilized standard multi-core CPU workstations for both model training "
+        "and real-time streaming inference. All reported benchmark models—including the 3-seed LSTM, XGBoost, and HMM forward filter—were "
+        "trained and evaluated on CPU architectures (with GPU usage restricted solely to preliminary exploratory trials), confirming that "
+        "neither offline model training nor inline proxy deployment requires dedicated or expensive GPU hardware."
     )
     set_run_font(r116_t, size_pt=12)
     
@@ -389,7 +419,7 @@ def apply_updates_ch1_to_4(doc):
     set_run_font(r119_b, size_pt=12, bold=True)
     r119_t = p119.add_run(
         "The development cost was kept minimal due to the availability of open-source and free programming frameworks, "
-        "including Python, XGBoost, PyTorch, Scikit-learn, Burp Suite Community Edition, OWASP Juice Shop, and Docker."
+        "including Python, XGBoost, TensorFlow / Keras, Scikit-learn, Burp Suite Community Edition, OWASP Juice Shop, and Docker."
     )
     set_run_font(r119_t, size_pt=12)
     
@@ -400,9 +430,9 @@ def apply_updates_ch1_to_4(doc):
     r121_b = p121.add_run("Cost-Benefit: ")
     set_run_font(r121_b, size_pt=12, bold=True)
     r121_t = p121.add_run(
-        "The project demonstrates high economic feasibility by leveraging open-source software libraries (PyTorch, TensorFlow, XGBoost, "
-        "Scikit-learn, mitmproxy, and Docker) and open benchmark applications (OWASP Juice Shop), incurring zero proprietary licensing "
-        "expenditure while delivering publication-grade experimental validation."
+        "The project demonstrates high economic feasibility by leveraging open-source software libraries (TensorFlow / Keras, XGBoost, "
+        "Scikit-learn, hmmlearn, mitmproxy, and Docker) and open benchmark applications (OWASP Juice Shop), incurring zero proprietary licensing "
+        "expenditure while delivering rigorous experimental validation."
     )
     set_run_font(r121_t, size_pt=12)
     
@@ -436,6 +466,43 @@ def apply_updates_ch1_to_4(doc):
     r129 = p129.add_run("3.3 System Specification")
     set_run_font(r129, size_pt=13, bold=True)
     
+    # P132 in backup: 3.3.1 Hardware Specification - Processor
+    p132 = doc.paragraphs[132]
+    p132.text = ""
+    p132.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r132_b = p132.add_run("Processor (CPU): ")
+    set_run_font(r132_b, size_pt=12, bold=True)
+    r132_t = p132.add_run(
+        "Intel Core i7-12700H (14 cores, 20 threads, base clock 2.30 GHz, max turbo 4.70 GHz) workstation processor, serving as the "
+        "dedicated benchmark host environment for all reported model training, validation, and CPU-only streaming inference evaluations."
+    )
+    set_run_font(r132_t, size_pt=12)
+    
+    # P135 in backup: 3.3.1 Hardware Specification - GPU vs CPU
+    p135 = doc.paragraphs[135]
+    p135.text = ""
+    p135.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r135_b = p135.add_run("Graphics Processing Unit (GPU): ")
+    set_run_font(r135_b, size_pt=12, bold=True)
+    r135_t = p135.add_run(
+        "Optional for deployment. Dedicated NVIDIA GPU hardware was utilized for offline exploratory neural network experimentation; "
+        "however, all reported benchmark models, training pipelines, and streaming inference evaluations were executed strictly on CPU "
+        "(CUDA_VISIBLE_DEVICES=-1) to guarantee bit-reproducible execution and eliminate GPU hardware dependencies during live deployment."
+    )
+    set_run_font(r135_t, size_pt=12)
+    
+    # P142 in backup: 3.3.2 Software Specification - Libraries
+    p142 = doc.paragraphs[142]
+    p142.text = ""
+    p142.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    r142_b = p142.add_run("Libraries and Frameworks: ")
+    set_run_font(r142_b, size_pt=12, bold=True)
+    r142_t = p142.add_run(
+        "Python 3.10+, TensorFlow/Keras v2.15.0 (CPU execution), XGBoost v2.0.3, scikit-learn v1.4.0, hmmlearn v0.3.2, "
+        "NumPy v1.26.4, SciPy v1.11+, and BeautifulSoup v4.12."
+    )
+    set_run_font(r142_t, size_pt=12)
+    
     # ----------------------------------------------------
     # CHAPTER 4: DESIGN APPROACH AND DETAILS
     # ----------------------------------------------------
@@ -449,11 +516,13 @@ def apply_updates_ch1_to_4(doc):
         "into the pre-processing and feature extraction engine. The module extracts the 31 causal features spanning request morphology, payload regex "
         "signatures, endpoint sensitivity classes, response diagnostics, and decaying sliding-window context. Transactions are aggregated into "
         "chronological sessions using client cookie and authorization tokens. The per-request feature vector is evaluated by the XGBoost tree ensemble, "
-        "while the sequential feature trajectory is processed by the causal LSTM network. An HMM forward filter tracks the probabilistic transitions "
-        "between the latent attack stages S_t in {0: Normal, 1: Recon, 2: Fuzzing, 3: Injection, 4: Exploitation}. Model outputs are merged via linear "
-        "ensemble blending (alpha = 0.50) and calibrated via temperature scaling (T = 0.916). The system outputs the predicted active stage, "
-        "a normalized risk Severity Score defined as Severity(t) = SUM_{c=0}^4 w_c * P(S_t = c) where weights w = [0.0, 0.25, 0.50, 0.75, 1.00], "
-        "a forecasted next distinct attack stage, and operational SOC alerts, all persisted within a TTL-bounded session store."
+        "while the sequential feature trajectory is concurrently processed by the causal LSTM network. Model outputs are merged via equal-weight "
+        "ensemble blending (alpha = 0.50) and calibrated via temperature scaling (T = 0.916) to provide the deployed current-stage prediction. "
+        "In parallel, an HMM forward filter tracks the probabilistic transitions across the latent attack stages S_t in {0: Normal, 1: Recon, 2: Fuzzing, "
+        "3: Injection, 4: Exploitation}, supporting proactive next-distinct-stage attack intent forecasting and an optional lower-false-positive operating mode. "
+        "The system outputs the predicted active stage, a normalized risk Severity Score defined as Severity(t) = SUM_{c=0}^4 w_c * P(S_t = c) where "
+        "weights w = [0.0, 0.25, 0.50, 0.75, 1.00], the forecasted next distinct attack stage, and operational SOC alerts, all persisted within a "
+        "TTL-bounded session store."
     )
     set_run_font(r150, size_pt=12)
     

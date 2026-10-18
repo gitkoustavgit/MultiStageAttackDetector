@@ -74,6 +74,15 @@ def style_table(table, col_widths=None):
             for idx, width in enumerate(col_widths):
                 if idx < len(row.cells):
                     row.cells[idx].width = Inches(width)
+                    
+    # Repeat header row on continuation pages
+    header_tr = table.rows[0]._tr.get_or_add_trPr()
+    header_tr.append(parse_xml(f'<w:tblHeader {nsdecls("w")}/>'))
+    
+    # Prevent rows from breaking across page breaks
+    for row in table.rows:
+        trPr = row._tr.get_or_add_trPr()
+        trPr.append(parse_xml(f'<w:cantSplit {nsdecls("w")}/>'))
 
 def set_cell_bg(cell, hex_color="F2F2F2"):
     tcPr = cell._element.get_or_add_tcPr()
@@ -166,14 +175,14 @@ def append_chapter_5(doc):
         
     env_data = [
         ["Operating System", "Microsoft Windows 11 Enterprise (64-bit)", "Host execution runtime and container hypervisor"],
-        ["Host Processor (CPU)", "AMD Ryzen 5 / Intel Core i5 (6 cores, 3.8 GHz)", "Online feature extraction & real-time inference"],
+        ["Host Processor (CPU)", "Intel Core i7-12700H (14 cores, 20 threads @ 2.30 GHz)", "Model training, online feature extraction & real-time inference"],
         ["System Memory (RAM)", "16 GB DDR4 (3200 MHz)", "Session deque caching and batch corpus processing"],
         ["Storage Subsystem", "512 GB NVMe M.2 Solid State Drive", "Log persistence and model weight serialization"],
-        ["GPU Acceleration", "NVIDIA GeForce GTX 1650 (4 GB GDDR6)", "Offline multi-seed LSTM neural network training"],
+        ["GPU / Accelerator", "NVIDIA GeForce GTX 1650 (Exploratory prototyping only; all reported benchmark models, training routines, and streaming inference evaluations executed strictly on CPU for deployment portability and bit-stable reproducibility)", "Offline exploratory prototyping"],
         ["Programming Language", "Python 3.10.12 (64-bit virtualenv)", "End-to-end pipeline implementation and evaluation"],
         ["Tree Ensemble Framework", "XGBoost v2.0.3 (Hist gradient boosting)", "Per-request tabular stage classification"],
-        ["Deep Learning Framework", "TensorFlow / Keras v2.15.0", "3-seed recurrent LSTM temporal sequence encoding"],
-        ["Markov Modeling Library", "hmmlearn v0.3.2", "Supervised Bayesian forward belief filtering"],
+        ["Deep Learning Framework", "TensorFlow / Keras v2.15.0 (CPU execution)", "3-seed recurrent LSTM temporal sequence encoding"],
+        ["Markov Modeling Library", "hmmlearn v0.3.2 / NumPy v1.26.4 / SciPy v1.11+", "Supervised Bayesian forward belief filtering"],
         ["Machine Learning Suite", "scikit-learn v1.4.0", "Feature scaling, probability calibration & metrics"],
         ["Interception Proxy", "mitmproxy v10.1.5 / Burp Suite Community", "Bidirectional HTTP/1.1 and HTTP/2 traffic interception"],
         ["Vulnerable Testbed", "OWASP Juice Shop v15.0.0 (Docker)", "Air-gapped enterprise web application target"],
@@ -189,10 +198,13 @@ def append_chapter_5(doc):
     # 5.2 Five-Stage Attack Taxonomy
     add_h2(doc, "5.2 Five-Stage Web Injection Attack Taxonomy and Scope Definition")
     add_p(doc, 
-        "Enterprise web injection campaigns unfold through progressive operational phases aligned with the Lockheed Martin "
-        "Cyber Kill Chain and MITRE ATT&CK enterprise matrices. To provide granular situational awareness and avoid the blunt "
-        "binary (malicious vs. benign) labeling of legacy intrusion detection systems, this research formalizes a five-stage "
-        "attack taxonomy. Each HTTP transaction within a session is mapped to one of the five stages detailed in Table 2."
+        "Enterprise web injection campaigns unfold through progressive operational phases. To provide granular situational awareness "
+        "and avoid the blunt binary (malicious vs. benign) labeling of legacy intrusion detection systems, this research formalizes "
+        "a five-stage operational attack taxonomy: Normal, Reconnaissance, Fuzzing, Injection, and Exploitation. While conceptually "
+        "informed by established industry frameworks—specifically the Lockheed Martin Cyber Kill Chain and the MITRE ATT&CK Matrix "
+        "for Enterprise—this taxonomy is designed as an operational engineering classification tailored specifically for application-layer "
+        "HTTP session monitoring, rather than asserting a strict one-to-one mapping to high-level threat matrices. Each HTTP transaction "
+        "within a session is mapped to one of the five stages detailed in Table 2."
     )
     
     # Table 2: Taxonomy
@@ -207,10 +219,10 @@ def append_chapter_5(doc):
         
     tax_data = [
         ["Stage 0", "Normal", "Legitimate Interaction", "Authorized user browsing, product search, cart updates, and checkout", "GET /rest/products/search?q=apple"],
-        ["Stage 1", "Reconnaissance", "Reconnaissance (T1595, T1592)", "Endpoint discovery, hidden directory probing, schema fingerprinting", "GET /api/Challenges, /ftp, robots.txt"],
-        ["Stage 2", "Fuzzing", "Initial Access (T1190) / Probing", "Input boundary testing, abnormal delimiters, parser exception induction", "GET /rest/products/search?q=' OR '1'='1"],
-        ["Stage 3", "Injection", "Exploit Public Application (T1190)", "Active SQL syntax verification, UNION queries, boolean-blind probes", "GET /rest/products/search?q=' UNION SELECT 1,id,email FROM Users--"],
-        ["Stage 4", "Exploitation", "Credential Access (T1212) / Exfil (T1005)", "Authentication bypass, admin credential extraction, database dump", "POST /rest/user/login (Payload: admin'--)"],
+        ["Stage 1", "Reconnaissance", "Active Scanning (T1595 / T1595.003 Wordlist Scanning) / Endpoint Probing", "Endpoint discovery, hidden directory probing, schema fingerprinting", "GET /api/Challenges, /ftp, robots.txt"],
+        ["Stage 2", "Fuzzing", "Active Scanning: Vulnerability Scanning (T1595.002) / Input Probing", "Input boundary testing, abnormal delimiters, parser exception induction", "GET /rest/products/search?q=-99999999 (Negative limit & boundary probe without SQL syntax)"],
+        ["Stage 3", "Injection", "Exploit Public-Facing Application (T1190: SQL syntax verification & payload delivery)*", "Active SQL syntax verification, UNION queries, boolean-blind probes", "GET /rest/products/search?q=' UNION SELECT 1,id,email FROM Users--"],
+        ["Stage 4", "Exploitation", "Credential Access (T1212) / Exfiltration (T1005)", "Authentication bypass, admin credential extraction, unauthorized data dump outcome", "POST /rest/user/login (admin'--) -> 200 OK + Admin JWT issued; unauthorized credential exfiltration"],
     ]
     for r_idx, row_vals in enumerate(tax_data):
         for c_idx, val in enumerate(row_vals):
@@ -219,6 +231,10 @@ def append_chapter_5(doc):
             format_cell(tbl2.rows[r_idx+1].cells[c_idx], val, bold=is_bold, align=align)
             if r_idx % 2 == 1:
                 set_cell_bg(tbl2.rows[r_idx+1].cells[c_idx], "F9F9F9")
+
+    add_p(doc, 
+        "*Note: MITRE ATT&CK associations are illustrative behavioral mappings for application-layer analysis rather than asserting strict one-to-one equivalence, as Stage 3 represents active SQL syntax verification and injection probing prior to confirmed unauthorized impact (Stage 4)."
+    )
 
     # 5.3
     add_h2(doc, "5.3 Dataset Construction and In-House Testbed")
@@ -240,24 +256,44 @@ def append_chapter_5(doc):
         "requests scripts) coupled with manual vulnerability verification following the OWASP Web Security Testing Guide. "
         "Interception proxies, specifically mitmproxy and Burp Suite Community Edition, recorded all bidirectional HTTP/1.1 and HTTP/2 "
         "transactions, capturing full URI paths, request headers, query parameters, POST body payloads, HTTP response status codes, "
-        "response byte sizes, and inter-arrival timestamps. The resulting transactions were grouped by session identifier into "
-        "structured XML and JSON sequence corpora."
+        "response byte sizes, and inter-arrival timestamps. The resulting raw captures comprise 62 distinct XML capture files containing "
+        "2,878 real HTTP requests across 5 HTTP methods, 13 status codes, and 653 unique URI endpoints."
     )
     add_p(doc, 
-        "To resolve the inherent syntactic overlap between Fuzzing and Injection, labels were assigned deterministically based on "
-        "the known payload generator intent: requests injecting boundary values, random delimiters, or anomalous encodings to induce server errors "
-        "were categorized as Fuzzing, whereas requests injecting structured SQL syntax fragments (e.g., boolean clauses, UNION statements, or SQL "
-        "comment tokens aimed at verifying SQL interpreter execution) were tagged as Injection."
+        "Dataset Evolution and Session Composition: An earlier exploratory prototype utilized a synthetic traffic generator producing 500 "
+        "sessions and 10,000 target windows. However, systematic auditing revealed that those synthetic sessions suffered from monotone severity "
+        "escalation (label(t) == max(label[0..t]) for 100% of windows), allowing a trivial parameter-free running-maximum heuristic to artificially "
+        "score 0.9987 and outperform trained models. To establish authentic, non-trivial sequential dynamics and eliminate synthetic shortcuts, "
+        "a comprehensive new experimental corpus was assembled from the real Burp Suite captures. Sessions were composed using a block-level "
+        "kill-chain Markov process (implemented in pipeline/compose.py). Consecutive blocks represent distinct attack phases, drawing contiguous "
+        "runs of real requests (block lengths 3 to 16 requests) from the capture pool. The generative process is biased toward kill-chain progression "
+        "(Reconnaissance -> Fuzzing -> Injection -> Exploitation) while incorporating genuine retreats, pauses, and skips, as well as an 18% proportion "
+        "of erratic sessions with near-uniform stage transitions. This reduced the running-maximum fraction from 1.0 down to ~0.70, forcing models "
+        "to solve a genuinely non-trivial tracking and forecasting task. In addition, live-captured traffic (pipeline/augment.py, ~1,200 real-response "
+        "requests driven against Juice Shop, train split only) introduced systematic endpoint enumeration and payload diversity."
     )
     add_p(doc, 
-        "A foundational methodological principle of this study is the Zero-Leakage Experimental Guarantee. In many published "
-        "machine learning intrusion detection papers, datasets are shuffled randomly at the request or packet level. Such shuffling "
-        "causes severe data leakage: requests from the same user session appear simultaneously in both training and test sets, "
-        "artificially inflating test accuracy because the classifier merely memorizes user tokens, session cookies, or static IP "
-        "artifacts. To completely eliminate this contamination, the corpus enforces strict session-based splitting. The corpus comprises "
-        "2,100 complete sessions totaling 72,269 HTTP requests. Exactly 1,500 sessions (50,975 requests) are assigned to the training split, "
-        "300 sessions (11,120 requests) to the validation split, and 300 sessions (10,174 requests) to the held-out test split. "
-        "No session, cookie, or transaction in the test split was ever observed during feature scaling, model training, or hyperparameter selection."
+        "Deterministic Stage Labeling Rules: To resolve the inherent syntactic overlap between attack phases, labels were assigned deterministically "
+        "based on payload grammar and observed execution outcomes: (1) Requests testing numeric boundaries (e.g., negative or extreme values), "
+        "empty inputs, or abnormal delimiters to induce server exceptions without structured SQL tokens were categorized as Fuzzing; (2) Requests "
+        "injecting structured SQL syntax fragments (e.g., boolean clauses ' OR '1'='1, UNION SELECT statements, or SQL comment tokens aimed at "
+        "verifying SQL interpreter execution) were categorized as Injection; and (3) Requests that produced unauthorized impact—such as authentication "
+        "bypass with an administrative JWT bearer token issued, unauthorized data exfiltration in the response body, or administrative action execution—were "
+        "categorized as Exploitation."
+    )
+    add_p(doc, 
+        "A foundational methodological principle of this study is the Zero-Leakage Experimental Protocol. In many published "
+        "machine learning intrusion detection papers, datasets are shuffled randomly at the request or packet level, causing severe data leakage "
+        "where requests from the same user session appear simultaneously in both training and test sets. To completely eliminate contamination, "
+        "the corpus enforces strict whole-file-level partitioning before session composition (pipeline/corpus.py: assign_file_splits). Source capture "
+        "files and raw request sequences are partitioned disjointly across splits (60% training, 20% validation, 20% test). Multi-stage sessions are "
+        "composed by sampling request blocks exclusively from capture files assigned to that session's designated split; no source block or request sequence "
+        "ever crosses a split boundary. While common benign and application-specific endpoint paths (e.g., /rest/user/login, /rest/products/search) "
+        "legitimately appear in both training and testing sessions as in any real-world web application, the specific request payloads, cookie sequences, "
+        "and temporal trajectories are strictly split-disjoint. The verified corpus comprises exactly 2,100 complete sessions totaling 72,269 HTTP request "
+        "instances. Exactly 1,500 sessions (50,975 requests) are assigned to training, 300 sessions (11,120 requests) to validation, and 300 sessions "
+        "(10,174 requests) to the held-out test split. No session or request sequence in the test split was ever observed during feature scaling, model "
+        "training, or hyperparameter selection."
     )
     
     # Table 3: Dataset Summary
@@ -366,7 +402,7 @@ def append_chapter_5(doc):
         ["27", "ctx_unique_endpoints_w8", "Decaying Session Context", "Number of distinct URI endpoints accessed across the last W=8 requests."],
         ["28", "ctx_attack_regex_sum_w8", "Decaying Session Context", "Cumulative sum of regex signature matches across the last W=8 requests."],
         ["29", "ctx_decay_attack_pressure", "Decaying Session Context", "Exponential moving average of attack signatures: C_t = gamma * C_{t-1} + (1 - gamma) * x_t (gamma = 0.6)."],
-        ["30", "ctx_method_diversity", "Decaying Session Context", "Entropy of HTTP methods (GET, POST, PUT, DELETE) used in the session."],
+        ["30", "ctx_method_diversity", "Decaying Session Context", "Entropy of HTTP methods (GET, POST, PUT, DELETE) calculated strictly from requests observed up to the current request (1..t), with zero lookahead into future session requests."],
         ["31", "ctx_interarrival_time", "Decaying Session Context", "Log1p compressed elapsed time in seconds since previous request: log(1 + Delta t)."],
     ]
     for r_idx, row_vals in enumerate(feat_data):
@@ -460,15 +496,18 @@ def append_chapter_5(doc):
     add_p(doc, 
         "Empirical validation across alpha in [0.0, 1.0] in increments of 0.10 confirmed that an equal blending weight (alpha = 0.50) yields "
         "the highest Macro-F1 score on validation data. To ensure that the blended probability distributions reflect true empirical probabilities, "
-        "post-hoc Temperature Calibration is applied via Platt scaling:"
+        "post-hoc Temperature Scaling [Guo et al.] is applied to calibrate the blended logits:"
     )
     add_p(doc, 
         "P_cal(y_t = c) = exp(z_c / T) / SUM_{k=0}^4 exp(z_k / T)"
     )
     add_p(doc, 
-        "where z is the unnormalized logit vector and T is the learned temperature scalar. Calibration optimization on the validation partition "
-        "converged to T = 0.916 (with T = 1.3485 on raw LSTM outputs), reducing the Expected Calibration Error (ECE) from 15.68% down to 8.38%. "
-        "The calibrated ensemble distribution P_cal drives the production classifier and feeds the emission probabilities of the HMM forward filter."
+        "where z is the unnormalized logit vector and T is the learned temperature scalar. Temperature scaling optimizes a single global parameter "
+        "T > 0 to rescale logits without altering class ranking or argmax predictions, distinct from two-parameter sigmoid Platt scaling. "
+        "Calibration optimization on the validation partition converged to T = 0.916 on the ensemble logits (and T = 1.3485 on raw LSTM outputs), "
+        "reducing the Expected Calibration Error (ECE) from 15.68% down to 8.38%. The calibrated ensemble distribution P_cal provides the deployed "
+        "current-stage prediction, while the HMM forward filter computes the causal belief state b_t dedicated to next-distinct-stage forecasting "
+        "and providing an optional low-false-positive operating mode."
     )
     
     # 5.8
@@ -514,9 +553,12 @@ def append_chapter_5(doc):
     add_h2(doc, "5.9 Experimental Setup and Reproducibility")
     add_p(doc, 
         "All experiments were conducted on an Intel Core i7-12700H workstation (14 cores, 20 threads @ 2.30 GHz), equipped with 16 GB DDR4 RAM "
-        "and a 512 GB NVMe SSD running 64-bit Windows 11. The software environment utilized Python 3.10+, PyTorch 2.0.1, TensorFlow 2.12.0, "
-        "XGBoost 1.7.5, and Scikit-learn 1.2.2. Deterministic execution was guaranteed by fixing random seeds across NumPy (seed = 42), "
-        "Python random (seed = 42), PyTorch (torch.manual_seed(42)), and TensorFlow (tf.random.set_seed(42))."
+        "and a 512 GB NVMe SSD running 64-bit Windows 11. The software environment utilized Python 3.10.12 (64-bit virtualenv), TensorFlow/Keras 2.15.0 "
+        "(CPU execution mode), XGBoost 2.0.3, scikit-learn 1.4.0, and hmmlearn 0.3.2, in strict accordance with the specifications in Table 1. "
+        "Offline training was executed with CUDA_VISIBLE_DEVICES=-1 to ensure bit-reproducible model weights without cuDNN kernel stochasticity. "
+        "Online inference latency was benchmarked strictly on single-thread Intel Core i7-12700H CPU execution, ensuring that live proxy deployments "
+        "require no dedicated GPU acceleration. Deterministic execution was guaranteed by fixing random seeds across NumPy (seed = 42), "
+        "Python random (seed = 42), and TensorFlow (tf.random.set_seed(42))."
     )
     add_p(doc, 
         "The entire experimental corpus is packaged as dataset_v2.npz, containing 2,100 pre-tokenized request feature sequences, session labels, "
