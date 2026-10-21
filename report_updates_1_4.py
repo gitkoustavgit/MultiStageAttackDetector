@@ -44,18 +44,19 @@ def apply_updates_ch1_to_4(doc):
     p30.text = ""
     p30.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r30 = p30.add_run(
-        "An empirical experimental dataset was constructed using an air-gapped, containerized deployment of the "
+        "An empirical experimental dataset was constructed using a locally containerized, network-isolated deployment of the "
         "OWASP Juice Shop vulnerable web application, intercepted via mitmproxy and Burp Suite across 62 capture files "
-        "and approximately 1,200 live-response requests. To evaluate non-trivial sequential dynamics without synthetic shortcuts, "
-        "these real HTTP request blocks were composed into an extensive multi-stage corpus of 2,100 sessions containing 72,269 total "
-        "request instances, partitioned using a split-disjoint file protocol to prevent source block overlap across splits. "
-        "To enforce strict operational causality without future lookahead bias, the system employs a 31-dimensional causal feature extraction "
-        "framework incorporating request morphology, payload regex signatures, endpoint sensitivity classes, response status metrics, "
-        "and decaying session-context indicators. Current-stage detection is executed via a responsive causal ensemble combining "
-        "a per-request gradient boosted decision tree (XGBoost) and a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network, "
-        "fused via equal-weight probability blending (alpha = 0.50) and calibrated through temperature scaling (T = 0.916). "
-        "A causal Hidden Markov Model (HMM) forward filter tracks Bayesian state belief, enabling proactive next-distinct-stage intent "
-        "forecasting and providing an optional lower-false-positive operating mode."
+        "(comprising 2,878 raw HTTP requests) alongside approximately 1,200 live-response requests in the training split. "
+        "To evaluate non-trivial sequential dynamics without synthetic shortcuts, contiguous request blocks (3 to 16 requests) "
+        "were composed into an extensive multi-stage corpus of 2,100 sessions containing 72,269 total request instances, "
+        "partitioned using a file-disjoint protocol where source capture files and raw request blocks are strictly split-disjoint "
+        "across training, validation, and testing partitions. To enforce strict operational causality without future lookahead bias, "
+        "the system employs a 31-dimensional causal feature extraction framework incorporating request morphology, payload regex signatures, "
+        "endpoint sensitivity classes, response status metrics, and decaying session-context indicators. Current-stage detection is "
+        "executed via a responsive causal ensemble combining a per-request gradient boosted decision tree (XGBoost) and a seed-averaged "
+        "Long Short-Term Memory (LSTM) recurrent neural network, fused via equal-weight probability blending (alpha = 0.50) and calibrated "
+        "through temperature scaling (T = 0.916). A causal Hidden Markov Model (HMM) forward filter tracks Bayesian state belief, enabling "
+        "proactive next-distinct-stage intent forecasting and providing an optional lower-false-positive operating mode."
     )
     set_run_font(r30, size_pt=12)
     
@@ -63,15 +64,17 @@ def apply_updates_ch1_to_4(doc):
     p32.text = ""
     p32.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r32 = p32.add_run(
-        "The proposed system was empirically evaluated on a held-out, split-disjoint test corpus consisting of 300 sessions and "
-        "10,174 HTTP requests. The deployed causal ensemble achieves an overall accuracy of 54.31% and a Macro-F1 score of 0.5060, "
-        "substantially outperforming zero-parameter and running-max baselines by +24.36 percentage points. The transition edge accuracy reaches 0.4156, "
-        "demonstrating strong sequential path continuity. Causal context filtering constrains benign false-positive rates to 14.00% "
-        "(and 10.97% in pure HMM forward-filtering mode), representing a 41.4% reduction in false alarms compared to standalone XGBoost. "
-        "At the session campaign level, the detector catches 90.91% of reconnaissance campaigns and 91.45% of exploitation attacks, "
-        "with a median detection latency of just 1 request into the attack stage. Furthermore, Bayesian next-distinct-stage intent forecasting "
-        "achieves 33.69% Top-1 and 55.17% Top-2 accuracy at real phase transitions, providing actionable early-warning lead time for "
-        "security operations centers while sustaining an end-to-end algorithmic inference latency averaging 0.18 ms per request."
+        "The proposed system was empirically evaluated on a held-out, file-disjoint test corpus consisting of 300 sessions and "
+        "10,174 HTTP requests (derived from 12 held-out capture files). The deployed causal ensemble achieves an overall accuracy "
+        "of 54.31% and a Macro-F1 score of 0.5060, outperforming parameter-free lookup heuristics by +24.36 percentage points. "
+        "Transition edge accuracy reaches 0.4156, reflecting the operational trade-off between rapid boundary adaptation and temporal "
+        "smoothing. Sequential recurrent modeling constrains the per-request benign false-positive rate to 14.00% (and 10.97% in HMM "
+        "forward-filtering mode), achieving a 41.4% reduction in false alarms compared to standalone XGBoost (23.90%), though per-request "
+        "false alarms remain an operational challenge in high-throughput environments. At the session campaign level, the detector catches "
+        "86.09% of all attack sessions (74.29% to 91.45% across individual attack stages, identifying 91.45% of critical exploitation sessions) "
+        "with a 35.29% false alarm rate on benign sessions (down from 52.94% for standalone XGBoost) and a median detection latency of 1 request. "
+        "Furthermore, Bayesian next-distinct-stage intent forecasting achieves 33.69% Top-1 and 55.17% Top-2 accuracy at real phase transitions, "
+        "providing early-warning indication while sustaining an end-to-end algorithmic inference latency averaging 0.18 ms per request."
     )
     set_run_font(r32, size_pt=12)
     
@@ -164,11 +167,11 @@ def apply_updates_ch1_to_4(doc):
         "The scope of this project encompasses the design, implementation, and empirical evaluation of a context-aware machine learning "
         "framework for detecting and forecasting multi-stage web injection attacks across sequential HTTP request streams. The system models "
         "application-layer traffic according to a five-stage progression: Normal, Reconnaissance, Fuzzing, Injection, and Exploitation. "
-        "Evaluation is conducted on a dedicated in-house corpus of 2,100 sessions and 72,269 requests generated using the OWASP Juice Shop "
-        "web application, strictly partitioned at the session level to guarantee zero data leakage between training and testing splits. "
-        "The framework is engineered strictly under operational temporal causality: at any request step t, features and predictions depend "
-        "exclusively on requests <= t, ensuring direct deployability in real-time reverse proxies. The scope focuses specifically on Layer-7 "
-        "web injection campaigns and does not address generic network DDoS or host-level kernel rootkits."
+        "Evaluation is conducted on a dedicated in-house corpus of 2,100 sessions and 72,269 request instances generated using the OWASP Juice Shop "
+        "web application, strictly partitioned under a file-disjoint protocol where source capture files and request blocks are partitioned prior "
+        "to session composition. The framework is engineered strictly under operational temporal causality: at any request step t, features "
+        "and predictions depend exclusively on requests <= t, ensuring direct deployability in real-time reverse proxies. The scope focuses "
+        "specifically on Layer-7 web injection campaigns and does not address generic network DDoS or host-level kernel rootkits."
     )
     set_run_font(r61, size_pt=12)
     
@@ -196,14 +199,14 @@ def apply_updates_ch1_to_4(doc):
     p67.text = ""
     p67.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r67 = p67.add_run(
-        "Recognizing the limitations of stateless evaluation, several researchers have explored context-aware anomaly detection. Ghosh et al. [3] "
-        "integrated Random Forest, SVM, and XGBoost with cyber-physical system telemetry for false-data-injection detection in tele-driving operations. "
-        "Huang et al. [4] introduced AegisGuard, a context-aware framework for semantic vulnerability detection and risk stratification that "
-        "incorporates control-flow semantics. Pathan [9] formulated an agent-based, self-adaptable vulnerability assessment framework that continuously "
-        "adjusts security policies based on contextual host feedback. Rahman and Assi [10] developed Third Eye, a context-aware detection scheme "
-        "for hidden terminal emulation in cognitive radio IoT networks. While these approaches confirmed that contextual indicators dramatically "
-        "reduce false alarm rates, their application remained bounded by domain-specific physical or network contexts, leaving the sequential context "
-        "of web application HTTP transactions unaddressed."
+        "Recognizing the limitations of stateless inspection, foundational web security research explored anomaly-based HTTP analysis. "
+        "Kruegel and Vigna [3] pioneered multi-model anomaly detection for web attacks, profiling URI length, character distribution, and "
+        "parameter structural tokens. Robertson et al. [4] extended this approach by using generalization and anomaly characterization to "
+        "detect and cluster novel web-based attacks. Pathan [9] formulated an agent-based, self-adaptable vulnerability assessment framework "
+        "that continuously evaluates contextual application feedback. In the domain of web application firewalls, Betarte et al. [7] provided "
+        "a systematic review of machine learning techniques for WAFs, highlighting the operational challenge of high false-positive rates "
+        "under dynamic web traffic. While these approaches confirmed that feature contextualization improves detection fidelity, their inspection "
+        "remained predominantly request-centric, treating each transaction in isolation without modeling chronological session trajectories."
     )
     set_run_font(r67, size_pt=12)
     
@@ -211,17 +214,16 @@ def apply_updates_ch1_to_4(doc):
     p68.text = ""
     p68.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r68 = p68.add_run(
-        "Sequential and recurrent architectures have demonstrated high efficacy in modeling temporal network dynamics. Bertoli et al. [6] proposed "
-        "the AB-TRAP analytics framework, emphasizing the necessity of continuously updated sequential datasets for deep learning evaluation. Yue et al. [7] "
-        "combined Convolutional Neural Networks (CNN) with Recurrent Neural Networks (RNN) to capture spatio-temporal features in train Ethernet "
-        "consist networks. Dou et al. [8] applied similarity metric learning to event-triggered traffic time series. In industrial control and smart "
-        "grid domains, Liang et al. [15] deployed improved LSTM and feedforward networks for SCADA intrusion detection; Habibi et al. [16] utilized "
-        "bidirectional RNNs for power system security under IEEE 1815.1 protocols; and He et al. [17] combined Kalman filtering with RNNs (KFRNN) to detect "
-        "false data injection in smart grids. Similarly, Al-Sultan and Al-Bayatti [18] applied LSTM time-series classifiers to detect false safety "
-        "messages in vehicular ad-hoc networks (VANETs). In the web security domain, Jagat et al. [20] proposed a Variational LSTM Autoencoder deviation "
-        "network to detect web attacks from HTTP weblogs, while Tang et al. [23] implemented LSTM sequence models for SQL injection detection in "
-        "intelligent transportation systems. These works established that recurrent architectures excel at sequential pattern recognition, yet they "
-        "typically treated intrusion detection as a binary anomaly task rather than tracking progressive multi-stage attack chains."
+        "Sequential and recurrent architectures have demonstrated high efficacy in modeling temporal sequences. Bertoli et al. [6] proposed "
+        "the AB-TRAP analytics framework, emphasizing the necessity of continuously updated sequential datasets for deep learning evaluation. "
+        "Dou et al. [8] applied similarity metric learning to event-triggered traffic time series. In the web security domain, Jagat et al. [20] "
+        "proposed a Variational LSTM Autoencoder deviation network to detect web attacks from HTTP weblogs, while Tang et al. [23] implemented "
+        "LSTM sequence models for SQL injection detection. Furthermore, Guo et al. [10] established that modern deep neural networks tend to output "
+        "uncalibrated, overconfident probabilities and demonstrated that post-hoc Temperature Scaling effectively restores probabilistic calibration "
+        "without altering model accuracy. In multi-stage threat analysis, Hutchins et al. [11] formalized the Cyber Kill Chain, modeling attacks as "
+        "a structured sequence of operational phases, while Strom et al. [18] systematized adversary techniques in the MITRE ATT&CK Matrix for "
+        "Enterprise. These works confirmed that sequential pattern recognition and calibrated state modeling are essential for tracking progressive "
+        "multi-stage attack chains."
     )
     set_run_font(r68, size_pt=12)
     
@@ -229,15 +231,15 @@ def apply_updates_ch1_to_4(doc):
     p69.text = ""
     p69.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     r69 = p69.add_run(
-        "Modeling the progression of multi-stage cyber campaigns has been studied using probabilistic graphical models and unsupervised clustering. "
-        "Shawly et al. [5] developed an HMM-based architecture to detect and track interleaved multi-stage network attacks on the DARPA 2000 dataset, "
+        "Modeling the progression of multi-stage cyber campaigns has been studied using probabilistic graphical models. "
+        "Shawly et al. [5] developed an HMM-based architecture in IEEE TDSC to detect and track interleaved multi-stage network attacks, "
         "representing discrete attack steps as hidden states. Radoglou-Grammatikis et al. [12] analyzed low-frequency, multi-stage attacks in "
-        "industrial IoT networks, showing that slow probing often escapes traditional threshold detectors. Yoon and Kang [13] applied Latent Dirichlet "
+        "industrial networks, showing that slow probing often escapes traditional threshold detectors. Yoon and Kang [13] applied Latent Dirichlet "
         "Allocation (LDA) to group multi-stage threat events into latent attack topics. Maimo et al. [14] extracted threat behaviors via unsupervised "
         "clustering of multi-stage network flows. Cao et al. [19] investigated sequential attack detection in recommender systems, modeling malicious "
         "profile injections as sequential markovian deviations. Chadza et al. [22] proposed an HMM transfer learning framework for sequential network "
         "attack detection and next-stage intent prediction. These studies confirmed that Markov models capture state progression effectively; however, "
-        "they operated on synthetic network-layer alert sequences rather than application-layer HTTP session streams."
+        "they operated primarily on network-layer alert sequences rather than application-layer HTTP session streams."
     )
     set_run_font(r69, size_pt=12)
     
@@ -245,16 +247,15 @@ def apply_updates_ch1_to_4(doc):
     # Let's see: we can append the Web Datasets & Kill Chain text into P69 or right before P70!
     r69_extra = p69.add_run(
         "\n\nA critical limitation of intrusion detection research lies in benchmark dataset design. Widely cited web datasets—such as the CSIC 2010 HTTP Dataset "
-        "(Álvarez et al., CSIC) and the ECML/PKDD 2007 Discovery Challenge—contain thousands of tagged HTTP requests but entirely lack multi-request session attack progressions, "
+        "(Torrano-Giménez and Álvarez [15]) and the ECML/PKDD 2007 Discovery Challenge—contain thousands of tagged HTTP requests but entirely lack multi-request session attack progressions, "
         "rendering them unsuitable for sequential modeling. General-purpose intrusion datasets such as CICIDS-2017 (benchmarked by Maseer et al. [21] "
         "and analyzed with Information Gain feature selection by Panigrahi and Borah [24]) evaluate isolated packet captures. In the domain of SQL "
-        "injection defense, Li et al. [25] proposed ModSec-AdvLearn to counter adversarial SQL injections through robust feature spaces; Lakhina et al. [26] "
-        "analyzed IP traffic anomaly detection across variable granularities; Sarhan et al. [27] applied Explainable AI (XAI) to interpret feature "
-        "importance in network classifiers; and Bharadwaj and Khekare [29] analyzed detection gaps and security risks in SQL injections within "
-        "large-language-model-generated database queries. Furthermore, the proposed five-stage operational taxonomy is conceptually informed by established industry frameworks, "
-        "specifically the Lockheed Martin Cyber Kill Chain (Hutchins et al., 2011) and the MITRE ATT&CK Matrix for Enterprise (Strom et al., 2018), translating high-level "
-        "tactics—including Active Scanning (T1595), Exploit Public-Facing Application (T1190), and Credential Access (T1212)—into observable application-layer session states. "
-        "Whereas foundational alert correlation research (e.g., Valeur et al., IEEE TDSC 2004; Ning et al., ACM TISSEC 2004) focused on complex post-hoc graph reconstruction "
+        "injection defense, Floris et al. [25] proposed ModSec-AdvLearn in IEEE TIFS to counter adversarial SQL injections through robust machine learning; "
+        "Lakhina et al. [26] analyzed traffic anomaly detection via feature distributions; Sarhan et al. [27] applied Explainable AI (XAI) to interpret feature "
+        "importance in network classifiers; and Bharadwaj and Khekare [29] analyzed detection gaps and defense mechanisms in web injection vectors. "
+        "Furthermore, the proposed five-stage operational taxonomy translates established tactics from ATT&CK [18] and the Kill Chain [11]—including "
+        "Active Scanning (T1595), Exploit Public-Facing Application (T1190), and Credential Access (T1212)—into observable application-layer session states. "
+        "Whereas foundational alert correlation research (e.g., Valeur et al. [16], IEEE TDSC 2004; Ning et al. [17], ACM TISSEC 2004) focused on complex post-hoc graph reconstruction "
         "of disconnected network alarms, the proposed approach provides lightweight, online Bayesian HMM forward filtering that executes in line-rate without alert flooding."
     )
     set_run_font(r69_extra, size_pt=12)
@@ -305,8 +306,8 @@ def apply_updates_ch1_to_4(doc):
         "1. Formulated an operational five-stage attack taxonomy (Normal, Reconnaissance, Fuzzing, Injection, Exploitation) and engineered a "
         "31-dimensional causal feature extraction engine that combines per-request syntactic morphology, regex signatures, endpoint sensitivity, "
         "and decaying session-context indicators, guaranteeing strict zero future lookahead.\n"
-        "2. Curated an authentic, leak-free experimental corpus of 2,100 sessions totaling 72,269 HTTP requests from real Burp Suite captures on an "
-        "air-gapped OWASP Juice Shop testbed, enforcing whole-file-level partitioning prior to block composition to prevent split leakage."
+        "2. Curated an authentic experimental corpus of 2,100 sessions totaling 72,269 HTTP request instances from real Burp Suite captures on a "
+        "locally containerized OWASP Juice Shop testbed, enforcing whole-file-level partitioning prior to block composition to establish a file-disjoint evaluation protocol."
     )
     set_run_font(r76, size_pt=12)
     
@@ -318,8 +319,8 @@ def apply_updates_ch1_to_4(doc):
         "3. Constructed and deployed a multi-model causal ensemble architecture fusing a seed-averaged Long Short-Term Memory (LSTM) recurrent neural network "
         "with an XGBoost tree classifier via calibrated temperature scaling (T = 0.916) for responsive current-stage tracking, coupled with a Hidden Markov Model "
         "(HMM) forward filter for Bayesian state estimation and next-distinct-stage intent forecasting.\n"
-        "4. Conducted comprehensive empirical evaluation on a held-out test split of 10,174 requests, quantifying overall accuracy, Macro-F1 score, "
-        "transition edge accuracy, false-positive suppression, campaign catch rates, defensive lead time, and sub-0.20 ms streaming latency."
+        "4. Conducted comprehensive empirical evaluation on a held-out file-disjoint test split of 10,174 requests, quantifying overall accuracy (54.31%), Macro-F1 score (0.5060), "
+        "transition edge accuracy (0.4156), false-positive suppression (14.00%), session campaign catch rates (86.09% overall, 91.45% on exploitation), defensive lead time, and sub-0.20 ms streaming latency."
     )
     set_run_font(r77, size_pt=12)
     
@@ -349,7 +350,7 @@ def apply_updates_ch1_to_4(doc):
         "interception proxy configuration (mitmproxy/Burp Suite), data generation, and the engineering of the 31-dimensional causal feature schema. "
         "Phase 2 involved model architecture development, including hyperparameter tuning for XGBoost, multi-seed training of the causal LSTM network, "
         "estimation of the HMM transition dynamics, ensemble probability blending, and temperature calibration. Phase 3 comprised comprehensive "
-        "benchmark evaluation on the held-out leak-free test corpus, session-level campaign catch rate analysis, intent forecasting validation, "
+        "benchmark evaluation on the held-out file-disjoint test corpus, session-level attack campaign catch rate analysis, intent forecasting validation, "
         "and complete documentation."
     )
     set_run_font(r86, size_pt=12)
@@ -451,7 +452,7 @@ def apply_updates_ch1_to_4(doc):
     set_run_font(r126_b, size_pt=12, bold=True)
     r126_t = p126.add_run(
         "All vulnerability assessments, penetration testing activities, payload injections, and HTTP traffic recordings were "
-        "conducted strictly within an isolated, air-gapped local laboratory environment. The target web application (OWASP Juice Shop "
+        "conducted strictly within an isolated, local containerized laboratory environment. The target web application (OWASP Juice Shop "
         "v15.0.0) was deployed within a standalone Docker container bound exclusively to localhost (127.0.0.1:9000). No public, "
         "university, commercial, or third-party production networks were targeted, probed, or monitored. Synthetic and automated "
         "attack sessions were generated adhering strictly to the ACM Code of Ethics and institutional research guidelines, ensuring "

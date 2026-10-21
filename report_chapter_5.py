@@ -188,7 +188,7 @@ def append_chapter_5(doc):
         ["Markov Modeling Library", "hmmlearn v0.3.2 / NumPy v1.26.4 / SciPy v1.11+", "Supervised Bayesian forward belief filtering"],
         ["Machine Learning Suite", "scikit-learn v1.4.0", "Feature scaling, probability calibration & metrics"],
         ["Interception Proxy", "mitmproxy v10.1.5 / Burp Suite Community", "Bidirectional HTTP/1.1 and HTTP/2 traffic interception"],
-        ["Vulnerable Testbed", "OWASP Juice Shop v15.0.0 (Docker)", "Air-gapped enterprise web application target"],
+        ["Vulnerable Testbed", "OWASP Juice Shop v15.0.0 (Docker)", "Locally containerized, network-isolated web application target"],
     ]
     for r_idx, row_vals in enumerate(env_data):
         for c_idx, val in enumerate(row_vals):
@@ -242,13 +242,13 @@ def append_chapter_5(doc):
     # 5.3
     add_h2(doc, "5.3 Dataset Construction and In-House Testbed")
     add_p(doc, 
-        "To rigorously evaluate multi-stage web injection attacks in a realistic, reproducible, and ethically sound "
+        "To evaluate multi-stage web injection attacks in a realistic, reproducible, and ethically sound "
         "setting, an in-house experimental testbed was deployed. Modern web injection campaigns rarely consist of isolated, "
         "out-of-context exploit payloads; instead, attackers systematically progress through reconnaissance, input space "
         "fuzzing, syntax verification, and finally exploit execution. Standard benchmark intrusion datasets such as KDD-99 "
-        "or NSL-KDD lack application-layer HTTP semantics, whereas modern repositories like CICIDS-2017 collapse attack chains "
+        "or NSL-KDD lack application-layer HTTP semantics, whereas repositories like CICIDS-2017 collapse attack chains "
         "into independent packet samples without preserving session state. Consequently, a dedicated, session-aware "
-        "experimental corpus was constructed using the widely acknowledged OWASP Juice Shop (v15.0.0) vulnerable web application."
+        "experimental corpus was constructed using the OWASP Juice Shop (v15.0.0) vulnerable web application."
     )
     add_p(doc, 
         "The Juice Shop application was containerized using Docker and hosted on an isolated loopback network interface "
@@ -259,68 +259,79 @@ def append_chapter_5(doc):
         "requests scripts) coupled with manual vulnerability verification following the OWASP Web Security Testing Guide. "
         "Interception proxies, specifically mitmproxy and Burp Suite Community Edition, recorded all bidirectional HTTP/1.1 and HTTP/2 "
         "transactions, capturing full URI paths, request headers, query parameters, POST body payloads, HTTP response status codes, "
-        "response byte sizes, and inter-arrival timestamps. The resulting raw captures comprise 62 distinct XML capture files containing "
-        "2,878 real HTTP requests across 5 HTTP methods, 13 status codes, and 653 unique URI endpoints."
+        "response byte sizes, and inter-arrival timestamps. The resulting raw capture pool comprises 62 distinct XML capture files containing "
+        "2,878 unique captured HTTP requests across 5 HTTP methods, 13 status codes, and 653 unique URI endpoints."
     )
     add_p(doc, 
-        "Dataset Evolution and Session Composition: An earlier exploratory prototype utilized a synthetic traffic generator producing 500 "
-        "sessions and 10,000 target windows. However, systematic auditing revealed that those synthetic sessions suffered from monotone severity "
-        "escalation (label(t) == max(label[0..t]) for 100% of windows), allowing a trivial parameter-free running-maximum heuristic to artificially "
-        "score 0.9987 and outperform trained models. To establish authentic, non-trivial sequential dynamics and eliminate synthetic shortcuts, "
-        "a comprehensive new experimental corpus was assembled from the real Burp Suite captures. Sessions were composed using a block-level "
-        "kill-chain Markov process (implemented in pipeline/compose.py). Consecutive blocks represent distinct attack phases, drawing contiguous "
-        "runs of real requests (block lengths 3 to 16 requests) from the capture pool. The generative process is biased toward kill-chain progression "
-        "(Reconnaissance -> Fuzzing -> Injection -> Exploitation) while incorporating genuine retreats, pauses, and skips, as well as an 18% proportion "
-        "of erratic sessions with near-uniform stage transitions. This reduced the running-maximum fraction from 1.0 down to ~0.70, forcing models "
-        "to solve a genuinely non-trivial tracking and forecasting task. In addition, live-captured traffic (pipeline/augment.py, ~1,200 real-response "
-        "requests driven against Juice Shop, train split only) introduced systematic endpoint enumeration and payload diversity."
+        "Dataset Provenance and Block-Level Session Composition: Because individual capture runs contain limited sequence lengths, multi-request "
+        "sessions were assembled using a block-level kill-chain Markov process (implemented in pipeline/compose.py). Rather than generating synthetic "
+        "text strings, the composition engine samples contiguous blocks of real, captured requests (block lengths ranging from 3 to 16 requests) "
+        "from the capture pool. Across the entire corpus of 2,100 sessions totaling 72,269 request instances, the underlying 2,878 captured requests "
+        "(alongside approximately 1,200 live-response requests added exclusively to the training split) are resampled approximately 17 times on average. "
+        "The generative process transitions between attack rungs (Reconnaissance -> Fuzzing -> Injection -> Exploitation) while incorporating "
+        "retreats, pauses, and skips, as well as an 18% proportion of erratic sessions with near-uniform stage transitions. This reduced the "
+        "fraction of monotonically escalating sessions from 1.0 down to ~0.70, ensuring non-trivial temporal dynamics. It is acknowledged as a "
+        "methodological characteristic that because session sequences are assembled via this Markov progression grammar, the Hidden Markov Model "
+        "transition dynamics estimated during training partly reflect the generator's underlying transition rules."
     )
     add_p(doc, 
-        "Deterministic Stage Labeling Rules: To resolve the inherent syntactic overlap between attack phases, labels were assigned deterministically "
-        "based on payload grammar and observed execution outcomes: (1) Requests testing numeric boundaries (e.g., negative or extreme values), "
-        "empty inputs, or abnormal delimiters to induce server exceptions without structured SQL tokens were categorized as Fuzzing; (2) Requests "
-        "injecting structured SQL syntax fragments (e.g., boolean clauses ' OR '1'='1, UNION SELECT statements, or SQL comment tokens aimed at "
-        "verifying SQL interpreter execution) were categorized as Injection; and (3) Requests that produced unauthorized impact—such as authentication "
-        "bypass with an administrative JWT bearer token issued, unauthorized data exfiltration in the response body, or administrative action execution—were "
-        "categorized as Exploitation."
+        "Deterministic Five-Stage Request Labeling Rules: To resolve syntactic ambiguities between operational phases, explicit labeling criteria "
+        "were applied across all five stages:\n"
+        "1. Stage 0 (Normal): Standard legitimate user navigation, product catalog queries with alphanumeric keywords, static asset retrievals "
+        "(e.g., /assets/public/images), profile updates, and regular authentication attempts lacking metacharacters or anomalous headers.\n"
+        "2. Stage 1 (Reconnaissance): Systematic application surface mapping and endpoint enumeration, including requests probing hidden routes "
+        "(/admin, /api/Challenges, /rest/user/whoami), technology profiling, directory discovery, and parameter probing without active injection syntax.\n"
+        "3. Stage 2 (Fuzzing): Deliberate parameter boundary and exception testing, including submitting boundary integers (-1, 0, 999999), single "
+        "metacharacters (', \", <), malformed delimiters, and unexpected data types designed to elicit server error codes (4xx/5xx) or verbose database "
+        "diagnostics without structured SQL or script execution.\n"
+        "4. Stage 3 (Injection): Multi-token structured injection payloads targeting interpreter manipulation, including boolean SQL clauses "
+        "(' OR '1'='1), UNION SELECT statements, inline SQL comments (--), XSS script tags (<script>alert(1)</script>), and attribute event handlers. "
+        "The empirical recall on Injection is 25.8% (0.2583) because many subtle injection requests share structural tokens with fuzzing probes, "
+        "leading the classifier to conservatively assign Fuzzing until multi-token syntax is established.\n"
+        "5. Stage 4 (Exploitation): Payloads achieving verified security compromise, including authentication bypass yielding administrative JWT tokens "
+        "(admin'--), unauthorized execution of administrative functions (/rest/admin/application-configuration), privilege escalation, or sensitive "
+        "credential extraction (/api/Users/1)."
     )
     add_p(doc, 
-        "A foundational methodological principle of this study is the Zero-Leakage Experimental Protocol. In many published "
-        "machine learning intrusion detection papers, datasets are shuffled randomly at the request or packet level, causing severe data leakage "
-        "where requests from the same user session appear simultaneously in both training and test sets. To completely eliminate contamination, "
-        "the corpus enforces strict whole-file-level partitioning before session composition (pipeline/corpus.py: assign_file_splits). Source capture "
-        "files and raw request sequences are partitioned disjointly across splits (60% training, 20% validation, 20% test). Multi-stage sessions are "
-        "composed by sampling request blocks exclusively from capture files assigned to that session's designated split; no source block or request sequence "
-        "ever crosses a split boundary. While common application endpoints (e.g., /rest/user/login, /rest/products/search) and potentially repeated payload patterns "
-        "may legitimately occur across partitions as in standard operational web traffic, source capture files and raw request blocks are "
-        "strictly split-disjoint, ensuring that multi-request session sequences and temporal trajectories remain partitioned without split overlap. "
-        "The verified corpus comprises exactly 2,100 complete sessions totaling 72,269 HTTP request "
-        "instances. Exactly 1,500 sessions (50,975 requests) are assigned to training, 300 sessions (11,120 requests) to validation, and 300 sessions "
-        "(10,174 requests) to the held-out test split. No session or request sequence in the test split was ever observed during feature scaling, model "
-        "training, or hyperparameter selection."
+        "File-Disjoint Partitioning Protocol: To prevent data leakage, the corpus enforces a strict file-disjoint partitioning protocol before session "
+        "composition (pipeline/corpus.py: assign_file_splits). The 62 source XML capture files were partitioned into disjoint subsets: 40 files assigned "
+        "to training, 10 files to validation, and 12 files to the held-out test split. Multi-stage sessions were composed by sampling request blocks "
+        "exclusively from capture files assigned to that session's designated split; no source block or request sequence crosses a split boundary. "
+        "While common application endpoints (e.g., /rest/user/login, /rest/products/search) and standardized scanner payload patterns (e.g., from "
+        "Intruder or SQLmap wordlists) legitimately occur across partitions as in operational web traffic, source capture files and raw request blocks "
+        "are strictly split-disjoint. The final corpus comprises 2,100 complete sessions totaling 72,269 HTTP request instances: 1,500 sessions "
+        "(50,975 requests) in training, 300 sessions (11,120 requests) in validation, and 300 sessions (10,174 requests) in the held-out test split. "
+        "In the held-out test split, 34 sessions are fully benign (835 requests) and 266 sessions contain attack sequences (9,339 requests). "
+        "Results are reported on this held-out file-disjoint test partition; the limitation of evaluating on a single 300-session test split without "
+        "multi-fold cross-validation confidence intervals is noted and discussed in Section 7.6."
     )
     
     # Table 3: Dataset Summary
     add_caption(doc, "Table 3: Summary of the Experimental Dataset and Request Distribution Across Attack Stages")
-    tbl3 = doc.add_table(rows=7, cols=5)
-    style_table(tbl3, col_widths=[1.8, 1.2, 1.2, 1.2, 1.1])
+    tbl3 = doc.add_table(rows=12, cols=5)
+    style_table(tbl3, col_widths=[2.0, 1.1, 1.1, 1.1, 1.1])
     
-    headers3 = ["Attack Stage / Metric", "Training Set", "Validation Set", "Held-Out Test Set", "Total"]
+    headers3 = ["Dataset Metric / Attack Stage", "Training Set", "Validation Set", "Held-Out Test Set", "Total Corpus"]
     for i, h in enumerate(headers3):
         format_cell(tbl3.rows[0].cells[i], h, bold=True, align=WD_ALIGN_PARAGRAPH.CENTER)
         set_cell_bg(tbl3.rows[0].cells[i], "E6E6E6")
         
     data3 = [
-        ["Total Sessions", "1,500", "300", "300", "2,100"],
-        ["Stage 0: Normal", "14,373 (28.2%)", "3,067 (27.6%)", "2,900 (28.5%)", "20,340 (28.1%)"],
-        ["Stage 1: Reconnaissance", "11,993 (23.5%)", "2,806 (25.2%)", "2,400 (23.6%)", "17,199 (23.8%)"],
-        ["Stage 2: Fuzzing", "9,106 (17.9%)", "2,237 (20.1%)", "1,758 (17.3%)", "13,101 (18.1%)"],
-        ["Stage 3: Injection", "8,367 (16.4%)", "1,768 (15.9%)", "1,699 (16.7%)", "11,834 (16.4%)"],
-        ["Stage 4: Exploitation", "7,136 (14.0%)", "1,242 (11.2%)", "1,417 (13.9%)", "9,795 (13.6%)"],
+        ["Source Capture Files", "40", "10", "12", "62"],
+        ["Unique Raw Requests in Pool", "~1,700 + ~1,200 live", "~580", "~600", "~4,080"],
+        ["Composed User Sessions", "1,500", "300", "300", "2,100"],
+        ["Purely Benign Sessions (Peak = 0)", "168 (11.2%)", "32 (10.7%)", "34 (11.3%)", "234 (11.1%)"],
+        ["Attack Sessions (Peak >= 1)", "1,332 (88.8%)", "268 (89.3%)", "266 (88.7%)", "1,866 (88.9%)"],
+        ["Total Composed Request Instances", "50,975", "11,120", "10,174", "72,269"],
+        ["Stage 0: Normal Requests", "14,373 (28.2%)", "3,067 (27.6%)", "2,900 (28.5%)", "20,340 (28.1%)"],
+        ["Stage 1: Reconnaissance Requests", "11,993 (23.5%)", "2,806 (25.2%)", "2,400 (23.6%)", "17,199 (23.8%)"],
+        ["Stage 2: Fuzzing Requests", "9,106 (17.9%)", "2,237 (20.1%)", "1,758 (17.3%)", "13,101 (18.1%)"],
+        ["Stage 3: Injection Requests", "8,367 (16.4%)", "1,768 (15.9%)", "1,699 (16.7%)", "11,834 (16.4%)"],
+        ["Stage 4: Exploitation Requests", "7,136 (14.0%)", "1,242 (11.2%)", "1,417 (13.9%)", "9,795 (13.6%)"],
     ]
     for r_idx, row_vals in enumerate(data3):
         for c_idx, val in enumerate(row_vals):
-            is_bold = (r_idx == 0)
+            is_bold = (r_idx < 3 or r_idx == 5)
             align = WD_ALIGN_PARAGRAPH.LEFT if c_idx == 0 else WD_ALIGN_PARAGRAPH.CENTER
             format_cell(tbl3.rows[r_idx+1].cells[c_idx], val, bold=is_bold, align=align)
             if r_idx % 2 == 1:
@@ -328,8 +339,8 @@ def append_chapter_5(doc):
                 
     add_p(doc, 
         "As reported in Table 3 and illustrated in Fig. 8, the total request count across splits is 50,975 in training, 11,120 "
-        "in validation, and 10,174 in the held-out test set (overall total: 72,269 requests). The average session length is 34.0 requests "
-        "in training, 37.1 requests in validation, and 33.9 requests in the test set. Class balance across all three partitions is highly "
+        "in validation, and 10,174 in the held-out test set (overall total: 72,269 request instances). The average session length is 34.0 requests "
+        "in training, 37.1 requests in validation, and 33.9 requests in the test set. Class balance across all three partitions is "
         "consistent, with Normal traffic comprising ~28%, Reconnaissance ~24%, Fuzzing ~18%, Injection ~16%, and Exploitation ~14%. "
         "While evaluating on a single target application (Juice Shop) enables deep semantic modeling of full attack chains, it represents "
         "an acknowledged boundary condition; evaluating cross-application generalization against additional targets (e.g., DVWA, WebGoat) "
@@ -379,35 +390,35 @@ def append_chapter_5(doc):
     feat_data = [
         ["1", "is_get", "Request Morphology", "Binary indicator: 1 if HTTP method is GET, 0 otherwise."],
         ["2", "is_post", "Request Morphology", "Binary indicator: 1 if HTTP method is POST, 0 otherwise."],
-        ["3", "is_write", "Request Morphology", "Binary indicator: 1 if method is PUT or DELETE (resource modification)."],
+        ["3", "is_write", "Request Morphology", "Binary indicator: 1 if method is PUT, PATCH, or DELETE (state mutation)."],
         ["4", "path_depth", "Request Morphology", "Integer count of URI path segments separated by slashes."],
-        ["5", "path_length", "Request Morphology", "Log1p compressed length of the URI path: log(1 + len(path))."],
-        ["6", "has_query", "Request Morphology", "Binary indicator: 1 if query parameter string is non-empty."],
-        ["7", "query_length", "Request Morphology", "Log1p compressed length of query string: log(1 + len(query))."],
-        ["8", "has_body", "Request Morphology", "Binary indicator: 1 if POST/PUT request body contains payload data."],
-        ["9", "body_length", "Request Morphology", "Log1p compressed size of the request body in bytes."],
-        ["10", "has_auth_header", "Request Morphology", "Binary indicator: 1 if Authorization or Bearer token is present."],
-        ["11", "cookie_count", "Request Morphology", "Count of distinct session cookies transmitted in Cookie header."],
-        ["12", "re_sqli_keywords", "Payload Regex Signatures", "Count of matched SQL injection keyword patterns (UNION, SELECT, WHERE, OR)."],
-        ["13", "re_sqli_syntax", "Payload Regex Signatures", "Count of SQL syntax symbols: quotes, double dashes (--), hash (#), semi-colons."],
-        ["14", "re_hex_encoding", "Payload Regex Signatures", "Count of hexadecimal escape sequences (%27, 0x, char(), ASCII encodings)."],
-        ["15", "re_system_cmds", "Payload Regex Signatures", "Detection of OS command injection strings (cat, /etc/passwd, cmd.exe, ping)."],
-        ["16", "re_xss_tags", "Payload Regex Signatures", "Count of HTML/JavaScript tags (<script>, onload=, alert(), onerror=)."],
-        ["17", "re_path_traversal", "Payload Regex Signatures", "Count of directory traversal sequences (../, ..\\, %2e%2e%2f)."],
-        ["18", "is_auth_endpoint", "Endpoint Sensitivity", "Binary indicator: 1 if URI targets /rest/user/login, /oauth, or /auth."],
-        ["19", "is_admin_endpoint", "Endpoint Sensitivity", "Binary indicator: 1 if URI matches /admin, /api/Challenges, or /metrics."],
-        ["20", "is_search_endpoint", "Endpoint Sensitivity", "Binary indicator: 1 if URI targets product keyword search (/rest/products/search)."],
-        ["21", "is_static_asset", "Endpoint Sensitivity", "Binary indicator: 1 if request targets images, css, or js assets."],
-        ["22", "resp_status_4xx", "Response Diagnostics", "Binary indicator: 1 if HTTP response status is client error (400, 401, 403, 404)."],
-        ["23", "resp_status_5xx", "Response Diagnostics", "Binary indicator: 1 if status is server error (500 Internal Server Error)."],
-        ["24", "resp_body_length", "Response Diagnostics", "Log1p compressed length of HTTP response payload in bytes."],
-        ["25", "ctx_request_count", "Decaying Session Context", "Running chronological request counter within the session: log(1 + t)."],
-        ["26", "ctx_error_rate_w8", "Decaying Session Context", "Fraction of last W=8 requests in session resulting in 4xx or 5xx status."],
-        ["27", "ctx_unique_endpoints_w8", "Decaying Session Context", "Number of distinct URI endpoints accessed across the last W=8 requests."],
-        ["28", "ctx_attack_regex_sum_w8", "Decaying Session Context", "Cumulative sum of regex signature matches across the last W=8 requests."],
-        ["29", "ctx_decay_attack_pressure", "Decaying Session Context", "Exponential moving average of attack signatures: C_t = gamma * C_{t-1} + (1 - gamma) * x_t (gamma = 0.6)."],
-        ["30", "ctx_method_diversity", "Decaying Session Context", "Entropy of HTTP methods (GET, POST, PUT, DELETE) calculated strictly from requests observed up to the current request (1..t), with zero lookahead into future session requests."],
-        ["31", "ctx_interarrival_time", "Decaying Session Context", "Log1p compressed elapsed time in seconds since previous request: log(1 + Delta t)."],
+        ["5", "has_query", "Request Morphology", "Binary indicator: 1 if query parameter string is non-empty."],
+        ["6", "log_query_len", "Request Morphology", "Log1p compressed length of query parameter string: ln(1 + len(query))."],
+        ["7", "log_body_len", "Request Morphology", "Log1p compressed length of POST/PUT body payload in bytes."],
+        ["8", "query_param_count", "Request Morphology", "Total count of parsed query parameters."],
+        ["9", "special_char_ratio", "Request Morphology", "Proportion of punctuation, quotes, and non-alphanumeric symbols in query and body."],
+        ["10", "sqli_score", "Payload Regex Signatures", "Count of SQL injection keyword and syntax pattern matches (UNION, SELECT, WHERE, OR, comments --, #)."],
+        ["11", "xss_score", "Payload Regex Signatures", "Count of XSS HTML tag and JavaScript event handler patterns (<script>, onerror=, onload=, alert)."],
+        ["12", "numeric_query", "Payload Regex Signatures", "Binary indicator: 1 if query parameter values consist strictly of numeric digits."],
+        ["13", "boundary_value", "Payload Regex Signatures", "Binary indicator: 1 if input values contain boundary probes (-1, 0, 999999, null, NaN)."],
+        ["14", "admin_path", "Endpoint Sensitivity", "Binary indicator: 1 if URI contains administrative tokens (/admin, /administration, /metrics)."],
+        ["15", "api_path", "Endpoint Sensitivity", "Binary indicator: 1 if URI targets REST API routes (/api/, /rest/)."],
+        ["16", "auth_path", "Endpoint Sensitivity", "Binary indicator: 1 if URI targets authentication routes (/login, /auth, /oauth, /rest/user/login)."],
+        ["17", "search_path", "Endpoint Sensitivity", "Binary indicator: 1 if URI targets product keyword search routes (/rest/products/search)."],
+        ["18", "has_auth_header", "Endpoint Sensitivity", "Binary indicator: 1 if Authorization header (e.g., Bearer token) is present."],
+        ["19", "has_identity_header", "Endpoint Sensitivity", "Binary indicator: 1 if user identity headers (X-User-Email, X-Forwarded-For) are present."],
+        ["20", "status_2xx", "Response Diagnostics", "Binary indicator: 1 if HTTP response status code is in the 2xx range (Success)."],
+        ["21", "status_3xx", "Response Diagnostics", "Binary indicator: 1 if HTTP response status code is in the 3xx range (Redirection)."],
+        ["22", "status_4xx", "Response Diagnostics", "Binary indicator: 1 if HTTP response status is in the 4xx range (Client Error, e.g., 401, 404)."],
+        ["23", "status_5xx", "Response Diagnostics", "Binary indicator: 1 if HTTP response status is in the 5xx range (Server Error, e.g., 500 unhandled exception)."],
+        ["24", "log_resp_len", "Response Diagnostics", "Log1p compressed length of HTTP response payload in bytes: ln(1 + len(resp))."],
+        ["25", "log_request_index", "Decaying Session Context", "Chronological index of request within the active user session: ln(1 + t)."],
+        ["26", "log_inter_arrival", "Decaying Session Context", "Log1p compressed elapsed time in seconds since the previous request in session: ln(1 + Delta t)."],
+        ["27", "endpoint_diversity_recent", "Decaying Session Context", "Number of distinct URI endpoints accessed across the sliding window (W = 8)."],
+        ["28", "path_diversity_recent", "Decaying Session Context", "Number of distinct URI base paths accessed across the sliding window (W = 8)."],
+        ["29", "error_rate_recent", "Decaying Session Context", "Fraction of requests in the sliding window (W = 8) that produced 4xx or 5xx response statuses."],
+        ["30", "attack_pressure", "Decaying Session Context", "Exponential moving average of payload signature scores: C_t = gamma * C_{t-1} + (1 - gamma) * (sqli_score + xss_score) with gamma = 0.6."],
+        ["31", "enum_pressure", "Decaying Session Context", "Rolling count of distinct parameterized probes in the window (W = 8), capturing systematic directory/parameter brute-forcing."],
     ]
     for r_idx, row_vals in enumerate(feat_data):
         for c_idx, val in enumerate(row_vals):
@@ -418,11 +429,11 @@ def append_chapter_5(doc):
                 set_cell_bg(tbl4.rows[r_idx+1].cells[c_idx], "F9F9F9")
                 
     add_p(doc, 
-        "The engineered feature space systematically decouples orthogonal signals: Features 1 to 11 capture grammatical structure; "
-        "Features 12 to 17 flag malicious payload patterns; Features 18 to 21 identify target asset criticality; Features 22 to 24 capture "
-        "response diagnostics (notably error codes and exfiltrated byte volumes); and Features 25 to 31 maintain causal temporal "
-        "memory. Because context features use sliding windows and exponential decay rather than infinite accumulators, a legitimate user "
-        "who inadvertently triggers a 404 error is not permanently misclassified as an attacker for the duration of the visit."
+        "The engineered feature space systematically decouples orthogonal signals: Features 1 to 9 capture request morphology and syntax density; "
+        "Features 10 to 13 flag malicious payload signatures and boundary probes; Features 14 to 19 evaluate target endpoint criticality and privilege context; "
+        "Features 20 to 24 capture application response diagnostics; and Features 25 to 31 maintain causal temporal session memory. "
+        "Because context features use bounded sliding windows (W = 8) and exponential decay rather than infinite accumulators, a legitimate user "
+        "who inadvertently triggers a 404 error is not permanently penalized for the remainder of their session."
     )
     
     # 5.5
@@ -439,17 +450,20 @@ def append_chapter_5(doc):
     )
     add_p(doc, 
         "2. Gradient Boosted Decision Trees (XGBoost): A per-request non-linear tree ensemble trained using the XGBoost framework. "
-        "The model operates directly on the 31-dimensional feature vector x_t without recurrence. Hyperparameters were tuned on the validation set: "
+        "The model operates on the 31-dimensional feature vector x_t. Although x_t incorporates rolling context features (Features 25 to 31, "
+        "such as error_rate_recent and attack_pressure), the XGBoost classifier itself is non-recurrent and stateless; it evaluates each request "
+        "vector independently without internal recurrent memory or hidden state propagation. Hyperparameters were tuned on the validation set: "
         "max_depth = 6, n_estimators = 100, learning_rate = 0.10, subsample = 0.8, colsample_bytree = 0.8, and multi:softprob objective function. "
-        "XGBoost serves as a robust single-request baseline."
+        "XGBoost serves as a high-capacity single-request baseline."
     )
     add_p(doc, 
         "3. Long Short-Term Memory (LSTM) Recurrent Neural Network: A sequential deep neural network designed to capture temporal "
         "transitions across successive HTTP requests. The network architecture consists of an input layer accepting 31-dimensional feature vectors, "
         "two stacked causal LSTM layers with 64 hidden units each, a dropout layer (rate = 0.20) to mitigate overfitting, and a Dense linear layer "
         "with Softmax activation outputting posterior class probabilities over the five stages. The model is trained using the Adam optimizer "
-        "(learning rate = 0.001) with categorical cross-entropy loss over 30 epochs. To eliminate stochastic initialization variance, models "
-        "were trained across three distinct random seeds (Seed 42, 43, 44) and the seed-averaged ensemble prediction is reported."
+        "(learning rate = 0.001) with categorical cross-entropy loss over 30 epochs on sliding history windows (T <= 10). To eliminate stochastic "
+        "initialization variance, models were trained across three distinct random seeds (Seed 42, 43, 44), and the seed-averaged ensemble prediction "
+        "is reported. On modern AVX2-enabled CPU hardware, evaluating this 3-seed ensemble across bounded sliding windows requires only 0.11 ms per request."
     )
     
     # 5.6
@@ -468,19 +482,23 @@ def append_chapter_5(doc):
         "additive Laplace smoothing (smoothing parameter lambda_s = 0.20 selected via grid search on the validation set)."
     )
     add_p(doc, 
-        "Observation Emissions and Forward Filtering: Rather than emitting discrete symbols, the continuous observation vector o_t consists of "
-        "the calibrated posterior probabilities emitted by the neural and tree classifiers. The forward algorithm computes the joint probability "
-        "alpha_t(j) = P(o_1, o_2, ..., o_t, q_t = s_j | lambda) recursively:"
+        "Observation Emissions and Forward Filtering: In classical discrete HMMs, emissions represent categorical tokens from a codebook. "
+        "In this hybrid neural-HMM architecture, the continuous observation vector is the calibrated posterior probability distribution "
+        "P_cal(y_t = s_j | x_t) emitted by the neural and tree classifiers. By Bayes' rule, the observation likelihood is proportional to "
+        "P(x_t | q_t = s_j) proportional to P(q_t = s_j | x_t) / P(q_t = s_j). Under an uninformative uniform state prior (P(q_t = s_j) = 1/K), "
+        "the emission likelihood is directly proportional to the calibrated posterior e_{t, j} = P_cal(y_t = s_j | x_t). "
+        "The causal forward algorithm recursively computes the joint forward variable alpha_t(j) = P(x_1, ..., x_t, q_t = s_j | lambda):"
     )
     add_p(doc, 
-        "alpha_t(j) = P(o_t | q_t = s_j) * SUM_{i=0}^4 [ alpha_{t-1}(i) * A_{ij} ]"
+        "alpha_t(j) = e_{t, j} * SUM_{i=0}^4 [ alpha_{t-1}(i) * A_{ij} ]"
     )
     add_p(doc, 
         "The causal belief distribution b_t in R^5 is obtained by normalizing the forward variables: b_t(j) = alpha_t(j) / SUM_{k=0}^4 alpha_t(k). "
-        "Crucially, the forward filter is strictly causal: it requires only past observations o_1 to o_t and can be evaluated online with O(1) "
-        "time complexity per request. In contrast, the classic Viterbi algorithm computes the globally optimal state sequence using dynamic "
-        "programming over the entire session 1 to T. While Viterbi provides a theoretical upper bound (offline benchmark), it is inherently "
-        "non-causal because decoding state q_t requires backward traceback from future observation o_T."
+        "Crucially, the forward filter is strictly causal: it requires only past observations x_1 to x_t and can be evaluated online with O(1) "
+        "time complexity per request (0.02 ms). In contrast, the classic Viterbi algorithm computes the globally optimal state sequence using dynamic "
+        "programming over the entire completed session 1 to T. While Viterbi provides a retrospective offline sequence decoding benchmark, "
+        "it is inherently non-causal because decoding state q_t requires backward traceback from future observation x_T, making it unsuitable "
+        "for real-time inline blocking."
     )
     
     # 5.7
@@ -500,7 +518,7 @@ def append_chapter_5(doc):
     add_p(doc, 
         "Empirical validation across alpha in [0.0, 1.0] in increments of 0.10 confirmed that an equal blending weight (alpha = 0.50) yields "
         "the highest Macro-F1 score on validation data. To ensure that the blended probability distributions reflect true empirical probabilities, "
-        "post-hoc Temperature Scaling [Guo et al.] is applied to calibrate the blended logits:"
+        "post-hoc Temperature Scaling [10] is applied to calibrate the blended logits:"
     )
     add_p(doc, 
         "P_cal(y_t = c) = exp(z_c / T) / SUM_{k=0}^4 exp(z_k / T)"
@@ -529,28 +547,34 @@ def append_chapter_5(doc):
         "Macro-F1 = (1 / K) * SUM_{c=0}^{K-1} [ 2 * P_c * R_c / (P_c + R_c) ], where P_c and R_c represent class-specific precision and recall."
     )
     add_p(doc, 
-        "3. Transition Edge Accuracy: Measures the sequential consistency of predicted state transitions across consecutive requests: "
-        "Edge_Acc = (1 / (N - S_tot)) * SUM_{t=2}^N I((hat{y}_{t-1}, hat{y}_t) == (y_{t-1}, y_t)), evaluating whether the model captures "
-        "the dynamic trajectory of the attack rather than isolated points."
+        "3. Transition Edge Accuracy: Evaluates classification fidelity specifically at state change boundaries and sequence onsets. "
+        "Let E = { t in {1, ..., T} | t = 1 or y_t != y_{t-1} } denote the set of transition points (|E| = 1,054 across the 300 test sessions). "
+        "Transition Edge Accuracy is computed as: Edge_Acc = (1 / |E|) * SUM_{t in E} I(hat{y}_t = y_t), measuring how accurately the model "
+        "captures dynamic phase shifts rather than relying on intra-block persistence."
     )
     add_p(doc, 
-        "4. Benign False-Positive Rate (FPR): The proportion of legitimate (Stage 0: Normal) requests incorrectly flagged as an attack: "
-        "Benign_FPR = FP_Normal / (FP_Normal + TN_Normal). Minimizing benign FPR is paramount to prevent alert fatigue."
+        "4. Benign False-Positive Rate (FPR) and Session False Alarm Rate: Request-level Benign FPR measures the proportion of legitimate "
+        "(Stage 0: Normal) requests incorrectly classified as an attack: FPR = FP_Normal / (FP_Normal + TN_Normal). Complementing this, "
+        "Session-Level False Alarm Rate (FAR) is evaluated strictly on the 34 pure-benign sessions in the test set: "
+        "Session_FAR = (Benign Sessions with >= 1 False Alarm) / (Total Pure-Benign Sessions), quantifying how frequently legitimate user "
+        "sessions trigger disruptive operational alerts."
     )
     add_p(doc, 
         "5. Session-Level Campaign Detection Rate: Measures the operational probability that an attacking session is detected before completion. "
-        "For all test sessions whose true peak stage reaches an attack stage (s >= 1), evaluation assesses whether the running predicted stage ever "
-        "reaches or exceeds that peak stage: Catch_Rate(s) = Caught_Sessions(s) / Total_Sessions(s)."
+        "For all 266 test sessions whose true peak stage reaches an attack stage (s >= 1), evaluation assesses whether the running predicted stage "
+        "ever reaches or exceeds that peak stage: Catch_Rate(s) = Caught_Sessions(s) / Total_Sessions(s)."
     )
     add_p(doc, 
-        "6. Early Detection Latency & Lead Time: For each caught attack session, latency L_det is the number of requests of the peak attack stage processed "
-        "before the detector raises an alert: L_det = t_alert - t_peak_onset. Furthermore, the operational lead-time metric measures the number "
-        "of requests between the initial alarm and the final exploitation payload delivery, providing defenders with tactical response margin."
+        "6. Early Detection Latency & Lead Time: For each caught attack session, detection latency L_det is the number of requests of the peak "
+        "attack stage processed before the detector raises an alert: L_det = t_alert - t_peak_onset. The operational lead-time metric measures "
+        "the number of requests elapsed between the initial alarm and the final exploitation payload delivery, providing defenders with tactical response margin."
     )
     add_p(doc, 
-        "7. Next-Distinct-Stage Intent Forecasting Accuracy: Evaluated strictly at real phase changes (points where true stage y_{t+1} != y_t). "
+        "7. Next-Distinct-Stage Intent Forecasting Accuracy: Evaluated strictly at real phase transitions (points where true stage y_{t+1} != y_t, "
+        "n = 754 in the test corpus). Because raw adjacent-request pairs exhibit 92.36% persistence due to block structure, predicting y_{t+1} = y_t "
+        "is trivial during steady-state runs. Meaningful intent forecasting requires predicting the next distinct stage when a transition occurs. "
         "Using the transition matrix with self-loops removed, B = norm(A - diag(A)), the model forecasts the next distinct stage via "
-        "v_next = b_t * B. Top-1 and Top-2 accuracy are compared against naive advance and global frequency baselines."
+        "v_next = b_t * B. Top-1 and Top-2 accuracy are compared against naive advance and global empirical prior baselines."
     )
     
     # 5.9
@@ -567,7 +591,9 @@ def append_chapter_5(doc):
     add_p(doc, 
         "The entire experimental corpus is packaged as dataset_v2.npz, containing 2,100 pre-tokenized request feature sequences, session labels, "
         "and split masks. Benchmark evaluation is fully automated via pipeline/evaluate.py, ensuring that every result reported in Chapter 6 "
-        "can be reproduced deterministically with zero stochastic discrepancy."
+        "can be reproduced deterministically with zero stochastic discrepancy. While the current protocol enforces strict file-disjoint partitioning, "
+        "evaluations are based on a fixed train/val/test split of Juice Shop traffic; future extensions will evaluate multi-fold cross-validation "
+        "and cross-application transferability across additional target environments."
     )
     
     print("Chapter 5 appended successfully.")

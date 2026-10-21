@@ -1,0 +1,52 @@
+P0: 1. Major methodological concerns
+P1: The dataset is much smaller than “72,269 requests” suggests.
+P2: The raw capture is 2,878 requests across 62 files, plus about 1,200 live requests added to train only.
+P3: Sessions were built by resampling 3–16-request blocks from that pool. That implies roughly 17× reuse of the same underlying requests.
+P4: If the 20% test split is by file, the test set draws on about a dozen files. The 10,174 test requests are therefore heavily duplicated and not independent.
+P5: Please report unique requests per split and the number of source files per split.
+P6: Run file-level k-fold cross-validation and report confidence intervals. A single 300-session split cannot support the precision shown (e.g., 0.5060, 41.4%).
+P7: The “zero-leakage” claim is overstated.
+P8: Section 5.3 itself concedes that payload patterns repeat across partitions. SQLmap and Intruder wordlists will do exactly that.
+P9: Say “file-disjoint” instead, and temper the language in §7.5 (“unbiased, leak-free”).
+P10: The task is partly circular.
+P11: Sessions come from a Markov generator you designed, and the HMM transition matrix is then estimated from that generator’s output. The forecasting result largely measures how well the model recovers your own generator.
+P12: Labels follow SQL-grammar rules, and the features include SQL-grammar regexes. Yet Injection recall is only 25.8%, which suggests label noise or block-level labelling. Explain how labels were assigned to each request. The rules for Normal and Recon are missing.
+P13: A stronger baseline is the transition matrix conditioned on the true current stage. That would show how much of the forecasting score is just the generator.
+P14: The false-positive framing is misleading.
+P15: The test set is 72% attack traffic, and only 34 of 300 sessions are fully benign. Real traffic is overwhelmingly benign.
+P16: A 14% benign FPR (about 1 in 7 benign requests) would be unusable in a SOC. §7.3 and the abstract present it as a strength.
+P17: Report session-level false alarms on benign sessions, and precision at realistic base rates.
+P18: The campaign catch rate is inflated.
+P19: A session counts as “caught” if the running predicted stage ever reaches or exceeds the true peak. With a 14% FPR over about 34 requests, almost any session will trip an early false alarm.
+P20: Report the same metric on benign sessions, or on a random or XGBoost baseline.
+P21: The abstract highlights 90.91% and 91.45% and leaves out the 74.29% for Injection.
+P22: The claim about temporal context is not supported by the ablations.
+P23: XGBoost already consumes the ctx_* features, so §6.4’s “XGBoost evaluates requests in isolation” is wrong.
+P24: The FPR drop to 14.00% comes mostly from the LSTM, which alone gets 14.69%.
+P25: XGBoost has higher edge accuracy (0.4896) than the deployed ensemble (0.4156). The HMM forward filter drops accuracy to 52.83% and edge accuracy to 0.2951. §6.3 and the abstract (“strong sequential path continuity”) are not supported by those numbers.
+P26: Add a feature-category ablation, XGBoost with lag features, and a GRU or Transformer. Also compare against ModSecurity CRS, since the WAF is your stated motivation.
+P27: 2. Internal inconsistencies
+P28: The persistence baseline is contradicted. §6.7 says consecutive requests share a label 49.34% of the time. But 754 transitions over about 9,874 consecutive pairs implies about 92.4% persistence, which also fits blocks of 3–16 requests. One of these is wrong, and if 92% is right, the Task A discussion needs rewriting.
+P29: The latency breakdown doesn’t add up. 0.03 + 0.03 + 0.14 + 0.01 = 0.21 ms, not 0.18 ms. The HMM variant is listed at 0.20 ms and online Viterbi at 0.22 ms, against a stated requirement of “< 0.20 ms”. Also explain how a 3-seed Keras LSTM runs in 0.14 ms per request (stateful stepping? custom NumPy?).
+P30: Table 5 has a suspicious repeat. Ensemble + HMM Forward edge accuracy (0.2951) is identical to the current-request lookup’s. Please check for a copy-paste error.
+P31: The feature names don’t match Table 4. §6.4 cites special_char_ratio, query_param_count, attack_pressure, error_rate_recent and endpoint_diversity_recent, none of which are in the 31 features.
+P32: The cross-reference is wrong. §6.1 says Viterbi is discussed in §5.4. It is in §5.6.
+P33: Units and wording slips: 
+P34: “+24.36%” should be “+24.36 percentage points”.
+P35: The Conclusion’s numbers have lost their punctuation (“54 31%”, “0 5060”, “72 269”).
+P36: §7.1 garbles the FPR reductions.
+P37: §2.5 says “advertising campaign” where it means attack campaign.
+P38: “Air-gapped” is the wrong term. A localhost Docker container is isolated, not air-gapped, and the report also uses MongoDB Atlas, which is cloud-hosted. The same terminology slip appears in the abstract.
+P39: The edge-accuracy formula is not usable as written. It uses N − S_tot (S_tot is undefined), and the summation does not exclude session boundaries.
+P40: The HMM emission model is unspecified. It says the observations are classifier posteriors, but not how P(o_t | q_t) is computed. This is needed for reproducibility.
+P41: The requirements are not matched by the implementation. Alerts, credential masking, TTL session store, Linux support and the reverse-proxy deployment are listed but never implemented or evaluated.
+P42: 3. Overclaiming
+P43: 54.31% accuracy and 0.506 Macro-F1 on 5 classes is a modest result. Words like “decisive”, “dramatically”, “excellent” and “strong” are not justified.
+P44: Top-1 forecasting of 33.69% means wrong about two-thirds of the time. Top-2 of 55.17% over 4 candidates is only about 5 points above random (50%). It is also evaluated only at known transition points, which a live system would not know. “Actionable early warning” is too strong, and no significance tests are given for n = 754.
+P45: Offline Viterbi is called the “theoretical maximum”. It is an offline decoder, not a bound.
+P46: The 2.89-point causality gap is real, but forward-backward smoothing would be the more natural offline comparison.
+P47: 4. References (please audit all 30)
+P48: I spot-checked two and both are wrong:
+P49: [25] ModSec-AdvLearn: the real authors are Floris, Scano, Montaruli, Demetrio, Valenza, Compagna, Ariu, Piras, Balzarotti and Biggio (IEEE TIFS, 2025). The report lists “X. Li, Y. Chen, M. Zhang”.
+P50: [5] Shawly et al.: the real authors are Shawly, Elghariani, Kobes and Ghafoor. The report lists “El-Alfy” and “Sait”, and the venue/volume looks wrong.
+P51: Several others look doubtful and I did not check them all. These include [3], [4], [10], [11], [22], [26] and [29]; for example, [29] cites an “ICCSP” DOI under a conference name that doesn’t match ICCSP. Check every entry against the publisher’s page. Also, Guo et al. (temperature scaling), Hutchins (Kill Chain), Strom (ATT&CK), Valeur, Ning and Álvarez (CSIC 2010) are cited in the text but missing from the list. The literature review also leans on IoT, SCADA and VANET papers, with little on session-based web-attack detection.
