@@ -67,6 +67,7 @@ def ensemble_emissions(lstm_models, xgb_clf, feats: np.ndarray,
     lstm_p = np.zeros((len(feats), NUM_STAGES), dtype=np.float64)
     for m in lstm_models:
         lstm_p += m.predict(feats[None, :, :], verbose=0)[0]
+        lstm_p += m(feats[None, :, :], training=False).numpy()[0]
     lstm_p /= max(1, len(lstm_models))
     xgb_p = xgb_clf.predict_proba(feats)
     ens = alpha * lstm_p + (1.0 - alpha) * xgb_p

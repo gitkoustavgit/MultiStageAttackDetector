@@ -28,11 +28,13 @@ import glob
 
 from .models import (
     NUM_STAGES,
+    _apply_temperature,
     build_lstm,
     ensemble_emissions,
     fit_transition_matrix,
     forward_filter,
     online_viterbi,
+    pad_sequences,
     viterbi_decode,
 )
 
@@ -139,6 +141,10 @@ def main():
     for feats in test_feats:
         p = np.mean([m.predict(feats[None, :, :], verbose=0)[0] for m in lstm_models], axis=0)
         lstm_em.append(p)
+    t0 = time.perf_counter()
+    X_pad, _ = pad_sequences(test_feats)
+    batch_preds = np.mean([m(X_pad, training=False).numpy() for m in lstm_models], axis=0)
+    lstm_em = [batch_preds[i, :len(s)] for i, s in enumerate(test_feats)]
     lstm_latency = (time.perf_counter() - t0) * 1000 / len(y_all)
     results.append(score(f"LSTM (seed-avg x{len(lstm_models)})", y_all,
                          np.concatenate([e.argmax(1) for e in lstm_em]),
@@ -156,6 +162,7 @@ def main():
 
     # Tuned ensemble (the ONE fusion path; alpha chosen on validation)
     ens_em = [ensemble_emissions(lstm_models, clf, feats, alpha, T) for feats in test_feats]
+    ens_em = [_apply_temperature(alpha * lp + (1.0 - alpha) * xp, T) for lp, xp in zip(lstm_em, xgb_em)]
     p_ens = np.concatenate([e.argmax(1) for e in ens_em])
     results.append(score(f"Ensemble (alpha={alpha}) [DEPLOYED current stage]", y_all, p_ens, edges_all, benign_all))
 

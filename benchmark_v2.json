@@ -34,6 +34,7 @@
     "edge_acc": 0.36907020872865276,
     "benign_fp": 0.14689655172413793,
     "latency_ms": 4.309241187241978
+    "latency_ms": 0.2462935521918795
   },
   {
     "model": "XGBoost (per-step)",
@@ -43,6 +44,7 @@
     "edge_acc": 0.48956356736242884,
     "benign_fp": 0.23896551724137932,
     "latency_ms": 0.015658351779128245
+    "latency_ms": 0.03668956162807404
   },
   {
     "model": "Ensemble (alpha=0.5) [DEPLOYED current stage]",
