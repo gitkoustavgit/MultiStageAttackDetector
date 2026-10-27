@@ -136,6 +136,11 @@ def main():
     clf.load_model("xgb_v2.json")
 
     # LSTM-only (seed-averaged) row
+    lstm_em = []
+    t0 = time.perf_counter()
+    for feats in test_feats:
+        p = np.mean([m.predict(feats[None, :, :], verbose=0)[0] for m in lstm_models], axis=0)
+        lstm_em.append(p)
     t0 = time.perf_counter()
     X_pad, _ = pad_sequences(test_feats)
     batch_preds = np.mean([m(X_pad, training=False).numpy() for m in lstm_models], axis=0)
@@ -156,6 +161,7 @@ def main():
                          edges_all, benign_all, latency_ms=xgb_latency))
 
     # Tuned ensemble (the ONE fusion path; alpha chosen on validation)
+    ens_em = [ensemble_emissions(lstm_models, clf, feats, alpha, T) for feats in test_feats]
     ens_em = [_apply_temperature(alpha * lp + (1.0 - alpha) * xp, T) for lp, xp in zip(lstm_em, xgb_em)]
     p_ens = np.concatenate([e.argmax(1) for e in ens_em])
     results.append(score(f"Ensemble (alpha={alpha}) [DEPLOYED current stage]", y_all, p_ens, edges_all, benign_all))
